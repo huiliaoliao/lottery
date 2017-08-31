@@ -1,0 +1,415 @@
+ul{
+    list-style: none;
+}
+
+.contai{
+    /*min-height:1000px;*/
+}
+.logo{
+    background-color: #343434;
+}
+.logo img{
+    margin-top:16px;
+    margin-bottom: 16px;
+    margin-left: 5%;
+}
+#nav{
+    background-color: #3d3d3d;
+    height: 56px;
+    float: left;
+    padding:6px 10px;
+    margin:0;
+}
+#nav li{
+    float: left;
+    padding:0 14px;
+    margin-right: 10px;
+    height:40px;
+    line-height: 40px;
+}
+#nav li a{
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+}
+#nav li.active>a{
+    color:#f4841e;
+}
+.content{
+    background-color: #f6f6f6;
+    height: 944px;
+}
+.content-first{
+    margin-bottom: 24px;
+}
+.clear{
+    clear: both;
+}
+.active{
+    color:#f4841e;
+    border-bottom-style: solid;
+    border-bottom-width: 4px;
+    border-bottom-color:#f4841e ;
+}
+.side-menu{
+    padding-top: 27px;
+    padding-left:24px;
+    padding-right: 0;
+    background-color: #3d3d3d;
+    min-height:700px;
+}
+.sub-menu span{
+    color:#fff;
+}
+.sub li{
+    height:52px;
+    line-height: 52px;
+
+}
+
+.menu{
+    color:#fff;
+    text-decoration: none;
+}
+.glyphicon-chevron-down{
+    padding-left: 48px;
+}
+.menu{
+    padding-left: 24px;
+}
+#table tr th{
+    height: 40px;
+}
+h5{
+    margin:0;
+    padding-top: 24px;
+    padding-bottom: 48px;
+    font-weight: bold;
+    color:#5b5b5b;
+}
+.h5{
+    padding-bottom: 20px;
+    margin:0;
+    padding-top: 24px;
+    font-weight: bold;
+    color:#5b5b5b;
+}
+.table tbody td{
+    border-right: 2px solid #E3E3E3;
+}
+.table tbody td:last-child{
+    border-right: none;
+}
+
+/****************左侧菜单********************/
+/*.menu_list {
+    width:90%;
+}
+.menu_list ul li{
+    display: block;
+    text-align: center;
+    width:90%;
+}
+.menu_list ul li .fuMenu{
+    width: 90%;
+    color:#f6f6f6;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+}
+.menu_list ul li .xiala{
+    float: left;
+    margin-left: 120px;
+    margin-top: -24px;
+}
+.menu_list ul li .div1 {
+    width: 100%;
+    height: auto;
+    float: left;
+}
+.menu_list ul li .div1 .zcd{
+    color: #f6f6f6;
+    font-size: 14px;
+    height: 52px;
+    cursor: pointer;
+    line-height: 52px;
+    text-align: center;
+    width: 90%;
+}*/
+/*****出入汇总表格******/
+.date {
+    color: #343434;
+    font-size: 14px;
+    margin-right: 8px;
+}
+.button {
+    background: #f4841e;
+    color: #fff;
+    width: 54px;
+    height: 22px;
+    margin-left: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    outline: none;
+    border: none;
+}
+.button2{
+    background: #f6f6f6;
+    color: #f4841e;
+    width: 54px;
+    height: 22px;
+    margin-left: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    border: 1px solid #f4841e;
+}
+.table-button1 {
+    background: #f00;
+    color: #fff;
+    width: 40px;
+    height: 22px;
+    border-radius: 4px;
+    cursor: pointer;
+    outline: none;
+    border: none;
+
+}
+.table-button2 {
+    background:#f4841e;
+    color: #fff;
+    width: 40px;
+    height: 22px;
+    border-radius: 4px;
+    cursor: pointer;
+    outline: none;
+    border: none;
+}
+.t-left {
+    float: left;
+    margin-left: 20px;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.t-right {
+    float: right;
+    color: #4888c8;
+    text-decoration: underline;
+    margin-right: 20px;
+    cursor: pointer;
+}
+.d-right{
+    float:right;
+}
+.Ablue{
+    text-decoration:underline ;
+    color:#4888C8;
+    cursor: pointer;
+}
+
+.color1 {
+    color: #1c7654;
+}
+
+.color2 {
+    color: #eb6468;
+}
+
+.cancelBorder {
+    border-right: none !important;
+}
+.table>thead>tr{
+    background-color:#3d3d3d; ;
+    color:#fff;
+}
+/****公司入款******/
+tbody>tr:last-child{
+    border-bottom: 2px solid #3d3d3d;
+}
+
+/*****展示分类******/
+#subject input{
+    border:none;
+    display: block;
+}
+
+
+
+
+
+
+
+
+.middle{
+/*    width: 250px;
+margin: 0px auto;*/
+}
+.middle .leftMenu{
+    width: 100%;
+    min-height: 1000px;
+    float: left;
+}
+.middle .leftMenu .topMenu{
+    height: 42px;
+    background-color: #0065a5;
+}
+.middle .leftMenu .topMenu img{
+    margin: 11px;
+    float: left;
+}
+.middle .leftMenu .topMenu .changeMenu{
+    cursor: pointer;
+}
+.middle .leftMenu .topMenu .banshi{
+    padding-left: 23px;
+}
+.middle .leftMenu .topMenu .menuTitle{
+    text-align: center;
+    color: #F2F2F2;
+    float: left;
+    line-height: 42px;
+    font-size: 16px;
+    width: 120px;
+}
+.menu_list {
+    width: 100%;
+    background: #354045;
+}
+.menu_list ul li{
+    display: block;
+    text-align: center;
+    width: 100%;
+}
+.menu_list ul li .fuMenu{
+    color: #F2F2F2;
+    font-size: 16px;
+    cursor: pointer;
+    height:58px;
+    line-height: 58px;
+    text-align: center;
+    width: 100%;
+    float: left;
+}
+.menu_list ul li .xiala{
+    float: left;
+    margin-left: -50px;
+    margin-top: 27px;
+}
+.menu_list ul li .icon{
+    float: right;
+    margin-left: -50px;
+    margin-top: 27px;
+}
+.menu_list ul li .div1 {
+    width: 100%;
+    height: auto;
+    float: left;
+}
+.menu_list ul li .div1 .zcd{
+    text-decoration: none;
+    display: block;
+    color: #f6f6f6;
+    font-size: 14px;
+    height: 50px;
+    /*margin-bottom: 1px;*/
+    cursor: pointer;
+    line-height: 50px;
+    text-align: center;
+    width: 100%;
+}
+.div1 {
+    /*height: 200px;*/
+    display: none;
+}
+.removes{
+    color: #f4841e !important;
+    background-color: #f6f6f6;
+}
+
+
+*{
+    padding: 0;
+    margin: 0;
+}
+body {
+    font-family: "\5FAE\8F6F\96C5\9ED1","Microsoft Yahei","Hiragino Sans GB",tahoma,arial,"\5B8B\4F53";
+    line-height: 1;
+    color: #85888e;
+    min-width: 1300px;
+}
+
+ul,
+li {
+    list-style: none
+}
+
+input,
+textarea {
+    outline: 0
+}
+
+img {
+    max-width: 100%
+}
+
+img,
+input {
+    border: 0;
+    vertical-align: top
+}
+
+a {
+    color: #85888e;
+    text-decoration: none;
+    outline: 0;
+}
+div.row .displayed-show{
+    display: block;
+}
+
+.displayed-hide{
+    display: none;
+}
+.displayed-block{
+    display: block;
+}
+/********线上出款***********/
+.parent-input{
+    font-size: 12px;
+    margin-bottom: 20px;
+    height: 20px;
+    line-height: 20px;
+}
+.parent-input input{
+    margin-right: 10px;
+}
+.parent-input select{
+    border:none;
+}
+/****出入汇总*********/
+#caption{
+    background-color: #3d3d3d;
+    color:#fff;
+    margin-bottom: 10px;
+}
+.sel-width{
+    width: 70px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

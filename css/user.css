@@ -1,0 +1,30 @@
+.user-parent-input{
+    margin-bottom: 20px;
+    font-size: 14px;
+    font-weight: bold;
+
+}
+.user-parent-input select{
+    margin-left: 20px;
+    height:50px;
+}
+.user-parent-input input{
+    margin-left: 20px;
+    height:50px;
+}
+.user-parent-input button{
+    height:40px;
+    line-height: 40px;
+    width:40px;
+    border-radius: 5%;
+
+}
+.handel{
+    height: 25px;
+}
+.handel-button{
+    position: relative;
+}
+.handel-button button{
+    position:absolute;
+}

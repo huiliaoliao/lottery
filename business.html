@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title></title>
+    <link rel="stylesheet" href="css/bootstrap.css"/>
+    <link rel="stylesheet" href="css/lottery.css">
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.min.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row">
+        <!--左半边-->
+        <div class="col-xs-2 contai">
+            <!--logo-->
+            <div class="row">
+                <div class="col-xs-12 logo pull-left">
+                    <img src="img/logo.png" alt="">
+                </div>
+            </div>
+            <!--侧边菜单栏-->
+            <div class="row">
+                <div class="col-xs-12 side-menu">
+                    <div class="middle">
+                        <div class="leftMenu">
+                            <div class="menu_list">
+                                <ul>
+                                    <li class="">
+                                        <p class="fuMenu">彩票设置</p>
+                                        <img class="xiala" src="img/xiala.png" />
+                                        <div class="div1">
+                                            <a href="#class-setting" class="zcd">分类设置</a>
+                                            <a href="#show-class" class="zcd">展示分类</a>
+                                            <a href="#color-setting" class="zcd">彩种设置</a>
+                                            <a href="#limit set" class="zcd">限额设置</a>
+                                            <a href="#color-list" class="zcd  removes">彩种列表</a>
+                                            <a href="#play-list" class="zcd">玩法列表</a>
+                                        </div>
+                                    </li>
+                                    <li class="">
+                                        <p class="fuMenu">彩票管理</p>
+                                        <img class="xiala" src="img/xiala.png" />
+                                        <div class="div1">
+                                            <a href="#single" class="zcd">注单管理</a>
+                                            <a href="#run-lottery" class="zcd">开奖结果</a>
+                                        </div>
+                                    </li>
+                                    <li class="">
+                                        <p class="fuMenu">六合彩管理</p>
+                                        <img class="xiala" src="img/xiala.png" />
+                                        <div class="div1">
+                                            <a href="#result" class="zcd">开奖结果</a>
+                                            <a href="#odds" class="zcd">赔率设置</a>
+                                            <a href="#config" class="zcd">配置管理</a>
+                                        </div>
+                                    </li>
+                                    <li class="">
+                                        <p class="fuMenu">私彩管理</p>
+                                        <img class="xiala" src="img/xiala.png" />
+                                        <div class="div1">
+                                            <a href="#private" class="zcd">私彩管理</a>
+                                        </div>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--右半边-->
+        <div class="col-xs-10 contai">
+            <!--导航-->
+            <div class="row">
+                <ul class="col-xs-12" id="nav">
+                    <li>
+                        <a href="index.html">报表系统</a>
+                    </li>
+                    <li>
+                        <a href="payment.html">现金管理</a>
+                    </li>
+                    <li>
+                        <a href="user.html">用户管理</a>
+                    </li>
+                    <li class="active">
+                        <a href="business.html">业务管理</a>
+                    </li>
+                    <li>
+                        <a href="content.html">内容管理</a>
+                    </li>
+                    <li>
+                        <a href="system.html">系统管理</a>
+                    </li>
+                    <li>
+                        <a href="server.html">服务器管理</a>
+                    </li>
+                    <li class="dropdown pull-right top-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <img src="img/icon-user.svg" alt="">
+                            <span class="username">Jhon Doe</span>
+                            <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu extended logout">
+                            <li style="color:#ddd;"><a href="#"><i class="icon-user"></i>我的资料</a></li>
+                            <li><a href="#"><i class="icon-cog"></i>我的设置</a></li>
+                            <li><a href="login.html"><i class="icon-key"></i>退出</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <div class="clear"></div>
+            </div>
+            <!--主体内容-->
+            <div class="row">
+                <!--彩票设置-->
+                <!--1.分类设置-->
+                <div class="col-xs-12 displayed-hide" id="class-setting">
+                    <h5>分类设置</h5>
+                </div>
+                <!--2.展示分类-->
+                <div class="col-xs-12 displayed-hide" id="show-class">
+                    <h5 class="h5">编辑展示分类</h5>
+                    <div class="parent-input">
+                        分类名称 &nbsp; <input type="text" value="三分彩">
+                    </div>
+                    <div class="parent-input">
+                        分类图片 &nbsp; <input type="file">
+                    </div>
+                    <div class="parent-input">
+                        排序 &nbsp; <input type="text">
+                    </div>
+                    <div class="parent-input">
+                        热门 &nbsp;
+                        <select name="">
+                            <option value="">是</option>
+                            <option value="" slected>否</option>
+                        </select>
+                    </div>
+                    <div class="parent-input">
+                        简介 &nbsp; <textarea name="" cols="" rows=""></textarea>
+                    </div>
+                    <div class="parent-input">
+                        <button class="button">确定</button>
+                        <button class="button2">取消</button>
+                    </div>
+
+                </div>
+                <!--3.彩种设置-->
+                <div class="col-xs-12 displayed-hide" id="color-setting">
+                    <h5>彩种设置</h5>
+                </div>
+                <!--4.限额设置-->
+                <div class="col-xs-12 displayed-hide" id="limit set">
+                    <h5>限额设置</h5>
+                </div>
+                <!--5.彩种列表-->
+                <div class="col-xs-12  displayed-hide" id="color-list">
+                    <h5>彩种列表</h5>
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th>层级</th>
+                            <th>订单号</th>
+                            <th>会员账户</th>
+                            <th>会员存款银行账户</th>
+                            <th>存入银行账号</th>
+                            <th>存入金额</th>
+                            <th>时间</th>
+                            <th>备注</th>
+                            <th>操作人</th>
+                        </tr>
+                        </thead>
+
+                        <tbody id="income-tbody">
+                        <tr>
+                            <td>公司入款</td>
+                            <td>32145658.21（71人）
+                            </td>
+                            <td  class="color1">会员出款</td>
+                            <td>收入金额</td>
+                            <td>会员出款</td>
+                            <td>收入金额</td>
+                            <td>会员出款</td>
+                            <td>收入金额</td>
+                            <td>会员出款</td>
+                        </tr>
+                        <tr>
+                            <td>公司入款</td>
+                            <td>32145658.21（71人）</td>
+                            <td class="color1">会员出款</td>
+                            <td>收入金额</td>
+                            <td>会员出款</td>
+                            <td>收入金额</td>
+                            <td>会员出款</td>
+                            <td>收入金额</td>
+                            <td>会员出款</td>
+                        </tr>
+                        <tr>
+                            <td>公司入款</td>
+                            <td>32145658.21（71人）
+                            </td>
+                            <td class="color1">会员出款</td>
+                            <td>收入金额</td>
+                            <td>会员出款</td>
+                            <td>收入金额</td>
+                            <td>会员出款</td>
+                            <td>收入金额</td>
+                            <td>会员出款</td>
+                        </tr>
+                        <tr>
+                            <td>公司入款</td>
+                            <td>32145658.21（71人）
+                            </td>
+                            <td class="color1">会员出款</td>
+                            <td>收入金额</td>
+                            <td>会员出款</td>
+                            <td>收入金额</td>
+                            <td>会员出款</td>
+                            <td>收入金额</td>
+                            <td>会员出款</td>
+                        </tr>
+                        </tbody>
+
+                    </table>
+
+                </div>
+                <!--6.玩法列表-->
+                <div class="col-xs-12 displayed-hide" id="play-list">
+                    <h5 class="h5">玩法列表</h5>
+                    <div class="parent-input d-right">
+                        彩种类别:&nbsp;<select name="">
+                            <option value="">全部</option>
+                            <option value="">不全部</option>
+                        </select>
+                        <button class="button">搜索</button>
+                    </div>
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th>广告标题</th>
+                            <th>类别</th>
+                            <th>玩法名称</th>
+                            <th>最小赔率</th>
+                            <th>最大赔率</th>
+                            <th>最小投注金额</th>
+                            <th>最大投注金额</th>
+                            <th>单项最大投注金额</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>PC蛋蛋</td>
+                            <td>特码包三</td>
+                            <td>3.5</td>
+                            <td>3.5</td>
+                            <td>1.00</td>
+                            <td>10000.00</td>
+                            <td>10000.00</td>
+                            <td>特码包三【特码包三】</td>
+                            <td>
+                                <a href="" class="Ablue">编辑</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>PC蛋蛋</td>
+                            <td>特码包三</td>
+                            <td>3.5</td>
+                            <td>3.5</td>
+                            <td>1.00</td>
+                            <td>10000.00</td>
+                            <td>10000.00</td>
+                            <td>特码包三【特码包三】</td>
+                            <td>
+                                <a href="" class="Ablue">编辑</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>PC蛋蛋</td>
+                            <td>特码包三</td>
+                            <td>3.5</td>
+                            <td>3.5</td>
+                            <td>1.00</td>
+                            <td>10000.00</td>
+                            <td>10000.00</td>
+                            <td>特码包三【特码包三】</td>
+                            <td>
+                                <a href="" class="Ablue">编辑</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>PC蛋蛋</td>
+                            <td>特码包三</td>
+                            <td>3.5</td>
+                            <td>3.5</td>
+                            <td>1.00</td>
+                            <td>10000.00</td>
+                            <td>10000.00</td>
+                            <td>特码包三【特码包三】</td>
+                            <td>
+                                <a href="" class="Ablue">编辑</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>PC蛋蛋</td>
+                            <td>特码包三</td>
+                            <td>3.5</td>
+                            <td>3.5</td>
+                            <td>1.00</td>
+                            <td>10000.00</td>
+                            <td>10000.00</td>
+                            <td>特码包三【特码包三】</td>
+                            <td>
+                                <a href="" class="Ablue">编辑</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>PC蛋蛋</td>
+                            <td>特码包三</td>
+                            <td>3.5</td>
+                            <td>3.5</td>
+                            <td>1.00</td>
+                            <td>10000.00</td>
+                            <td>10000.00</td>
+                            <td>特码包三【特码包三】</td>
+                            <td>
+                                <a href="" class="Ablue">编辑</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>PC蛋蛋</td>
+                            <td>特码包三</td>
+                            <td>3.5</td>
+                            <td>3.5</td>
+                            <td>1.00</td>
+                            <td>10000.00</td>
+                            <td>10000.00</td>
+                            <td>特码包三【特码包三】</td>
+                            <td>
+                                <a href="" class="Ablue">编辑</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>PC蛋蛋</td>
+                            <td>特码包三</td>
+                            <td>3.5</td>
+                            <td>3.5</td>
+                            <td>1.00</td>
+                            <td>10000.00</td>
+                            <td>10000.00</td>
+                            <td>特码包三【特码包三】</td>
+                            <td>
+                                <a href="" class="Ablue">编辑</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>PC蛋蛋</td>
+                            <td>特码包三</td>
+                            <td>3.5</td>
+                            <td>3.5</td>
+                            <td>1.00</td>
+                            <td>10000.00</td>
+                            <td>10000.00</td>
+                            <td>特码包三【特码包三】</td>
+                            <td>
+                                <a href="" class="Ablue">编辑</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>PC蛋蛋</td>
+                            <td>特码包三</td>
+                            <td>3.5</td>
+                            <td>3.5</td>
+                            <td>1.00</td>
+                            <td>10000.00</td>
+                            <td>10000.00</td>
+                            <td>特码包三【特码包三】</td>
+                            <td>
+                                <a href="" class="Ablue">编辑</a>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!--彩票管理-->
+                <!--1.注单管理-->
+                <div class="col-xs-12 displayed-hide" id="single">
+                    <h5 class="h5">注单管理</h5>
+                    <div class="parent-input">
+                        注单编号:&nbsp;<input type="number" placeholder="请输入注单编号">
+                        会员账户:&nbsp;<input type="number" placeholder="请输入会员账户">
+                        日期范围:&nbsp;<input type="number" placeholder="最小金额">
+                        至&nbsp;<input type="number" placeholder="最大金额">
+                    </div>
+                    <div class="parent-input">
+                        彩种:&nbsp;
+                        <select name="">
+                            <option value="">全部</option>
+                            <option value="">不全部</option>
+                        </select>
+                        期号:&nbsp;<input type="text" placeholder="请输入彩期号">
+                        状态:&nbsp;<select name="" id="">
+                            <option value="">全部</option>
+                            <option value="">全部1</option>
+                            <option value="">全部2</option>
+                        </select>
+                        <select name="">
+                            <option value="">默认分页</option>
+                            <option value="">默认分页2</option>
+                        </select>
+                        <button class="button">提交</button>
+                    </div>
+                </div>
+                <!--2.开奖结果-->
+                <div class="col-xs-12 displayed-hide" id="run-lottery">
+                    <h5>开奖结果</h5>
+                </div>
+
+                <!--六合彩管理-->
+                <!--1.开奖结果-->
+                <div class="col-xs-12 displayed-hide" id="result">
+                    <h5>开奖结果</h5>
+                </div>
+                <!--2.赔率管理-->
+                <div class="col-xs-12 displayed-hide" id="odds">
+                    <h5>赔率管理</h5>
+                </div>
+                <!--3.配置管理-->
+                <div class="col-xs-12 displayed-hide" id="config">
+                    <h5>配置管理</h5>
+                </div>
+
+                <!--私彩管理-->
+                <!--1.私彩管理-->
+                <div class="col-xs-12 displayed-hide" id="private">
+                    <h5>私彩管理</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<br/><br/><br/><br/><br/><br/>
+<script src="js/jquery-1.11.3.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/bootlint.js"></script>
+<script src="js/lottery.js"></script>
+</body>
+</html>
