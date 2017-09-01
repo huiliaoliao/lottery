@@ -1,8 +1,6 @@
 .user-parent-input{
     margin-bottom: 20px;
     font-size: 14px;
-    font-weight: bold;
-
 }
 .user-parent-input select{
     margin-left: 20px;
@@ -10,7 +8,7 @@
 }
 .user-parent-input input{
     margin-left: 20px;
-    height:50px;
+    height:30px;
 }
 .user-parent-input button{
     height:40px;
@@ -20,11 +18,73 @@
 
 }
 .handel{
-    height: 25px;
-}
-.handel-button{
+    height: 54px;
     position: relative;
+    line-height:54px;
 }
-.handel-button button{
+/*.handel-button{*/
+    /*position: relative;*/
+/*}*/
+.handel button{
     position:absolute;
+    top:24px;
+    left:34px;
 }
+h4{
+    padding-bottom: 2px;
+    border-bottom:1px solid #ddd;
+}
+
+.save{
+    background: #f4841e;
+    color: #fff;
+    width: 60px;
+    height:30px;
+    line-height: 30px;
+    margin-left: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    outline: none;
+    border: none;
+}
+#basic-info{
+    margin:16px 80px;
+}
+/***********设置返点***************/
+#deal{
+    text-align: center;
+    margin-top:40px;
+}
+#deal li{
+    margin-bottom: 20px;
+}
+.subscriber{
+    margin:21px 0px;
+}
+.subscriber input{
+    width:300px;
+    margin-right: 90px;
+
+}
+.form-user{
+    width:700px;
+    height:800px;
+}
+.form-group{
+    width:600px;
+    text-align: right;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

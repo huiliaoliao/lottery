@@ -101,56 +101,80 @@
 
                         <!-- Nav tabs -->
                         <ul class="nav nav-tabs" role="tablist">
-                            <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">基本资料</a></li>
-                            <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">银行资料</a></li>
-                            <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">设置返点</a></li>
-                            <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">会员统计资料</a></li>
-                            <li role="presentation"><a href="#aa" aria-controls="settings" role="tab" data-toggle="tab">金流记录</a></li>
-                            <li role="presentation"><a href="#bb" aria-controls="settings" role="tab" data-toggle="tab">订单列表</a></li>
+                            <li role="presentation" class="active"><a href="#basics" aria-controls="home" role="tab" data-toggle="tab">基本资料</a></li>
+                            <li role="presentation"><a href="#bank" aria-controls="profile" role="tab" data-toggle="tab">银行资料</a></li>
+                            <li role="presentation"><a href="#rebate" aria-controls="messages" role="tab" data-toggle="tab">设置返点</a></li>
+                            <li role="presentation"><a href="#statistics" aria-controls="settings" role="tab" data-toggle="tab">会员统计资料</a></li>
+                            <li role="presentation"><a href="#cash-flow" aria-controls="settings" role="tab" data-toggle="tab">金流记录</a></li>
+                            <li role="presentation"><a href="#order" aria-controls="settings" role="tab" data-toggle="tab">订单列表</a></li>
                         </ul>
 
-                        <!-- Tab panes -->
+
                         <div class="tab-content">
-                            <div role="tabpanel" class="tab-pane active" id="home">
+                            <!-- 基本资料 -->
+                            <div role="tabpanel" class="tab-pane active" id="basics">
+                                <div id="basic-info">
                                 <form action="">
-                                    <div>
-                                        <input type="text">
-                                        <input type="password">
-                                        <input type="email">
-                                        <input type="number">
-                                        <input type="text">
-                                        <select name="" id="">
+                                    <div class="user-basic">
+                                        <div class="user-details-input">
+                                            账号： <input type="text">
+                                            登录密码:  <input type="password">
+                                        </div>
+                                        <div  class="user-details-input">
+                                            电子邮箱： <input type="email">
+                                            手机号码:  <input type="tel">
+                                        </div>
+                                        <div  class="user-details-input">
+                                            是否代理： <input type="text">
+                                            用户状态： <select name="" id="" class="button">
                                             <option value="">启用</option>
                                             <option value="">禁用</option>
                                         </select>
-                                        <textarea name="" cols="30" rows="10">备注：</textarea>
-                                        <h2>代理信息</h2>
-                                        <div>
-                                            <select name="" >
+                                        </div>
+                                        <div  class="user-details-input">
+                                            备注： <textarea name="" cols="30" rows="1"></textarea>
+                                        </div>
+                                    </div>
+
+
+                                        <h4>代理信息</h4>
+                                        <div class="user-details-input">
+                                            代理状态：<select name="" class="button">
                                                 <option value="">未审核</option>
                                                 <option value="">已拒绝</option>
                                                 <option value="">已审核</option>
                                             </select>
-                                            <textarea name="" id="" cols="30" rows="10">联系方式：</textarea>
-                                            <button>保存设置</button>
+                                            联系方式：<textarea name="" id="" cols="30" rows="1"></textarea>
+                                            <button class="save">保存设置</button>
                                         </div>
-                                        <h2>真实姓名</h2>
-                                        <input type="text">
-                                        <button>保存设置</button>
-                                        <h2>资金密码</h2>
-                                        <input type="password">
-                                        <button>保存设置</button>
-                                        <h2>用户层级</h2>
-                                        <select name="">
+                                        <h4>真实姓名</h4>
+                                        <div class="user-details-input">
+                                            真实姓名：<input type="text">
+                                            <button class="save">保存设置</button>
+                                        </div>
+                                        <h4>资金密码</h4>
+                                        <div class="user-details-input">
+                                            资金密码：<input type="password">
+
+                                        </div>
+
+                                        <h4>用户层级</h4>
+                                        <div class="user-details-input">
+                                        用户层级：<select name="">
                                             <option value="">专用会员</option>
                                             <option value="">测试会员</option>
                                             <option value="">真实会员</option>
                                             <option value="">默认会员</option>
                                         </select>
-                                    </div>
+                                            <button class="save">保存设置</button>
+                                        </div>
+
                                 </form>
+                                </div>
                             </div>
-                            <div role="tabpanel" class="tab-pane" id="profile">
+
+                            <!--银行资料-->
+                            <div role="tabpanel" class="tab-pane" id="bank">
                                 <table class="table table-striped">
                                     <thead>
                                     <tr>
@@ -178,30 +202,35 @@
                                 </table>
 
                                 <form action="">
-                                    真实姓名：
-                                    <selcet>
+                                    真实姓名： 装饰当
+                                    <selcet class="button2">
                                         <option value="">建设银行</option>
                                         <option value="">建设银行</option>
                                         <option value="">建设银行</option>
                                         <option value="">建设银行</option>
                                     </selcet>
-                                    <input type="text">
-                                    <input type="text">
-                                    <input type="text">
-                                    <button>保存</button>
+                                    户主名称：<input type="text">
+                                    银行卡号：<input type="text">
+                                    开户行:<input type="text">
+                                    <button class="button">保存</button>
                                 </form>
                             </div>
-                            <div role="tabpanel" class="tab-pane" id="messages">
-                                时时彩：<input type="range">
-                                时时彩：<input type="range">
-                                时时彩：<input type="range">
-                                时时彩：<input type="range">
-                                时时彩：<input type="range">
-                                时时彩：<input type="range">
-                                时时彩：<input type="range">
-                                <button>保存设置</button>
+                            <!--设置返点-->
+                            <div role="tabpanel" class="tab-pane" id="rebate">
+                                <ul id="deal">
+                                    <li>时时彩：<input type="range"></li>
+                                    <li>时时彩：<input type="range"></li>
+                                    <li>时时彩：<input type="range"></li>
+                                    <li>时时彩：<input type="range"></li>
+                                    <li>时时彩：<input type="range"></li>
+                                    <li>时时彩：<input type="range"></li>
+                                    <li>时时彩：<input type="range"></li>
+                                    <li><button class="save">保存设置</button></li>
+                                </ul>
+
                             </div>
-                            <div role="tabpanel" class="tab-pane" id="settings">
+                            <!--会员统计资料-->
+                            <div role="tabpanel" class="tab-pane" id="statistics">
                                 <form action="">
                                     <input type="text">
                                     <input type="text">
@@ -213,7 +242,8 @@
                                     <input type="month">
                                 </form>
                             </div>
-                            <div role="tabpanel" class="tab-pane" id="aa">
+                            <!--金流记录-->
+                            <div role="tabpanel" class="tab-pane" id="cash-flow">
                                 <div class="parent-input">
                                     <select name="" class="button2 sel-width">
                                     <option value="">全部</option>
@@ -267,7 +297,8 @@
                                     </tbody>
                                 </table>
                             </div>
-                            <div role="tabpanel" class="tab-pane" id="bb">444</div>
+                            <!--订单列表-->
+                            <div role="tabpanel" class="tab-pane" id="order">444</div>
                         </div>
 
                     </div>

@@ -43,7 +43,29 @@ $(document).ready(function () {
             }
 
         })
+    });
+
+    // 操作里面按钮
+    $("#user-list-tbody .handel button").click(function() {
+        if (this.className.indexOf('run') >= 0) {
+            $(this).parent().prev().children(".user-status").text("启用");
+            $(this).css("display", "none").next().css("display", "block");
+        } else {
+            $(this).parent().prev().children(".user-status").text("锁定");
+            $(this).css("display", "none").prev().css("display", "block");
+        }
+
     })
+
+    //新增
+
+    // $("btn").click(function () {
+    //     var u = uname.val();
+    //     var p = upwd.val();
+    //     var ureg = /^[0-9a-zA-Z]{6,12}$/;
+    //     var preg = /^[0-9a-zA-Z]{6,18}$/;
+    //
+    // })
 
 
 });

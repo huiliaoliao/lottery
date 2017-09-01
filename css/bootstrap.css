@@ -2533,8 +2533,8 @@ input[type="file"] {
   display: block;
 }
 input[type="range"] {
-  display: block;
-  width: 100%;
+  /*display: block;*/
+  width: 30%;
 }
 select[multiple],
 select[size] {

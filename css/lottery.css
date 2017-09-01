@@ -32,7 +32,7 @@ ul{
     text-decoration: none;
     text-align: center;
 }
-#nav li.active>a{
+#nav li.active1>a{
     color:#f4841e;
 }
 .content{
@@ -45,7 +45,7 @@ ul{
 .clear{
     clear: both;
 }
-.active{
+.active1{
     color:#f4841e;
     border-bottom-style: solid;
     border-bottom-width: 4px;
@@ -334,7 +334,6 @@ margin: 0px auto;*/
 body {
     font-family: "\5FAE\8F6F\96C5\9ED1","Microsoft Yahei","Hiragino Sans GB",tahoma,arial,"\5B8B\4F53";
     line-height: 1;
-    color: #85888e;
     min-width: 1300px;
 }
 
