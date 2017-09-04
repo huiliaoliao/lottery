@@ -53,7 +53,7 @@
                 <!--导航-->
                 <div class="row">
                     <ul class="col-xs-12 " id="nav">
-                        <li class="active">
+                        <li class="active1">
                             <a href="javascript:void(0)">报表系统</a>
                         </li>
                         <li>
@@ -247,60 +247,60 @@
                             <tr>
                                 <td>公司入款</td>
                                 <td>
-                                    <span class="t-left color1">232323</span>
+                                    <span class="t-left color1" data-toggle="modal" data-target="#collect-myModal">232323</span>
                                     <span class='t-right'>详情</span>
                                 </td>
                                 <td>会员出款</td>
                                 <td>
-                                    <span class="t-left color1">232323</span>
+                                    <span class="t-left color1" data-toggle="modal" data-target="#collect-myModal">232323</span>
                                     <span class='t-right'>详情</span>
                                 </td>
                             </tr>
                             <tr>
                                 <td>线上支付</td>
                                 <td>
-                                    <span class="t-left color1">232323</span>
+                                    <span class="t-left color1" data-toggle="modal" data-target="#collect-myModal">232323</span>
                                     <span class='t-right'>详情</span>
                                 </td>
                                 <td>给予优惠</td>
                                 <td>
-                                    <span class="t-left color1">232323</span>
+                                    <span class="t-left color1" data-toggle="modal" data-target="#collect-myModal">232323</span>
                                     <span class='t-right'>详情</span>
                                 </td>
                             </tr>
                             <tr>
                                 <td>人工存入</td>
                                 <td>
-                                    <span class="t-left color1">232323</span>
+                                    <span class="t-left color1" data-toggle="modal" data-target="#collect-myModal">232323</span>
                                     <span class='t-right'>详情</span>
                                 </td>
                                 <td>人工扣除</td>
                                 <td>
-                                    <span class="t-left color1">232323</span>
+                                    <span class="t-left color1" data-toggle="modal" data-target="#collect-myModal">232323</span>
                                     <span class='t-right'>详情</span>
                                 </td>
                             </tr>
                             <tr>
                                 <td>出款扣除</td>
                                 <td>
-                                    <span class="t-left color1">232323</span>
+                                    <span class="t-left color1" data-toggle="modal" data-target="#collect-myModal">232323</span>
                                     <span class='t-right'>详情</span>
                                 </td>
                                 <td>给予反水</td>
                                 <td>
-                                    <span class="t-left color1">232323</span>
+                                    <span class="t-left color1" data-toggle="modal" data-target="#collect-myModal">232323</span>
                                     <span class='t-right'>详情</span>
                                 </td>
                             </tr>
                             <tr>
                                 <td>首次充值</td>
                                 <td>
-                                    <span class="t-left color1">232323</span>
+                                    <span class="t-left color1" data-toggle="modal" data-target="#collect-myModal">232323</span>
                                     <span class='t-right'>详情</span>
                                 </td>
                                 <td>首次出款</td>
                                 <td>
-                                    <span class="t-left color1">232323</span>
+                                    <span class="t-left color1" data-toggle="modal" data-target="#collect-myModal">232323</span>
                                     <span class='t-right'>详情</span>
                                 </td>
                             </tr>
@@ -377,107 +377,125 @@
                             <div class="clear"></div>
 
                             <!--点击数字显示的弹窗-->
-                            <div id="pop-up" class="displayed-hide">
-                            <div style="height: 200px;overflow: auto;">
-                                <button type="button" style="position: relative;right: 0px;border-radius: 50%;">&times;</button>
-                                <table class="table table-bordered">
-                                    <thead>
-                                    <tr style="background-color:#f6f6f6;color:#3d3d3d;">
-                                        <th>层级</th>
-                                        <th>会员账户</th>
-                                        <th>上级账户</th>
-                                        <th>申请金额</th>
-                                        <th>优惠金额</th>
-                                        <th>手续费</th>
-                                        <th>出款金额</th>
-                                        <th>提交时间</th>
-                                        <th>状态</th>
-                                        <th>操作</th>
-                                        <th>操作人</th>
-                                        <th>备注</th>
-                                        <th>时间</th>
-                                        <th>异动时间</th>
-                                        <th>完成时间</th>
-                                    </tr>
-                                    </thead>
 
-                                    <tbody id="income-tbody">
-                                    <tr>
-                                        <td>默认层级</td>
-                                        <td class="color1">p888888888
-                                        </td>
-                                        <td>dcp1010</td>
-                                        <td class="color1">100.00</td>
-                                        <td>0.00</td>
-                                        <td>0.00</td>
-                                        <td class="color2">100.00</td>
-                                        <td>2017/07/16 15:16:18</td>
-                                        <td>确认</td>
-                                        <td></td>
-                                        <td>cpkf022</td>
-                                        <td class="color1">添加</td>
-                                        <td>未达到取款打码量</td>
-                                        <td>2017/08/28 16:37:37</td>
-                                        <td>2017/08/28 16:37:37</td>
-                                    </tr>
-                                    <tr>
-                                        <td>默认层级</td>
-                                        <td class="color1">p888888888
-                                        </td>
-                                        <td>dcp1010</td>
-                                        <td class="color1">100.00</td>
-                                        <td>0.00</td>
-                                        <td>0.00</td>
-                                        <td class="color2">100.00</td>
-                                        <td>2017/07/16 15:16:18</td>
-                                        <td>确认</td>
-                                        <td></td>
-                                        <td>cpkf022</td>
-                                        <td class="color1">添加</td>
-                                        <td>未达到取款打码量</td>
-                                        <td>2017/08/28 16:37:37</td>
-                                        <td>2017/08/28 16:37:37</td>
-                                    </tr>
-                                    <tr>
-                                        <td>默认层级</td>
-                                        <td class="color1">p888888888
-                                        </td>
-                                        <td>dcp1010</td>
-                                        <td class="color1">100.00</td>
-                                        <td>0.00</td>
-                                        <td>0.00</td>
-                                        <td class="color2">100.00</td>
-                                        <td>2017/07/16 15:16:18</td>
-                                        <td>确认</td>
-                                        <td></td>
-                                        <td>cpkf022</td>
-                                        <td class="color1">添加</td>
-                                        <td>未达到取款打码量</td>
-                                        <td>2017/08/28 16:37:37</td>
-                                        <td>2017/08/28 16:37:37</td>
-                                    </tr>
-                                    <tr>
-                                        <td>默认层级</td>
-                                        <td class="color1">p888888888
-                                        </td>
-                                        <td>dcp1010</td>
-                                        <td class="color1">100.00</td>
-                                        <td>0.00</td>
-                                        <td>0.00</td>
-                                        <td class="color2">100.00</td>
-                                        <td>2017/07/16 15:16:18</td>
-                                        <td>确认</td>
-                                        <td></td>
-                                        <td>cpkf022</td>
-                                        <td class="color1">添加</td>
-                                        <td>未达到取款打码量</td>
-                                        <td>2017/08/28 16:37:37</td>
-                                        <td>2017/08/28 16:37:37</td>
-                                    </tr>
-                                    </tbody>
 
-                                </table>
-                            </div>
+                            <div class="modal fade" id="collect-myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                            <h4 class="modal-title" id="collect-myModalLabel">Modal title</h4>
+                                        </div>
+                                        <div class="modal-body"><!--
+                                            <div id="pop-up">
+
+                                            </div>-->
+                                            <div style="height: 300px;overflow: auto;">
+                                                <table class="table table-bordered">
+                                                    <thead>
+                                                    <tr style="background-color:#f6f6f6;color:#3d3d3d;">
+                                                        <th>层级</th>
+                                                        <th>会员账户</th>
+                                                        <th>上级账户</th>
+                                                        <th>申请金额</th>
+                                                        <th>优惠金额</th>
+                                                        <th>手续费</th>
+                                                        <th>出款金额</th>
+                                                        <th>提交时间</th>
+                                                        <th>状态</th>
+                                                        <th>操作</th>
+                                                        <th>操作人</th>
+                                                        <th>备注</th>
+                                                        <th>时间</th>
+                                                        <th>异动时间</th>
+                                                        <th>完成时间</th>
+                                                    </tr>
+                                                    </thead>
+
+                                                    <tbody id="income-tbody">
+                                                    <tr>
+                                                        <td>默认层级</td>
+                                                        <td class="color1">p888888888
+                                                        </td>
+                                                        <td>dcp1010</td>
+                                                        <td class="color1">100.00</td>
+                                                        <td>0.00</td>
+                                                        <td>0.00</td>
+                                                        <td class="color2">100.00</td>
+                                                        <td>2017/07/16 15:16:18</td>
+                                                        <td>确认</td>
+                                                        <td></td>
+                                                        <td>cpkf022</td>
+                                                        <td class="color1">添加</td>
+                                                        <td>未达到取款打码量</td>
+                                                        <td>2017/08/28 16:37:37</td>
+                                                        <td>2017/08/28 16:37:37</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>默认层级</td>
+                                                        <td class="color1">p888888888
+                                                        </td>
+                                                        <td>dcp1010</td>
+                                                        <td class="color1">100.00</td>
+                                                        <td>0.00</td>
+                                                        <td>0.00</td>
+                                                        <td class="color2">100.00</td>
+                                                        <td>2017/07/16 15:16:18</td>
+                                                        <td>确认</td>
+                                                        <td></td>
+                                                        <td>cpkf022</td>
+                                                        <td class="color1">添加</td>
+                                                        <td>未达到取款打码量</td>
+                                                        <td>2017/08/28 16:37:37</td>
+                                                        <td>2017/08/28 16:37:37</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>默认层级</td>
+                                                        <td class="color1">p888888888
+                                                        </td>
+                                                        <td>dcp1010</td>
+                                                        <td class="color1">100.00</td>
+                                                        <td>0.00</td>
+                                                        <td>0.00</td>
+                                                        <td class="color2">100.00</td>
+                                                        <td>2017/07/16 15:16:18</td>
+                                                        <td>确认</td>
+                                                        <td></td>
+                                                        <td>cpkf022</td>
+                                                        <td class="color1">添加</td>
+                                                        <td>未达到取款打码量</td>
+                                                        <td>2017/08/28 16:37:37</td>
+                                                        <td>2017/08/28 16:37:37</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>默认层级</td>
+                                                        <td class="color1">p888888888
+                                                        </td>
+                                                        <td>dcp1010</td>
+                                                        <td class="color1">100.00</td>
+                                                        <td>0.00</td>
+                                                        <td>0.00</td>
+                                                        <td class="color2">100.00</td>
+                                                        <td>2017/07/16 15:16:18</td>
+                                                        <td>确认</td>
+                                                        <td></td>
+                                                        <td>cpkf022</td>
+                                                        <td class="color1">添加</td>
+                                                        <td>未达到取款打码量</td>
+                                                        <td>2017/08/28 16:37:37</td>
+                                                        <td>2017/08/28 16:37:37</td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                            <button type="button" class="btn btn-primary">Save changes</button>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
 
                         </div>

@@ -9,11 +9,10 @@ $(document).ready(function () {
 
     //出入汇总---数字弹窗
     $('#summary>tbody>tr>td span:nth-child(1)').click(function () {
-        var b = $(this).parent("").html();
-        $("#pop-up").addClass('displayed-block').html(b);
+        //拿到后台当前行数据，修改弹窗头部标题，遍历显示表格即可
+        //var rowKey = '行标识，唯一的';
 
-        //未写完。不知道弹窗要获取哪里数据
-
+        console.log('生成表格');
     });
 
 

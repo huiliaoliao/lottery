@@ -42,7 +42,9 @@ ul{
 .content-first{
     margin-bottom: 24px;
 }
-.clear{
+.clear:after{
+    content: '';
+    display: block;
     clear: both;
 }
 .active1{
@@ -209,6 +211,8 @@ h5{
 
 .color1 {
     color: #1c7654;
+    cursor: pointer;
+    text-decoration: underline;
 }
 
 .color2 {
@@ -221,6 +225,10 @@ h5{
 .table>thead>tr{
     background-color:#3d3d3d; ;
     color:#fff;
+}
+
+.handel div:first-child{
+    cursor: pointer;
 }
 /****公司入款******/
 tbody>tr:last-child{
@@ -393,6 +401,29 @@ div.row .displayed-show{
 }
 .sel-width{
     width: 70px;
+}
+#pagenation>ul{
+    float: right;
+}
+#pagenation>ul>li{
+    float: left;
+    width:30px;
+    height: 30px;
+    line-height: 30px;
+    margin: 0 5px;
+    background: #f4841e;
+    text-align: center;
+}
+#pagenation>ul>li:hover{
+    color:#fff;
+    background: #0065a5;
+}
+#pagenation>ul>li.pageSeleted{
+    color:#fff;
+    background: #449d44;
+}
+#collect-myModal .modal-dialog{
+    width: 880px;
 }
 
 

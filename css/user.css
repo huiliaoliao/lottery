@@ -66,6 +66,7 @@ h4{
     margin-right: 90px;
 
 }
+/*
 .form-user{
     width:700px;
     height:800px;
@@ -73,6 +74,34 @@ h4{
 .form-group{
     width:600px;
     text-align: right;
+}
+*/
+/*
+.form-user{
+    width:700px;
+    height:800px;
+    height:800px;
+}
+.form-group{
+    width:600px;
+    text-align: right;
+}
+*/
+.newUserName-err,
+.newUser-upwd-err,
+.newUser-realyName-err,
+.newUser-tel-err,
+.newUser-email-err,
+.newUser-beizhu-err,
+.newUserName-required-err,
+.newUserType-required-err,
+.newUser-upwd-required-err
+{
+    color:red;
+    display: none;
+}
+#bank-table{
+    margin-bottom: 120px;
 }
 
 

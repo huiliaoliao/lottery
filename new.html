@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title></title>
+    <link rel="stylesheet" href="css/bootstrap.css"/>
+    <link rel="stylesheet" href="css/lottery.css">
+    <link rel="stylesheet" href="css/user.css">
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.min.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row">
+        <!--左半边-->
+        <div class="col-xs-2 contai">
+            <!--logo-->
+            <div class="row">
+                <div class="col-xs-12 logo">
+                    <img src="img/logo.png" class="img-responsive" alt="">
+                </div>
+            </div>
+            <!--侧边菜单栏-->
+            <div class="row">
+                <div class="col-xs-12 side-menu">
+                    <div class="middle">
+                        <div class="leftMenu">
+                            <div class="menu_list">
+                                <ul>
+                                    <li class="">
+                                        <!--<img class="icon" src="img/help.png">-->
+                                        <p class="fuMenu">账户管理</p>
+                                        <img class="xiala" src="img/xiala.png"/>
+
+                                        <div class="div1">
+                                            <a href="#user-list" class="zcd">会员管理</a>
+                                            <a href="#membership-details" class="zcd">代理审核</a>
+                                            <a href="#agency-name" class="zcd">代理域名</a>
+                                            <a href="#agency" class="zcd">代理码管理</a>
+                                            <a href="#member-tier" class="zcd">会员层级管理</a>
+                                            <a href="#login-Log" class="zcd">登录日志</a>
+                                        </div>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--右半边-->
+        <div class="col-xs-10 contai">
+            <!--导航-->
+            <div class="row">
+                <ul class="col-xs-12 " id="nav">
+                    <li>
+                        <a href="index.html">报表系统</a>
+                    </li>
+                    <li>
+                        <a href="payment.html">现金管理</a>
+                    </li>
+                    <li class="active1">
+                        <a href="javascript:void(0)">用户管理</a>
+                    </li>
+                    <li>
+                        <a href="business.html">业务管理</a>
+                    </li>
+                    <li>
+                        <a href="content.html">内容管理</a>
+                    </li>
+                    <li>
+                        <a href="system.html">系统管理</a>
+                    </li>
+                    <li>
+                        <a href="server.html">服务器管理</a>
+                    </li>
+                    <li class="dropdown pull-right top-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <img src="img/user.png" alt="">
+                        </a>
+                        <ul class="dropdown-menu extended logout">
+                            <li style="color:#ddd;"><a href="#"><i class="icon-user"></i>我的资料</a></li>
+                            <li><a href="#"><i class="icon-cog"></i>我的设置</a></li>
+                            <li><a href="login.html"><i class="icon-key"></i>退出</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <div class="clear"></div>
+            </div>
+            <!--主体内容-->
+            <div class="row" id="main-content">
+                <!--新增用户资料-->
+                <div class="col-sm-12">
+                    <div id="newUser">
+                        <h5 class="h5">新增用户资料</h5>
+
+                        <div class="row">
+                            <div class="form-horizontal col-sm-6">
+                                <div class="form-group">
+                                    <label for="newUser-userName" class="col-sm-4 control-label">用户名：</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="newUser-userName">
+                                        <div class="newUserName-err">用户名必须是6~12位字符</div>
+                                        <div class="newUserName-required-err">用户名必须输入</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-horizontal col-sm-6">
+                                <div class="form-group">
+                                    <label for="newuser-userType" class="col-sm-4 control-label">账户类型：</label>
+                                    <div class="col-sm-8">
+                                        <select class="form-control" id="newuser-userType">
+                                            <option value="nomalUser">普通会员注册</option>
+                                            <option value="dailiUser">总代理</option>
+                                            <option value="zidailiUser">子代理</option>
+                                            <option value="yaoqingUser">代理邀请会员</option>
+                                            <option value="shiwanUser">试玩用户</option>
+                                        </select>
+                                    </div>
+                                    <div class="newUserType-required-err">用户类型必须选择</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-horizontal col-sm-6">
+                                <div class="form-group">
+                                    <label for="newUser-upwd" class="col-sm-4 control-label">登录密码：</label>
+                                    <div class="col-sm-8">
+                                        <input type="password" class="form-control" id="newUser-upwd">
+                                        <div class="newUser-upwd-err">密码必须是6~18位字符</div>
+                                        <div class="newUser-upwd-required-err">密码必须输入</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-horizontal col-sm-6">
+                                <div class="form-group">
+                                    <label for="newUser-realyName" class="col-sm-4 control-label">真实姓名：</label>
+
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="newUser-realyName">
+                                        <div class="newUser-realyName-err">真实姓名最多为32个字符</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-horizontal col-sm-6">
+                                <div class="form-group">
+                                    <label for="newUser-userTel" class="col-sm-4 control-label">手机号：</label>
+
+                                    <div class="col-sm-8">
+                                        <input type="tel" class="form-control" id="newUser-userTel">
+                                        <div class="newUser-tel-err">请输入正确的手机号</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-horizontal col-sm-6">
+                                <div class="form-group">
+                                    <label for="newUser-userEmail" class="col-sm-4 control-label">邮箱：</label>
+
+                                    <div class="col-sm-8">
+                                        <input type="email" class="form-control" id="newUser-userEmail">
+                                        <div class="newUser-email-err">请输入正确的邮箱</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-horizontal col-sm-6">
+                                <div class="form-group">
+                                    <label for="newUser-beizhu" class="col-sm-4 control-label">备注：</label>
+
+                                    <div class="col-sm-8">
+                                        <textarea name="" id="newUser-beizhu" cols="47" rows="5"></textarea>
+                                        <div class="newUser-beizhu-err">备注不能超过200字符</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-offset-5 col-sm-1">
+                                <button id="newUser-confirm" class="btn btn-danger" type="button">确定</button>
+                            </div>
+                            <div class=" col-sm-3">
+                                <button id="newuser-cancel" class="btn btn-warning" type="button">返回</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+</div>
+</div>
+
+
+<script src="js/jquery-1.11.3.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/lottery.js"></script>
+<script src="js/user.js"></script>
+
+</body>
+</html>

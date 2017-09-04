@@ -77,8 +77,8 @@
                     <li>
                         <a href="index.html">报表系统</a>
                     </li>
-                    <li class="active">
-                        <a href="payment.html">现金管理</a>
+                    <li class="active1">
+                        <a href="javascript:void(0)">现金管理</a>
                     </li>
                     <li>
                         <a href="user.html">用户管理</a>
@@ -115,7 +115,7 @@
             <div class="row">
                 <!--资金管理-->
                 <!--1.人工入款-->
-                <div class="col-xs-12 displayed-hide  displayed-show" id="Artificial-info">
+                <div class="col-xs-12 displayed-hide" id="Artificial-info">
                     <h5 class="h5">人工入款</h5>
                     <div class="parent-input">
                     <button class="button  sel-width">添加入款</button>
@@ -396,8 +396,8 @@
                             <option value="">提交</option>
                             <option value="">不提交</option>
                         </select>
-                        <input type="date">
-                        至&nbsp;<input type="date">
+                        <input type="date" id="online-out-start-time">
+                        至&nbsp;<input type="date" id="online-out-end-time">
                         会员账户: &nbsp; <input type="text" placeholder="会员账户">
                         <select name="" id="">
                             <option value="">全部</option>
@@ -415,9 +415,11 @@
                             <option value="">默认分页</option>
                             <option value="">默认分页2</option>
                         </select>
-                        <select name="">
-                            <option value="">自动刷新</option>
-                            <option value="">自动刷新2</option>
+                        <select name="" id="online-out-refresh-type">
+                            <option value="auto">自动刷新</option>
+                            <option value="3">10秒刷新</option>
+                            <option value="20">20秒刷新</option>
+                            <option value="60">60秒刷新</option>
                         </select>
                         操作人:&nbsp;<input type="text">
                         <button class="button">提交</button>
