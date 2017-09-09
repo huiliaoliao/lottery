@@ -98,13 +98,13 @@
 
 
             <div class="row" id="main-content">
-                <!--1.-->
+                <!--1.会员管理-->
                 <div class="col-xs-12 displayed-hide" id="user-list">
                     <h5 class="h5">用户列表</h5>
 
                     <div class="parent-input">
-                        <button class="button" id="add">
-                            <a href="new.html">新增</a>
+                        <button class="button" id="add" data-toggle="modal" data-target="#user-list-add-myModal">
+                            新增
                         </button>
                         <button class="button" id="lock">锁定</button>
                         <button class="button" id="unlock">解锁</button>
@@ -175,8 +175,8 @@
                             </td>
                             <td class="handel">
                                 <div data-toggle="modal" data-target="#collect-myModal">会员详情</div>
-                                <button class="run displayed-hide table-button2">启用</button>
-                                <button class="lock table-button1">锁定</button>
+                                <button class="run displayed-hide btn-warning btn-xs">启用</button>
+                                <button class="lock btn-danger btn-xs">锁定</button>
                             </td>
                         </tr>
                         <tr>
@@ -195,9 +195,9 @@
                                 <span class="user-status">启用</span>
                             </td>
                             <td class="handel">
-                                <div  data-toggle="modal" data-target="#collect-myModal">会员详情</div>
-                                <button class="run displayed-hide table-button2">启用</button>
-                                <button class="lock table-button1">锁定</button>
+                                <div data-toggle="modal" data-target="#collect-myModal">会员详情</div>
+                                <button class="run displayed-hide btn-warning btn-xs">启用</button>
+                                <button class="lock btn-danger btn-xs">锁定</button>
 
                             </td>
                         </tr>
@@ -217,9 +217,9 @@
                                 <span class="user-status">启用</span>
                             </td>
                             <td class="handel">
-                                <div  data-toggle="modal" data-target="#collect-myModal">会员详情</div>
-                                <button class="run displayed-hide table-button2">启用</button>
-                                <button class="lock table-button1">锁定</button>
+                                <div data-toggle="modal" data-target="#collect-myModal">会员详情</div>
+                                <button class="run displayed-hide btn-warning btn-xs">启用</button>
+                                <button class="lock btn-danger btn-xs">锁定</button>
 
                             </td>
                         </tr>
@@ -239,9 +239,9 @@
                                 <span class="user-status">启用</span>
                             </td>
                             <td class="handel">
-                                <div  data-toggle="modal" data-target="#collect-myModal">会员详情</div>
-                                <button class="run displayed-hide table-button2">启用</button>
-                                <button class="lock table-button1">锁定</button>
+                                <div data-toggle="modal" data-target="#collect-myModal">会员详情</div>
+                                <button class="run displayed-hide btn-warning btn-xs">启用</button>
+                                <button class="lock btn-danger btn-xs">锁定</button>
 
                             </td>
                         </tr>
@@ -261,16 +261,133 @@
                                 <span class="user-status">启用</span>
                             </td>
                             <td class="handel">
-                                <div  data-toggle="modal" data-target="#collect-myModal">会员详情</div>
+                                <div data-toggle="modal" data-target="#collect-myModal">会员详情</div>
 
-                                <button class="run displayed-hide table-button2">启用</button>
-                                <button class="lock table-button1">锁定</button>
+                                <button class="run displayed-hide btn-warning btn-xs">启用</button>
+                                <button class="lock btn-danger btn-xs">锁定</button>
 
                             </td>
 
                         </tr>
                         </tbody>
                     </table>
+                    <!--会员管理新增模态框-->
+                    <div class="modal fade" id="user-list-add-myModal" tabindex="-1" role="dialog"
+                         aria-labelledby="myModalLabel">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                            aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title" id="user-list-add-myModalLabel">新增</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <h5 class="h5">新增用户资料</h5>
+                                    <div class="row">
+                                        <div class="form-horizontal col-sm-6">
+                                            <div class="form-group">
+                                                <label for="newUser-userName"
+                                                       class="col-sm-4 control-label">用户名：</label>
+                                                <div class="col-sm-8">
+                                                    <input type="text" class="form-control" id="newUser-userName">
+                                                    <div class="newUserName-err">用户名必须是6~12位字符</div>
+                                                    <div class="newUserName-required-err">用户名必须输入</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-horizontal col-sm-6">
+                                            <div class="form-group">
+                                                <label for="newuser-userType"
+                                                       class="col-sm-4 control-label">账户类型：</label>
+                                                <div class="col-sm-8">
+                                                    <select class="form-control" id="newuser-userType">
+                                                        <option value="nomalUser">普通会员注册</option>
+                                                        <option value="dailiUser">总代理</option>
+                                                        <option value="zidailiUser">子代理</option>
+                                                        <option value="yaoqingUser">代理邀请会员</option>
+                                                        <option value="shiwanUser">试玩用户</option>
+                                                    </select>
+                                                </div>
+                                                <div class="newUserType-required-err">用户类型必须选择</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-horizontal col-sm-6">
+                                            <div class="form-group">
+                                                <label for="newUser-upwd" class="col-sm-4 control-label">登录密码：</label>
+                                                <div class="col-sm-8">
+                                                    <input type="password" class="form-control" id="newUser-upwd">
+                                                    <div class="newUser-upwd-err">密码必须是6~18位字符</div>
+                                                    <div class="newUser-upwd-required-err">密码必须输入</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-horizontal col-sm-6">
+                                            <div class="form-group">
+                                                <label for="newUser-realyName"
+                                                       class="col-sm-4 control-label">真实姓名：</label>
+
+                                                <div class="col-sm-8">
+                                                    <input type="text" class="form-control" id="newUser-realyName">
+                                                    <div class="newUser-realyName-err">真实姓名最多为32个字符</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-horizontal col-sm-6">
+                                            <div class="form-group">
+                                                <label for="newUser-userTel" class="col-sm-4 control-label">手机号：</label>
+
+                                                <div class="col-sm-8">
+                                                    <input type="tel" class="form-control" id="newUser-userTel">
+                                                    <div class="newUser-tel-err">请输入正确的手机号</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-horizontal col-sm-6">
+                                            <div class="form-group">
+                                                <label for="newUser-userEmail"
+                                                       class="col-sm-4 control-label">邮箱：</label>
+
+                                                <div class="col-sm-8">
+                                                    <input type="email" class="form-control" id="newUser-userEmail">
+                                                    <div class="newUser-email-err">请输入正确的邮箱</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-horizontal col-sm-6">
+                                            <div class="form-group">
+                                                <label for="newUser-beizhu" class="col-sm-4 control-label">备注：</label>
+
+                                                <div class="col-sm-8">
+                                                    <textarea name="" id="newUser-beizhu" cols="47" rows="5"></textarea>
+                                                    <div class="newUser-beizhu-err">备注不能超过200字符</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-offset-5 col-sm-1">
+                                            <button id="newUser-confirm" class="btn btn-danger btn-sm" type="button">
+                                                确定
+                                            </button>
+                                        </div>
+                                        <div class="col-sm-offset-1 col-sm-1">
+                                            <button id="newuser-cancel" class="btn btn-warning btn-sm" type="button">
+                                                返回
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
 
                     <!--用户列表会员详情模态框-->
                     <!--会员详情 模态框-->
@@ -305,7 +422,7 @@
 
                                     <div class="tab-content">
                                         <!-- 基本资料 -->
-                                        <div role="tabpanel" class="tab-pane" id="basics">
+                                        <div role="tabpanel" class="tab-pane active" id="basics">
                                             <div class="row">
                                                 <div class="form-horizontal col-sm-6">
                                                     <div class="form-group">
@@ -816,114 +933,11 @@
                                     </div>
 
                                 </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                    <button type="button" class="btn btn-primary">Save changes</button>
-                                </div>
                             </div>
                         </div>
                     </div>
-
-
-                    <!--&lt;!&ndash;新增用户资料&ndash;&gt;-->
-                    <!--<div class="displayed-hide" id="newUser">-->
-                    <!--<h5 class="h5">新增用户资料</h5>-->
-
-                    <!--<div class="row">-->
-                    <!--<div class="form-horizontal col-sm-6">-->
-                    <!--<div class="form-group">-->
-                    <!--<label for="newUser-userName" class="col-sm-4 control-label">用户名：</label>-->
-                    <!--<div class="col-sm-8">-->
-                    <!--<input type="text" class="form-control" id="newUser-userName">-->
-                    <!--<div class="newUserName-err">用户名必须是6~12位字符</div>-->
-                    <!--<div class="newUserName-required-err">用户名必须输入</div>-->
-                    <!--</div>-->
-                    <!--</div>-->
-                    <!--</div>-->
-                    <!--<div class="form-horizontal col-sm-6">-->
-                    <!--<div class="form-group">-->
-                    <!--<label for="newuser-userType" class="col-sm-4 control-label">账户类型：</label>-->
-                    <!--<div class="col-sm-8">-->
-                    <!--<select class="form-control" id="newuser-userType">-->
-                    <!--<option value="nomalUser">普通会员注册</option>-->
-                    <!--<option value="dailiUser">总代理</option>-->
-                    <!--<option value="zidailiUser">子代理</option>-->
-                    <!--<option value="yaoqingUser">代理邀请会员</option>-->
-                    <!--<option value="shiwanUser">试玩用户</option>-->
-                    <!--</select>-->
-                    <!--</div>-->
-                    <!--<div class="newUserType-required-err">用户类型必须选择</div>-->
-                    <!--</div>-->
-                    <!--</div>-->
-                    <!--</div>-->
-                    <!--<div class="row">-->
-                    <!--<div class="form-horizontal col-sm-6">-->
-                    <!--<div class="form-group">-->
-                    <!--<label for="newUser-upwd" class="col-sm-4 control-label">登录密码：</label>-->
-                    <!--<div class="col-sm-8">-->
-                    <!--<input type="password" class="form-control" id="newUser-upwd">-->
-                    <!--<div class="newUser-upwd-err">密码必须是6~18位字符</div>-->
-                    <!--<div class="newUser-upwd-required-err">密码必须输入</div>-->
-                    <!--</div>-->
-                    <!--</div>-->
-                    <!--</div>-->
-                    <!--<div class="form-horizontal col-sm-6">-->
-                    <!--<div class="form-group">-->
-                    <!--<label for="newUser-realyName" class="col-sm-4 control-label">真实姓名：</label>-->
-
-                    <!--<div class="col-sm-8">-->
-                    <!--<input type="text" class="form-control" id="newUser-realyName">-->
-                    <!--<div class="newUser-realyName-err">真实姓名最多为32个字符</div>-->
-                    <!--</div>-->
-                    <!--</div>-->
-                    <!--</div>-->
-                    <!--</div>-->
-                    <!--<div class="row">-->
-                    <!--<div class="form-horizontal col-sm-6">-->
-                    <!--<div class="form-group">-->
-                    <!--<label for="newUser-userTel" class="col-sm-4 control-label">手机号：</label>-->
-
-                    <!--<div class="col-sm-8">-->
-                    <!--<input type="tel" class="form-control" id="newUser-userTel">-->
-                    <!--<div class="newUser-tel-err">请输入正确的手机号</div>-->
-                    <!--</div>-->
-                    <!--</div>-->
-                    <!--</div>-->
-                    <!--<div class="form-horizontal col-sm-6">-->
-                    <!--<div class="form-group">-->
-                    <!--<label for="newUser-userEmail" class="col-sm-4 control-label">邮箱：</label>-->
-
-                    <!--<div class="col-sm-8">-->
-                    <!--<input type="email" class="form-control" id="newUser-userEmail">-->
-                    <!--<div class="newUser-email-err">请输入正确的邮箱</div>-->
-                    <!--</div>-->
-                    <!--</div>-->
-                    <!--</div>-->
-                    <!--</div>-->
-                    <!--<div class="row">-->
-                    <!--<div class="form-horizontal col-sm-6">-->
-                    <!--<div class="form-group">-->
-                    <!--<label for="newUser-beizhu" class="col-sm-4 control-label">备注：</label>-->
-
-                    <!--<div class="col-sm-8">-->
-                    <!--<textarea name="" id="newUser-beizhu" cols="47" rows="5"></textarea>-->
-                    <!--<div class="newUser-beizhu-err">备注不能超过200字符</div>-->
-                    <!--</div>-->
-                    <!--</div>-->
-                    <!--</div>-->
-                    <!--</div>-->
-                    <!--<div class="row">-->
-                    <!--<div class="col-sm-offset-5 col-sm-1">-->
-                    <!--<button id="newUser-confirm" class="btn btn-danger" type="button">确定</button>-->
-                    <!--</div>-->
-                    <!--<div class=" col-sm-3">-->
-                    <!--<button id="newuser-cancel" class="btn btn-warning" type="button">返回</button>-->
-                    <!--</div>-->
-                    <!--</div>-->
-                    <!--</div>-->
-
                 </div>
-                <!--2.-->
+                <!--2.待审核代理列表-->
                 <div class="col-xs-12 displayed-hide" id="membership-details">
                     <div style="background-color: #F6F6F6">
                         <h5 class="h5">待审核代理列表</h5>
@@ -974,10 +988,13 @@
                                     <button class="btn btn-danger btn-xs displayed-hide">已拒绝</button>
                                     <button class="btn btn-info btn-xs displayed-hide">待审核</button>
                                 </td>
-                                <td>
-                                    <button class="btn btn-warning btn-xs">启用</button>
+                                <td class="detail">
+                                    <button class="run btn-warning btn-xs displayed-hide">启用</button>
+                                    <button class="lock btn-danger btn-xs">锁定</button>
                                 </td>
-                                <td class="color1">会员详细信息</td>
+                                <td class="color1" data-toggle="modal" data-target="#membership-details-myModal">
+                                    会员详细信息
+                                </td>
                             </tr>
                             <tr>
                                 <td>axc111</td>
@@ -990,14 +1007,17 @@
                                 <td>112.11.1</td>
                                 <td>555</td>
                                 <td>
-                                    <button class="btn button btn-xs">已审核</button>
+                                    <button class="btn btn-warning btn-xs">已审核</button>
                                     <button class="btn btn-danger btn-xs displayed-hide">已拒绝</button>
                                     <button class="btn btn-info btn-xs displayed-hide">待审核</button>
                                 </td>
-                                <td>
-                                    <button class="btn button btn-xs">启用</button>
+                                <td class="detail">
+                                    <button class="run btn-warning btn-xs displayed-hide">启用</button>
+                                    <button class="lock btn-danger btn-xs">锁定</button>
                                 </td>
-                                <td class="color1">会员详细信息</td>
+                                <td class="color1" data-toggle="modal" data-target="#membership-details-myModal">
+                                    会员详细信息
+                                </td>
                             </tr>
                             <tr>
                                 <td>axc111</td>
@@ -1010,14 +1030,17 @@
                                 <td>112.11.1</td>
                                 <td>555</td>
                                 <td>
-                                    <button class="btn button btn-xs">已审核</button>
+                                    <button class="btn btn-warning btn-xs">已审核</button>
                                     <button class="btn btn-danger btn-xs displayed-hide">已拒绝</button>
                                     <button class="btn btn-info btn-xs displayed-hide">待审核</button>
                                 </td>
-                                <td>
-                                    <button class="btn button btn-xs">启用</button>
+                                <td class="detail">
+                                    <button class="run btn-warning btn-xs displayed-hide">启用</button>
+                                    <button class="lock btn-danger btn-xs">锁定</button>
                                 </td>
-                                <td class="color1">会员详细信息</td>
+                                <td class="color1" data-toggle="modal" data-target="#membership-details-myModal">
+                                    会员详细信息
+                                </td>
                             </tr>
                             <tr>
                                 <td>axc111</td>
@@ -1030,87 +1053,597 @@
                                 <td>112.11.1</td>
                                 <td>555</td>
                                 <td>
-                                    <button class="button">已审核</button>
+                                    <button class="btn btn-warning btn-xs">已审核</button>
+                                    <button class="btn btn-danger btn-xs displayed-hide">已拒绝</button>
+                                    <button class="btn btn-info btn-xs displayed-hide">待审核</button>
                                 </td>
-                                <td>
-                                    <button class="button">启用</button>
+                                <td class="detail">
+                                    <button class="run btn-warning btn-xs displayed-hide">启用</button>
+                                    <button class="lock btn-danger btn-xs">锁定</button>
                                 </td>
-                                <td class="color1">会员详细信息</td>
-                            </tr>
-                            <tr>
-                                <td>axc111</td>
-                                <td>13634555</td>
-                                <td>默认层级</td>
-                                <td>2</td>
-                                <td>0.00</td>
-                                <td>dcc</td>
-                                <td>444</td>
-                                <td>112.11.1</td>
-                                <td>555</td>
-                                <td>
-                                    <button class="button">已审核</button>
+                                <td class="color1" data-toggle="modal" data-target="#membership-details-myModal">
+                                    会员详细信息
                                 </td>
-                                <td>
-                                    <button class="button">启用</button>
-                                </td>
-                                <td class="color1">会员详细信息</td>
-                            </tr>
-                            <tr>
-                                <td>axc111</td>
-                                <td>13634555</td>
-                                <td>默认层级</td>
-                                <td>2</td>
-                                <td>0.00</td>
-                                <td>dcc</td>
-                                <td>444</td>
-                                <td>112.11.1</td>
-                                <td>555</td>
-                                <td>
-                                    <button class="button">已审核</button>
-                                </td>
-                                <td>
-                                    <button class="button">启用</button>
-                                </td>
-                                <td class="color1">会员详细信息</td>
-                            </tr>
-                            <tr>
-                                <td>axc111</td>
-                                <td>13634555</td>
-                                <td>默认层级</td>
-                                <td>2</td>
-                                <td>0.00</td>
-                                <td>dcc</td>
-                                <td>444</td>
-                                <td>112.11.1</td>
-                                <td>555</td>
-                                <td>
-                                    <button class="button">已审核</button>
-                                </td>
-                                <td>
-                                    <button class="button">启用</button>
-                                </td>
-                                <td class="color1">会员详细信息</td>
-                            </tr>
-                            <tr>
-                                <td>axc111</td>
-                                <td>13634555</td>
-                                <td>默认层级</td>
-                                <td>2</td>
-                                <td>0.00</td>
-                                <td>dcc</td>
-                                <td>444</td>
-                                <td>112.11.1</td>
-                                <td>555</td>
-                                <td>
-                                    <button class="button">已审核</button>
-                                </td>
-                                <td>
-                                    <button class="button">启用</button>
-                                </td>
-                                <td class="color1">会员详细信息</td>
                             </tr>
                             </tbody>
                         </table>
+
+                        <!--会员详细信息模态框-->
+                        <div class="modal fade" id="membership-details-myModal" tabindex="-1" role="dialog"
+                             aria-labelledby="myModalLabel">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal"
+                                                aria-label="Close"><span
+                                                aria-hidden="true">&times;</span></button>
+                                        <h4 class="modal-title" id="membership-details-myModalLabel">Modal title</h4>
+                                    </div>
+                                    <div class="modal-body"><!--
+                                            !-- Nav tabs -->
+                                        <ul class="nav nav-tabs" role="tablist">
+                                            <li role="presentation" class="active"><a href="#membership-details-basics"
+                                                                                      aria-controls="home"
+                                                                                      role="tab"
+                                                                                      data-toggle="tab">基本资料</a></li>
+                                            <li role="presentation"><a href="#membership-details-bank"
+                                                                       aria-controls="profile" role="tab"
+                                                                       data-toggle="tab">银行资料</a></li>
+                                            <li role="presentation"><a href="#membership-details-rebate"
+                                                                       aria-controls="messages" role="tab"
+                                                                       data-toggle="tab">设置返点</a></li>
+                                            <li role="presentation"><a href="#membership-details-statistics"
+                                                                       aria-controls="settings"
+                                                                       role="tab"
+                                                                       data-toggle="tab">会员统计资料</a></li>
+                                            <li role="presentation"><a href="#membership-details-cash-flow"
+                                                                       aria-controls="settings" role="tab"
+                                                                       data-toggle="tab">金流记录</a></li>
+                                            <li role="presentation"><a href="#membership-details-order"
+                                                                       aria-controls="settings" role="tab"
+                                                                       data-toggle="tab">订单列表</a></li>
+                                        </ul>
+
+
+                                        <div class="tab-content">
+                                            <!-- 基本资料 -->
+                                            <div role="tabpanel" class="tab-pane active" id="membership-details-basics">
+                                                <div class="row">
+                                                    <div class="form-horizontal col-sm-6">
+                                                        <div class="form-group">
+                                                            <label for="vip-details-account"
+                                                                   class="col-sm-4 control-label">帐号：</label>
+
+                                                            <div class="col-sm-8">
+                                                                <input type="text" class="form-control"
+                                                                       id="membership-details-account"
+                                                                       readonly>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-horizontal col-sm-6">
+                                                        <div class="form-group">
+                                                            <label for="vip-details-upwd"
+                                                                   class="col-sm-4 control-label">登陆密码：</label>
+
+                                                            <div class="col-sm-8">
+                                                                <input type="password" class="form-control"
+                                                                       id="membership-details-upwd">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                                <div class="row">
+
+                                                    <div class="form-horizontal col-sm-6">
+                                                        <div class="form-group">
+                                                            <label for="vip-details-Email"
+                                                                   class="col-sm-4 control-label">电子邮箱：</label>
+
+                                                            <div class="col-sm-8">
+                                                                <input type="email" class="form-control"
+                                                                       id="membership-details-Email">
+
+                                                                <div class="newUser-email-err">请输入正确的邮箱</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-horizontal col-sm-6">
+                                                        <div class="form-group">
+                                                            <label for="vip-details-Tel"
+                                                                   class="col-sm-4 control-label">手机号：</label>
+
+                                                            <div class="col-sm-8">
+                                                                <input type="tel" class="form-control"
+                                                                       id="membership-details-Tel">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="form-horizontal col-sm-6">
+                                                        <div class="form-group">
+                                                            <label for="vip-details-agency"
+                                                                   class="col-sm-4 control-label">是否代理：</label>
+
+                                                            <div class="col-sm-8">
+                                                                <input type="text" class="form-control"
+                                                                       id="membership-details-agency"
+                                                                       readonly>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-horizontal col-sm-6">
+                                                        <div class="form-group">
+                                                            <label for="vip-userState"
+                                                                   class="col-sm-4 control-label">用户状态：</label>
+
+                                                            <div class="col-sm-8">
+                                                                <select class="form-control"
+                                                                        id="membership-details-userState">
+                                                                    <option value="start-using">启用</option>
+                                                                    <option value="disable">禁用</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="form-horizontal col-sm-6">
+                                                        <div class="form-group">
+                                                            <label for="" class="col-sm-4 control-label">备注：</label>
+
+                                                            <div class="col-sm-8">
+                                                                <textarea name="" cols="47" rows="5"></textarea>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <h4>代理信息</h4>
+
+                                                <div class="row">
+                                                    <div class="form-horizontal col-sm-6">
+                                                        <div class="form-group">
+                                                            <label for="vip-details-agentState"
+                                                                   class="col-sm-4 control-label">代理状态：</label>
+
+                                                            <div class="col-sm-8">
+                                                                <select class="form-control"
+                                                                        id="membership-details-agentState">
+                                                                    <option value="start-using">未审核</option>
+                                                                    <option value="disable">已拒绝</option>
+                                                                    <option value="disable">已审核</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-horizontal col-sm-6">
+                                                        <div class="form-group ">
+
+                                                            <label for="vip-details-contact"
+                                                                   class="col-sm-4 control-label">联系方式：</label>
+
+                                                            <div class="col-sm-8">
+                                                <textarea name="" id="membership-details-contact" cols="30"
+                                                          rows="2"></textarea>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-sm-4">
+                                                            <button id="membership-details-basics-agency"
+                                                                    class="btn btn-warning vip-details-save"
+                                                                    type="button">保存设置
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <h4>真实姓名</h4>
+
+                                                <div class="row">
+                                                    <div class="form-horizontal col-sm-6">
+                                                        <div class="form-group">
+                                                            <label for="vip-details-real"
+                                                                   class="col-sm-4 control-label">真实姓名：</label>
+
+                                                            <div class="col-sm-8">
+                                                                <input type="text" class="form-control"
+                                                                       id="membership-details-real">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-sm-offset-5 col-sm-1">
+                                                        <button id="membership-details-basics-real"
+                                                                class="btn btn-warning" type="button">
+                                                            保存设置
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <h4>资金密码</h4>
+
+                                                <div class="row">
+                                                    <div class="form-horizontal col-sm-6">
+                                                        <div class="form-group">
+                                                            <label for="vip-details-money"
+                                                                   class="col-sm-4 control-label">资金密码：</label>
+
+                                                            <div class="col-sm-8">
+                                                                <input type="password" class="form-control"
+                                                                       id="membership-details-money">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-sm-offset-5 col-sm-1">
+                                                        <button id="membership-details-basics-moneyPwd"
+                                                                class="btn btn-warning vip-details-save"
+                                                                type="button">保存设置
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <h4>用户层级</h4>
+
+                                                <div class="row">
+                                                    <div class="form-horizontal col-sm-6">
+                                                        <div class="form-group">
+                                                            <label for="vip-details-hierarchy"
+                                                                   class="col-sm-4 control-label">用户层级：</label>
+
+                                                            <div class="col-sm-8">
+                                                                <select class="form-control"
+                                                                        id="membership-details-hierarchy">
+                                                                    <option value="dedicated">专用会员</option>
+                                                                    <option value="test">测试会员</option>
+                                                                    <option value="real">真实会员</option>
+                                                                    <option value="default">默认层级</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-sm-offset-5 col-sm-1">
+                                                        <button id="membership-details-basics-hierarchy"
+                                                                class="btn btn-warning vip-details-save"
+                                                                type="button">保存设置
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--银行资料-->
+                                            <div role="tabpanel" class="tab-pane" id="membership-details-bank">
+                                                <table class="table table-striped" id="membership-details-bank-table">
+                                                    <thead>
+                                                    <tr>
+                                                        <th>姓名</th>
+                                                        <th>银行名称</th>
+                                                        <th>户主名称</th>
+                                                        <th>银行账号</th>
+                                                        <th>开户行</th>
+                                                        <th>操作</th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    <tr>
+                                                        <td>zhuang</td>
+                                                        <td>建设银行</td>
+                                                        <td>zhaung</td>
+                                                        <td>612820000</td>
+                                                        <td>xianshi</td>
+                                                        <td>
+                                                            <a href="#">编辑</a>
+                                                            <a href="#">删除</a>
+                                                        </td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                                <div class="row">
+                                                    <div class="form-horizontal col-sm-6">
+                                                        <div class="form-group">
+                                                            <label for="vip-details-account"
+                                                                   class="col-sm-4 control-label">真实姓名：</label>
+                                                            <div class="col-sm-8">
+                                                                <input type="text" class="form-control" readonly>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="form-horizontal col-sm-6">
+                                                        <div class="form-group">
+                                                            <label for="bank-sel"
+                                                                   class="col-sm-4 control-label">银行名称：</label>
+                                                            <div class="col-sm-8">
+                                                                <select class="form-control" id="bank-sel">
+                                                                    <option value="chana-bank">中国银行</option>
+                                                                    <option value="construct-bank">中国建设银行</option>
+                                                                    <option value="commercial-bank ">中国工商银行</option>
+                                                                    <option value="merchants-bank">招商银行</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="form-horizontal col-sm-6">
+                                                        <div class="form-group">
+                                                            <label for="bank-userName"
+                                                                   class="col-sm-4 control-label">户主名称：</label>
+                                                            <div class="col-sm-8">
+                                                                <input type="text" class="form-control"
+                                                                       id="membership-details-bank-userName">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="form-horizontal col-sm-6">
+                                                        <div class="form-group">
+                                                            <label for="bank-number"
+                                                                   class="col-sm-4 control-label">银行账号：</label>
+
+                                                            <div class="col-sm-8">
+                                                                <input type="text" class="form-control"
+                                                                       id="membership-details-bank-number">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="form-horizontal col-sm-6">
+                                                        <div class="form-group">
+                                                            <label for="bank-open"
+                                                                   class="col-sm-4 control-label">开户行：</label>
+                                                            <div class="col-sm-8">
+                                                                <input type="text" class="form-control"
+                                                                       id="membership-details-bank-open">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-sm-offset-5 col-sm-1">
+                                                        <button id="membership-details-bank-save"
+                                                                class="btn btn-warning vip-details-save"
+                                                                type="button">保存设置
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!--设置返点-->
+                                            <div role="tabpanel" class="tab-pane" id="membership-details-rebate">
+                                                <ul id="membership-details-deal">
+                                                    <li>时时彩：<input type="range"><span></span></li>
+                                                    <li>时时彩：<input type="range"><span></span></li>
+                                                    <li>时时彩：<input type="range"><span></span></li>
+                                                    <li>时时彩：<input type="range"><span></span></li>
+                                                    <li>时时彩：<input type="range"><span></span></li>
+                                                    <li>
+                                                        <button class="btn btn-warning">保存设置</button>
+                                                    </li>
+                                                </ul>
+
+                                            </div>
+                                            <!--会员统计资料-->
+                                            <div role="tabpanel" class="tab-pane" id="membership-details-statistics">
+                                                <div class="row">
+                                                    <div class="form-horizontal col-sm-6">
+                                                        <div class="form-group">
+                                                            <label for="" class="col-sm-4 control-label">账户余额：</label>
+                                                            <div class="col-sm-8">
+                                                                <input type="text" class="form-control"
+                                                                       readonly>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-horizontal col-sm-6">
+                                                        <div class="form-group">
+                                                            <label for="" class="col-sm-4 control-label">优惠总额：</label>
+                                                            <div class="col-sm-8">
+                                                                <input type="text" class="form-control"
+                                                                       readonly>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                                <div class="row">
+
+                                                    <div class="form-horizontal col-sm-6">
+                                                        <div class="form-group">
+                                                            <label for="" class="col-sm-4 control-label">充值总额：</label>
+                                                            <div class="col-sm-8">
+                                                                <input type="text" class="form-control"
+                                                                       readonly>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-horizontal col-sm-6">
+                                                        <div class="form-group">
+                                                            <label for="" class="col-sm-4 control-label">提款总额：</label>
+                                                            <div class="col-sm-8">
+                                                                <input type="text" class="form-control">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="form-horizontal col-sm-6">
+                                                        <div class="form-group">
+                                                            <label for="" class="col-sm-4 control-label">提现次数：</label>
+                                                            <div class="col-sm-8">
+                                                                <input type="text" class="form-control" readonly>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-horizontal col-sm-6">
+                                                        <div class="form-group">
+                                                            <label for="" class="col-sm-4 control-label">充值次数：</label>
+                                                            <div class="col-sm-8">
+                                                                <input type="text" class="form-control" readonly>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="form-horizontal col-sm-6">
+                                                        <div class="form-group">
+                                                            <label for="" class="col-sm-4 control-label">登陆次数：</label>
+                                                            <div class="col-sm-8">
+                                                                <input type="text" class="form-control" readonly>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-horizontal col-sm-6">
+                                                        <div class="form-group">
+                                                            <label for="" class="col-sm-4 control-label">最后登陆时间：</label>
+                                                            <div class="col-sm-8">
+                                                                <input type="text" class="form-control" readonly>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--金流记录-->
+                                            <div role="tabpanel" class="tab-pane" id="membership-details-cash-flow">
+                                                <table class="table table-striped">
+                                                    <thead>
+                                                    <tr>
+                                                        <th>时间</th>
+                                                        <th>金流方向</th>
+                                                        <th>金流类型</th>
+                                                        <th>金额</th>
+                                                        <th>操作前金额</th>
+                                                        <th>操作后金额</th>
+                                                        <th>备注</th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    <tr>
+                                                        <td>zhuang</td>
+                                                        <td>
+                                                            <span>存入</span>
+                                                            <span class="displayed-hide">取出</span>
+                                                        </td>
+                                                        <td>zhaung</td>
+                                                        <td>612820000</td>
+                                                        <td>xianshi</td>
+                                                        <td>11</td>
+                                                        <td>11</td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                                <div>
+                                                    <ul class="pagination pagination-sm">
+                                                        <li>
+                                                            <a href="#" aria-label="Previous">
+                                                                <span aria-hidden="true">&laquo;</span>
+                                                            </a>
+                                                        </li>
+                                                        <li><a href="#">1</a></li>
+                                                        <li><a href="#">2</a></li>
+                                                        <li><a href="#">3</a></li>
+                                                        <li><a href="#">4</a></li>
+                                                        <li><a href="#">5</a></li>
+                                                        <li>
+                                                            <a href="#" aria-label="Next">
+                                                                <span aria-hidden="true">&raquo;</span>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <!--订单列表-->
+                                            <div role="tabpanel" class="tab-pane" id="membership-details-order">
+                                                <div class="parent-input">
+                                                    彩种：<select name="" id="membership-details-order-kind">
+                                                    <option value="all">全部</option>
+                                                    <option value="fucai">福彩3D</option>
+                                                    <option value="chongqing">重庆时时彩</option>
+                                                </select>
+                                                    <input type="date" placeholder="开始时间"
+                                                           id="membership-details-order-start-time">
+                                                    ~<input type="date" id="membership-details-order-end-time"
+                                                            placeholder="结束日期">
+                                                    期号 <input type="text" placeholder="请输入彩期号">
+
+                                                    <select name="" id="membership-details-order-state">
+                                                        <option value="all">全部</option>
+                                                        <option value="all">未结算</option>
+                                                        <option value="all">未中奖</option>
+                                                        <option value="all">已中奖</option>
+                                                        <option value="all">已取消</option>
+                                                    </select>
+                                                    <select name="" id="membership-details-order-page">
+                                                        <option value="all">默认分页</option>
+                                                        <option value="30">30条</option>
+                                                        <option value="50">50条</option>
+                                                        <option value="100">100条</option>
+                                                        <option value="200">200条</option>
+                                                        <option value="500">500条</option>
+                                                    </select>
+                                                    <button class="button" id="membership-details-order-search">查询
+                                                    </button>
+                                                </div>
+
+
+                                                <table class="table table-striped">
+                                                    <thead>
+                                                    <tr>
+                                                        <th>彩种</th>
+                                                        <th>期数</th>
+                                                        <th>玩法</th>
+                                                        <th>用户</th>
+                                                        <th>下注总额</th>
+                                                        <th>中奖金额</th>
+                                                        <th>实际输赢</th>
+                                                        <th>投注IP</th>
+                                                        <th>投注时间</th>
+                                                        <th>状态</th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    <tr>
+                                                        <td>111</td>
+                                                        <td>11</td>
+                                                        <td>zhaung</td>
+                                                        <td>612820000</td>
+                                                        <td>xianshi</td>
+                                                        <td>11</td>
+                                                        <td>11</td>
+                                                        <td>xianshi</td>
+                                                        <td>11</td>
+                                                        <td>
+                                                            <span>未结算</span>
+                                                            <span>未中奖</span>
+                                                            <span>已中奖</span>
+                                                        </td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close
+                                        </button>
+                                        <button type="button" class="btn btn-primary">Save changes</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
                         <!--分页-->
                         <div aria-label="Page navigation" style="float: right;">
@@ -1134,545 +1667,16 @@
                         </div>
                         <div class="clear"></div>
 
-                        <!--&lt;!&ndash;代理审核会员详情 模态框&ndash;&gt;-->
-                        <!--<div class="modal fade" id="collect-myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">-->
-                        <!--<div class="modal-dialog" role="document">-->
-                        <!--<div class="modal-content">-->
-                        <!--<div class="modal-header">-->
-                        <!--<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>-->
-                        <!--<h4 class="modal-title" id="collect-myModalLabel">Modal title</h4>-->
-                        <!--</div>-->
-                        <!--<div class="modal-body">&lt;!&ndash;-->
-                        <!--!&#45;&#45; Nav tabs &ndash;&gt;-->
-                        <!--<ul class="nav nav-tabs" role="tablist">-->
-                        <!--<li role="presentation" class="active"><a href="#basics" aria-controls="home" role="tab"-->
-                        <!--data-toggle="tab">基本资料</a></li>-->
-                        <!--<li role="presentation"><a href="#bank" aria-controls="profile" role="tab"-->
-                        <!--data-toggle="tab">银行资料</a></li>-->
-                        <!--<li role="presentation"><a href="#rebate" aria-controls="messages" role="tab"-->
-                        <!--data-toggle="tab">设置返点</a></li>-->
-                        <!--<li role="presentation"><a href="#statistics" aria-controls="settings" role="tab"-->
-                        <!--data-toggle="tab">会员统计资料</a></li>-->
-                        <!--<li role="presentation"><a href="#cash-flow" aria-controls="settings" role="tab"-->
-                        <!--data-toggle="tab">金流记录</a></li>-->
-                        <!--<li role="presentation"><a href="#order" aria-controls="settings" role="tab"-->
-                        <!--data-toggle="tab">订单列表</a></li>-->
-                        <!--</ul>-->
-
-
-                        <!--<div class="tab-content">-->
-                        <!--&lt;!&ndash; 基本资料 &ndash;&gt;-->
-                        <!--<div role="tabpanel" class="tab-pane" id="basics">-->
-                        <!--<div class="row">-->
-                        <!--<div class="form-horizontal col-sm-6">-->
-                        <!--<div class="form-group">-->
-                        <!--<label for="vip-details-account" class="col-sm-4 control-label">帐号：</label>-->
-
-                        <!--<div class="col-sm-8">-->
-                        <!--<input type="text" class="form-control" id="vip-details-account"-->
-                        <!--readonly>-->
-                        <!--</div>-->
-                        <!--</div>-->
-                        <!--</div>-->
-
-                        <!--<div class="form-horizontal col-sm-6">-->
-                        <!--<div class="form-group">-->
-                        <!--<label for="vip-details-upwd" class="col-sm-4 control-label">登陆密码：</label>-->
-
-                        <!--<div class="col-sm-8">-->
-                        <!--<input type="password" class="form-control" id="vip-details-upwd">-->
-                        <!--</div>-->
-                        <!--</div>-->
-                        <!--</div>-->
-
-                        <!--</div>-->
-                        <!--<div class="row">-->
-
-                        <!--<div class="form-horizontal col-sm-6">-->
-                        <!--<div class="form-group">-->
-                        <!--<label for="vip-details-Email" class="col-sm-4 control-label">电子邮箱：</label>-->
-
-                        <!--<div class="col-sm-8">-->
-                        <!--<input type="email" class="form-control" id="vip-details-Email">-->
-
-                        <!--<div class="newUser-email-err">请输入正确的邮箱</div>-->
-                        <!--</div>-->
-                        <!--</div>-->
-                        <!--</div>-->
-
-                        <!--<div class="form-horizontal col-sm-6">-->
-                        <!--<div class="form-group">-->
-                        <!--<label for="vip-details-Tel" class="col-sm-4 control-label">手机号：</label>-->
-
-                        <!--<div class="col-sm-8">-->
-                        <!--<input type="tel" class="form-control" id="vip-details-Tel">-->
-                        <!--</div>-->
-                        <!--</div>-->
-                        <!--</div>-->
-                        <!--</div>-->
-                        <!--<div class="row">-->
-                        <!--<div class="form-horizontal col-sm-6">-->
-                        <!--<div class="form-group">-->
-                        <!--<label for="vip-details-agency" class="col-sm-4 control-label">是否代理：</label>-->
-
-                        <!--<div class="col-sm-8">-->
-                        <!--<input type="text" class="form-control" id="vip-details-agency"-->
-                        <!--readonly>-->
-                        <!--</div>-->
-                        <!--</div>-->
-                        <!--</div>-->
-                        <!--<div class="form-horizontal col-sm-6">-->
-                        <!--<div class="form-group">-->
-                        <!--<label for="vip-userState" class="col-sm-4 control-label">用户状态：</label>-->
-
-                        <!--<div class="col-sm-8">-->
-                        <!--<select class="form-control" id="vip-userState">-->
-                        <!--<option value="start-using">启用</option>-->
-                        <!--<option value="disable">禁用</option>-->
-                        <!--</select>-->
-                        <!--</div>-->
-                        <!--</div>-->
-                        <!--</div>-->
-                        <!--</div>-->
-                        <!--<div class="row">-->
-                        <!--<div class="form-horizontal col-sm-6">-->
-                        <!--<div class="form-group">-->
-                        <!--<label for="" class="col-sm-4 control-label">备注：</label>-->
-
-                        <!--<div class="col-sm-8">-->
-                        <!--<textarea name="" cols="47" rows="5"></textarea>-->
-                        <!--</div>-->
-                        <!--</div>-->
-                        <!--</div>-->
-                        <!--</div>-->
-                        <!--<h4>代理信息</h4>-->
-
-                        <!--<div class="row">-->
-                        <!--<div class="form-horizontal col-sm-6">-->
-                        <!--<div class="form-group">-->
-                        <!--<label for="vip-details-agentState"-->
-                        <!--class="col-sm-4 control-label">代理状态：</label>-->
-
-                        <!--<div class="col-sm-8">-->
-                        <!--<select class="form-control" id="vip-details-agentState">-->
-                        <!--<option value="start-using">未审核</option>-->
-                        <!--<option value="disable">已拒绝</option>-->
-                        <!--<option value="disable">已审核</option>-->
-                        <!--</select>-->
-                        <!--</div>-->
-                        <!--</div>-->
-                        <!--</div>-->
-                        <!--<div class="form-horizontal col-sm-6">-->
-                        <!--<div class="form-group ">-->
-
-                        <!--<label for="vip-details-contact"-->
-                        <!--class="col-sm-4 control-label">联系方式：</label>-->
-
-                        <!--<div class="col-sm-8">-->
-                        <!--<textarea name="" id="vip-details-contact" cols="30"-->
-                        <!--rows="2"></textarea>-->
-                        <!--</div>-->
-                        <!--</div>-->
-                        <!--</div>-->
-                        <!--<div class="row">-->
-                        <!--<div class="col-sm-4">-->
-                        <!--<button id="basics-agency" class="btn btn-warning vip-details-save"-->
-                        <!--type="button">保存设置-->
-                        <!--</button>-->
-                        <!--</div>-->
-                        <!--</div>-->
-                        <!--</div>-->
-                        <!--<h4>真实姓名</h4>-->
-
-                        <!--<div class="row">-->
-                        <!--<div class="form-horizontal col-sm-6">-->
-                        <!--<div class="form-group">-->
-                        <!--<label for="vip-details-real" class="col-sm-4 control-label">真实姓名：</label>-->
-
-                        <!--<div class="col-sm-8">-->
-                        <!--<input type="text" class="form-control" id="vip-details-real">-->
-                        <!--</div>-->
-                        <!--</div>-->
-                        <!--</div>-->
-                        <!--</div>-->
-                        <!--<div class="row">-->
-                        <!--<div class="col-sm-offset-5 col-sm-1">-->
-                        <!--<button id="basics-real" class="btn btn-warning" type="button">保存设置</button>-->
-                        <!--</div>-->
-                        <!--</div>-->
-                        <!--<h4>资金密码</h4>-->
-
-                        <!--<div class="row">-->
-                        <!--<div class="form-horizontal col-sm-6">-->
-                        <!--<div class="form-group">-->
-                        <!--<label for="vip-details-money" class="col-sm-4 control-label">资金密码：</label>-->
-
-                        <!--<div class="col-sm-8">-->
-                        <!--<input type="password" class="form-control" id="vip-details-money">-->
-                        <!--</div>-->
-                        <!--</div>-->
-                        <!--</div>-->
-                        <!--</div>-->
-                        <!--<div class="row">-->
-                        <!--<div class="col-sm-offset-5 col-sm-1">-->
-                        <!--<button id="basics-moneyPwd" class="btn btn-warning vip-details-save"-->
-                        <!--type="button">保存设置-->
-                        <!--</button>-->
-                        <!--</div>-->
-                        <!--</div>-->
-                        <!--<h4>用户层级</h4>-->
-
-                        <!--<div class="row">-->
-                        <!--<div class="form-horizontal col-sm-6">-->
-                        <!--<div class="form-group">-->
-                        <!--<label for="vip-details-hierarchy"-->
-                        <!--class="col-sm-4 control-label">用户层级：</label>-->
-
-                        <!--<div class="col-sm-8">-->
-                        <!--<select class="form-control" id="vip-details-hierarchy">-->
-                        <!--<option value="dedicated">专用会员</option>-->
-                        <!--<option value="test">测试会员</option>-->
-                        <!--<option value="real">真实会员</option>-->
-                        <!--<option value="default">默认层级</option>-->
-                        <!--</select>-->
-                        <!--</div>-->
-                        <!--</div>-->
-                        <!--</div>-->
-
-                        <!--</div>-->
-                        <!--<div class="row">-->
-                        <!--<div class="col-sm-offset-5 col-sm-1">-->
-                        <!--<button id="basics-hierarchy" class="btn btn-warning vip-details-save"-->
-                        <!--type="button">保存设置-->
-                        <!--</button>-->
-                        <!--</div>-->
-                        <!--</div>-->
-                        <!--</div>-->
-                        <!--&lt;!&ndash;银行资料&ndash;&gt;-->
-                        <!--<div role="tabpanel" class="tab-pane" id="bank">-->
-                        <!--<table class="table table-striped" id="bank-table">-->
-                        <!--<thead>-->
-                        <!--<tr>-->
-                        <!--<th>姓名</th>-->
-                        <!--<th>银行名称</th>-->
-                        <!--<th>户主名称</th>-->
-                        <!--<th>银行账号</th>-->
-                        <!--<th>开户行</th>-->
-                        <!--<th>操作</th>-->
-                        <!--</tr>-->
-                        <!--</thead>-->
-                        <!--<tbody>-->
-                        <!--<tr>-->
-                        <!--<td>zhuang</td>-->
-                        <!--<td>建设银行</td>-->
-                        <!--<td>zhaung</td>-->
-                        <!--<td>612820000</td>-->
-                        <!--<td>xianshi</td>-->
-                        <!--<td>-->
-                        <!--<a href="#">编辑</a>-->
-                        <!--<a href="#">删除</a>-->
-                        <!--</td>-->
-                        <!--</tr>-->
-                        <!--</tbody>-->
-                        <!--</table>-->
-                        <!--<div class="row">-->
-                        <!--<div class="form-horizontal col-sm-6">-->
-                        <!--<div class="form-group">-->
-                        <!--<label for="vip-details-account"-->
-                        <!--class="col-sm-4 control-label">真实姓名：</label>-->
-                        <!--<div class="col-sm-8">-->
-                        <!--<input type="text" class="form-control" readonly>-->
-                        <!--</div>-->
-                        <!--</div>-->
-                        <!--</div>-->
-                        <!--</div>-->
-                        <!--<div class="row">-->
-                        <!--<div class="form-horizontal col-sm-6">-->
-                        <!--<div class="form-group">-->
-                        <!--<label for="bank-sel" class="col-sm-4 control-label">银行名称：</label>-->
-                        <!--<div class="col-sm-8">-->
-                        <!--<select class="form-control" id="bank-sel">-->
-                        <!--<option value="chana-bank">中国银行</option>-->
-                        <!--<option value="construct-bank">中国建设银行</option>-->
-                        <!--<option value="commercial-bank ">中国工商银行</option>-->
-                        <!--<option value="merchants-bank">招商银行</option>-->
-                        <!--</select>-->
-                        <!--</div>-->
-                        <!--</div>-->
-                        <!--</div>-->
-                        <!--</div>-->
-                        <!--<div class="row">-->
-                        <!--<div class="form-horizontal col-sm-6">-->
-                        <!--<div class="form-group">-->
-                        <!--<label for="bank-userName" class="col-sm-4 control-label">户主名称：</label>-->
-                        <!--<div class="col-sm-8">-->
-                        <!--<input type="text" class="form-control" id="bank-userName">-->
-                        <!--</div>-->
-                        <!--</div>-->
-                        <!--</div>-->
-                        <!--</div>-->
-                        <!--<div class="row">-->
-                        <!--<div class="form-horizontal col-sm-6">-->
-                        <!--<div class="form-group">-->
-                        <!--<label for="bank-number" class="col-sm-4 control-label">银行账号：</label>-->
-
-                        <!--<div class="col-sm-8">-->
-                        <!--<input type="text" class="form-control" id="bank-number">-->
-                        <!--</div>-->
-                        <!--</div>-->
-                        <!--</div>-->
-                        <!--</div>-->
-                        <!--<div class="row">-->
-                        <!--<div class="form-horizontal col-sm-6">-->
-                        <!--<div class="form-group">-->
-                        <!--<label for="bank-open" class="col-sm-4 control-label">开户行：</label>-->
-                        <!--<div class="col-sm-8">-->
-                        <!--<input type="text" class="form-control" id="bank-open">-->
-                        <!--</div>-->
-                        <!--</div>-->
-                        <!--</div>-->
-                        <!--</div>-->
-                        <!--<div class="row">-->
-                        <!--<div class="col-sm-offset-5 col-sm-1">-->
-                        <!--<button id="bank-save" class="btn btn-warning vip-details-save"-->
-                        <!--type="button">保存设置-->
-                        <!--</button>-->
-                        <!--</div>-->
-                        <!--</div>-->
-                        <!--</div>-->
-
-                        <!--&lt;!&ndash;设置返点&ndash;&gt;-->
-                        <!--<div role="tabpanel" class="tab-pane" id="rebate">-->
-                        <!--<ul id="deal">-->
-                        <!--<li>时时彩：<input type="range"><span></span></li>-->
-                        <!--<li>时时彩：<input type="range"><span></span></li>-->
-                        <!--<li>时时彩：<input type="range"><span></span></li>-->
-                        <!--<li>时时彩：<input type="range"><span></span></li>-->
-                        <!--<li>时时彩：<input type="range"><span></span></li>-->
-                        <!--<li>-->
-                        <!--<button class="btn btn-warning">保存设置</button>-->
-                        <!--</li>-->
-                        <!--</ul>-->
-
-                        <!--</div>-->
-                        <!--&lt;!&ndash;会员统计资料&ndash;&gt;-->
-                        <!--<div role="tabpanel" class="tab-pane" id="statistics">-->
-                        <!--<div class="row">-->
-                        <!--<div class="form-horizontal col-sm-6">-->
-                        <!--<div class="form-group">-->
-                        <!--<label for="" class="col-sm-4 control-label">账户余额：</label>-->
-                        <!--<div class="col-sm-8">-->
-                        <!--<input type="text" class="form-control"-->
-                        <!--readonly>-->
-                        <!--</div>-->
-                        <!--</div>-->
-                        <!--</div>-->
-
-                        <!--<div class="form-horizontal col-sm-6">-->
-                        <!--<div class="form-group">-->
-                        <!--<label for="" class="col-sm-4 control-label">优惠总额：</label>-->
-                        <!--<div class="col-sm-8">-->
-                        <!--<input type="text" class="form-control"-->
-                        <!--readonly>-->
-                        <!--</div>-->
-                        <!--</div>-->
-                        <!--</div>-->
-
-                        <!--</div>-->
-                        <!--<div class="row">-->
-
-                        <!--<div class="form-horizontal col-sm-6">-->
-                        <!--<div class="form-group">-->
-                        <!--<label for="" class="col-sm-4 control-label">充值总额：</label>-->
-                        <!--<div class="col-sm-8">-->
-                        <!--<input type="text" class="form-control"-->
-                        <!--readonly>-->
-                        <!--</div>-->
-                        <!--</div>-->
-                        <!--</div>-->
-
-                        <!--<div class="form-horizontal col-sm-6">-->
-                        <!--<div class="form-group">-->
-                        <!--<label for="" class="col-sm-4 control-label">提款总额：</label>-->
-                        <!--<div class="col-sm-8">-->
-                        <!--<input type="text" class="form-control">-->
-                        <!--</div>-->
-                        <!--</div>-->
-                        <!--</div>-->
-                        <!--</div>-->
-                        <!--<div class="row">-->
-                        <!--<div class="form-horizontal col-sm-6">-->
-                        <!--<div class="form-group">-->
-                        <!--<label for="" class="col-sm-4 control-label">提现次数：</label>-->
-                        <!--<div class="col-sm-8">-->
-                        <!--<input type="text" class="form-control" readonly>-->
-                        <!--</div>-->
-                        <!--</div>-->
-                        <!--</div>-->
-                        <!--<div class="form-horizontal col-sm-6">-->
-                        <!--<div class="form-group">-->
-                        <!--<label for="" class="col-sm-4 control-label">充值次数：</label>-->
-                        <!--<div class="col-sm-8">-->
-                        <!--<input type="text" class="form-control" readonly>-->
-                        <!--</div>-->
-                        <!--</div>-->
-                        <!--</div>-->
-                        <!--</div>-->
-                        <!--<div class="row">-->
-                        <!--<div class="form-horizontal col-sm-6">-->
-                        <!--<div class="form-group">-->
-                        <!--<label for="" class="col-sm-4 control-label">登陆次数：</label>-->
-                        <!--<div class="col-sm-8">-->
-                        <!--<input type="text" class="form-control" readonly>-->
-                        <!--</div>-->
-                        <!--</div>-->
-                        <!--</div>-->
-                        <!--<div class="form-horizontal col-sm-6">-->
-                        <!--<div class="form-group">-->
-                        <!--<label for="" class="col-sm-4 control-label">最后登陆时间：</label>-->
-                        <!--<div class="col-sm-8">-->
-                        <!--<input type="text" class="form-control" readonly>-->
-                        <!--</div>-->
-                        <!--</div>-->
-                        <!--</div>-->
-                        <!--</div>-->
-                        <!--</div>-->
-                        <!--&lt;!&ndash;金流记录&ndash;&gt;-->
-                        <!--<div role="tabpanel" class="tab-pane" id="cash-flow">-->
-                        <!--<table class="table table-striped">-->
-                        <!--<thead>-->
-                        <!--<tr>-->
-                        <!--<th>时间</th>-->
-                        <!--<th>金流方向</th>-->
-                        <!--<th>金流类型</th>-->
-                        <!--<th>金额</th>-->
-                        <!--<th>操作前金额</th>-->
-                        <!--<th>操作后金额</th>-->
-                        <!--<th>备注</th>-->
-                        <!--</tr>-->
-                        <!--</thead>-->
-                        <!--<tbody>-->
-                        <!--<tr>-->
-                        <!--<td>zhuang</td>-->
-                        <!--<td>-->
-                        <!--<span>存入</span>-->
-                        <!--<span class="displayed-hide">取出</span>-->
-                        <!--</td>-->
-                        <!--<td>zhaung</td>-->
-                        <!--<td>612820000</td>-->
-                        <!--<td>xianshi</td>-->
-                        <!--<td>11</td>-->
-                        <!--<td>11</td>-->
-                        <!--</tr>-->
-                        <!--</tbody>-->
-                        <!--</table>-->
-                        <!--<div>-->
-                        <!--<ul class="pagination pagination-sm">-->
-                        <!--<li>-->
-                        <!--<a href="#" aria-label="Previous">-->
-                        <!--<span aria-hidden="true">&laquo;</span>-->
-                        <!--</a>-->
-                        <!--</li>-->
-                        <!--<li><a href="#">1</a></li>-->
-                        <!--<li><a href="#">2</a></li>-->
-                        <!--<li><a href="#">3</a></li>-->
-                        <!--<li><a href="#">4</a></li>-->
-                        <!--<li><a href="#">5</a></li>-->
-                        <!--<li>-->
-                        <!--<a href="#" aria-label="Next">-->
-                        <!--<span aria-hidden="true">&raquo;</span>-->
-                        <!--</a>-->
-                        <!--</li>-->
-                        <!--</ul>-->
-                        <!--</div>-->
-                        <!--</div>-->
-                        <!--&lt;!&ndash;订单列表&ndash;&gt;-->
-                        <!--<div role="tabpanel" class="tab-pane" id="order">-->
-                        <!--<div class="parent-input">-->
-                        <!--彩种：<select name="" id="order-kind">-->
-                        <!--<option value="all">全部</option>-->
-                        <!--<option value="fucai">福彩3D</option>-->
-                        <!--<option value="chongqing">重庆时时彩</option>-->
-                        <!--</select>-->
-                        <!--<input type="date" placeholder="开始时间" id="order-start-time">-->
-                        <!--~<input type="date" id="order-end-time" placeholder="结束日期">-->
-                        <!--期号 <input type="text" placeholder="请输入彩期号">-->
-
-                        <!--<select name="" id="order-state">-->
-                        <!--<option value="all">全部</option>-->
-                        <!--<option value="all">未结算</option>-->
-                        <!--<option value="all">未中奖</option>-->
-                        <!--<option value="all">已中奖</option>-->
-                        <!--<option value="all">已取消</option>-->
-                        <!--</select>-->
-                        <!--<select name="" id="order-page">-->
-                        <!--<option value="all">默认分页</option>-->
-                        <!--<option value="30">30条</option>-->
-                        <!--<option value="50">50条</option>-->
-                        <!--<option value="100">100条</option>-->
-                        <!--<option value="200">200条</option>-->
-                        <!--<option value="500">500条</option>-->
-                        <!--</select>-->
-                        <!--<button class="button" id="order-search">查询</button>-->
-                        <!--</div>-->
-
-
-                        <!--<table class="table table-striped">-->
-                        <!--<thead>-->
-                        <!--<tr>-->
-                        <!--<th>彩种</th>-->
-                        <!--<th>期数</th>-->
-                        <!--<th>玩法</th>-->
-                        <!--<th>用户</th>-->
-                        <!--<th>下注总额</th>-->
-                        <!--<th>中奖金额</th>-->
-                        <!--<th>实际输赢</th>-->
-                        <!--<th>投注IP</th>-->
-                        <!--<th>投注时间</th>-->
-                        <!--<th>状态</th>-->
-                        <!--</tr>-->
-                        <!--</thead>-->
-                        <!--<tbody>-->
-                        <!--<tr>-->
-                        <!--<td>111</td>-->
-                        <!--<td>11</td>-->
-                        <!--<td>zhaung</td>-->
-                        <!--<td>612820000</td>-->
-                        <!--<td>xianshi</td>-->
-                        <!--<td>11</td>-->
-                        <!--<td>11</td>-->
-                        <!--<td>xianshi</td>-->
-                        <!--<td>11</td>-->
-                        <!--<td>-->
-                        <!--<span>未结算</span>-->
-                        <!--<span>未中奖</span>-->
-                        <!--<span>已中奖</span>-->
-                        <!--</td>-->
-                        <!--</tr>-->
-                        <!--</tbody>-->
-                        <!--</table>-->
-                        <!--</div>-->
-
-                        <!--</div>-->
-
-                        <!--</div>-->
-                        <!--<div class="modal-footer">-->
-                        <!--<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>-->
-                        <!--<button type="button" class="btn btn-primary">Save changes</button>-->
-                        <!--</div>-->
-                        <!--</div>-->
-                        <!--</div>-->
-                        <!--</div>-->
-
-
                     </div>
                 </div>
-                <!--3.-->
+                <!--3.代理域名列表-->
                 <div class="col-xs-12 displayed-hide" id="agency-name">
                     <h5 class="h5">代理域名列表</h5>
 
                     <div class="parent-input">
-                        <button class="button">新增</button>
+                        <button class="button" data-toggle="modal" data-target="#agency-name-add-myModal">
+                            新增
+                        </button>
                         <div class="d-right">
                             代理用户<input type="text">
                             代理域名<input type="text">
@@ -1693,53 +1697,7 @@
                         </tr>
                         </thead>
 
-                        <tbody>
-                        <!--<tr>
-                            <td>zongli</td>
-                            <td>255555</td>
-                            <td>2566.22</td>
-                            <td>2533.22</td>
-                            <td class="color1">555</td>
-                            <td>222</td>
-                            <td>255555</td>
-                        </tr>
-                        <tr>
-                            <td>zongli</td>
-                            <td>255555</td>
-                            <td>2566.22</td>
-                            <td>2533.22</td>
-                            <td class="color1">555</td>
-                            <td>222</td>
-                            <td>255555</td>
-                        </tr>
-                        <tr>
-                            <td>zongli</td>
-                            <td>255555</td>
-                            <td>2566.22</td>
-                            <td>2533.22</td>
-                            <td class="color1">555</td>
-                            <td>222</td>
-                            <td>255555</td>
-                        </tr>
-                        <tr>
-                            <td>小计：</td>
-                            <td>255555</td>
-                            <td>2566.22</td>
-                            <td>2533.22</td>
-                            <td>555</td>
-                            <td>222</td>
-                            <td>255555</td>
-                        </tr>
-                        <tr>
-                            <td>合计：</td>
-                            <td>255555</td>
-                            <td>2566.22</td>
-                            <td>2533.22</td>
-                            <td>555</td>
-                            <td>222</td>
-                            <td>255555</td>
-                        </tr>-->
-                        </tbody>
+                        <tbody id="agency-name-tbody"></tbody>
                     </table>
                     <div id="pagenation" class="clear">
                         <a href="javascript:void(0)" class="prev">上一页</a>
@@ -1752,9 +1710,147 @@
                         </ul>
                         <a href="javascript:void(0)" class="next">下一页</a>
                     </div>
+                    <!--代理域名新增模态框-->
+                    <div class="modal fade" id="agency-name-add-myModal" tabindex="-1" role="dialog"
+                         aria-labelledby="myModalLabel">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                            aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title" id="agency-name-add-myModalLabel">新增</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <h5 class="h5">新增代理域名</h5>
+                                    <div class="row">
+                                        <div class="form-horizontal col-sm-12">
+                                            <div class="form-group">
+                                                <label for="newUser-userName" class="col-sm-4 control-label">会员账号：
+                                                </label>
+                                                <div class="col-sm-6">
+                                                    <input type="text" class="form-control" placeholder="请输入会员账户">
+                                                </div>
+                                                <div class="col-sm-2">
+                                                    <button type="button" class="btn btn-warning btn-sm">查询账户</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <table class="table">
+                                        <tr>
+                                            <td>会员账户</td>
+                                            <td>真实姓名</td>
+                                            <td>是否代理</td>
+                                        </tr>
+                                        <tr>
+                                            <td>acb</td>
+                                            <td></td>
+                                            <td>是</td>
+                                        </tr>
+                                    </table>
+
+                                    <div class="row">
+                                        <div class="form-horizontal col-sm-10">
+                                            <div class="form-group">
+                                                <label for="newUser-userName" class="col-sm-4 control-label">代理域名
+                                                </label>
+                                                <div class="col-sm-6">
+                                                    <input type="text" class="form-control" placeholder="注：不含'http:'">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-horizontal col-sm-10">
+                                            <div class="form-group">
+                                                <label for="newUser-userName" class="col-sm-4 control-label">会员账号：
+                                                </label>
+                                                <div class="col-sm-6">
+                                                    <select name="" class="form-control">
+                                                        <option value="run">启用</option>
+                                                        <option value="lock">禁用</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-offset-4 col-sm-1">
+                                            <button id="agency-name-add-confirm" class="btn btn-danger btn-sm"
+                                                    type="button">
+                                                确定
+                                            </button>
+                                        </div>
+                                        <div class="col-sm-offset-1 col-sm-1">
+                                            <button id="agency-name-add-cancel" class="btn btn-warning btn-sm"
+                                                    type="button">
+                                                返回
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--代理域名编辑模态框-->
+                    <div class="modal fade" id="agency-name-amend-myModal" tabindex="-1" role="dialog"
+                         aria-labelledby="myModalLabel">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                            aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title" id="agency-name-amend-myModalLabel">编辑</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="row">
+                                        <div class="form-horizontal col-sm-10">
+                                            <div class="form-group">
+                                                <label for="newUser-userName" class="col-sm-4 control-label">代理域名
+                                                </label>
+                                                <div class="col-sm-6">
+                                                    <input type="text" class="form-control" placeholder="注：不含'http:'">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-horizontal col-sm-10">
+                                            <div class="form-group">
+                                                <label for="newUser-userName" class="col-sm-4 control-label">会员账号：
+                                                </label>
+                                                <div class="col-sm-6">
+                                                    <select name="" class="form-control">
+                                                        <option value="run">启用</option>
+                                                        <option value="lock">禁用</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-offset-4 col-sm-1">
+                                            <button id="agency-name-amend-confirm" class="btn btn-danger btn-sm"
+                                                    type="button">
+                                                确定
+                                            </button>
+                                        </div>
+                                        <div class="col-sm-offset-1 col-sm-1">
+                                            <button id="agency-name-amend-cancel" class="btn btn-warning btn-sm"
+                                                    type="button">
+                                                返回
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
                 </div>
-                <!--4.-->
+                <!--4.代理码管理-->
                 <div class="col-xs-12 displayed-hide" id="agency">
                     <h5>代理码管理</h5>
 
@@ -1762,7 +1858,7 @@
                         代理推广码<input type="text">
                         <button class="button" id="agency-search">搜索</button>
                     </div>
-                    <table class="table table-striped">
+                    <table class="table table-striped" id="agency-table">
                         <thead>
                         <tr>
                             <th>代理用户</th>
@@ -1775,7 +1871,7 @@
                         </tr>
                         </thead>
 
-                        <tbody>
+                        <tbody id="agency-tbody">
                         <tr>
                             <td>255555</td>
                             <td>2566.22</td>
@@ -1783,12 +1879,25 @@
                             <td>555</td>
                             <td>1</td>
                             <td>
-                                <span class="user-status">启用</span>
+                                2017.08.15
                             </td>
-                            <td class="handel">
-                                <div>会员详情</div>
-                                <button class="run displayed-hide">启用</button>
-                                <button class="lock">锁定</button>
+                            <td>
+                                <button class="run btn btn-warning btn-xs">启用</button>
+                                <button class="lock btn btn-danger btn-xs displayed-hide">禁用</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>255555</td>
+                            <td>2566.22</td>
+                            <td>2533.22</td>
+                            <td>555</td>
+                            <td>1</td>
+                            <td>
+                                2017.08.15
+                            </td>
+                            <td>
+                                <button class="run btn btn-warning btn-xs">启用</button>
+                                <button class="lock btn btn-danger btn-xs displayed-hide">禁用</button>
 
                             </td>
                         </tr>
@@ -1799,12 +1908,11 @@
                             <td>555</td>
                             <td>1</td>
                             <td>
-                                <span class="user-status">启用</span>
+                                2017.08.15
                             </td>
-                            <td class="handel">
-                                <div>会员详情</div>
-                                <button class="run displayed-hide">启用</button>
-                                <button class="lock">锁定</button>
+                            <td>
+                                <button class="run btn btn-warning btn-xs">启用</button>
+                                <button class="lock btn btn-danger btn-xs displayed-hide">禁用</button>
 
                             </td>
                         </tr>
@@ -1815,12 +1923,11 @@
                             <td>555</td>
                             <td>1</td>
                             <td>
-                                <span class="user-status">启用</span>
+                                2017.08.15
                             </td>
-                            <td class="handel">
-                                <div>会员详情</div>
-                                <button class="run displayed-hide">启用</button>
-                                <button class="lock">锁定</button>
+                            <td>
+                                <button class="run btn btn-warning btn-xs">启用</button>
+                                <button class="lock btn btn-danger btn-xs displayed-hide">禁用</button>
 
                             </td>
                         </tr>
@@ -1831,159 +1938,629 @@
                             <td>555</td>
                             <td>1</td>
                             <td>
-                                <span class="user-status">启用</span>
+                                2017.08.15
                             </td>
-                            <td class="handel">
-                                <div>会员详情</div>
-                                <button class="run displayed-hide">启用</button>
-                                <button class="lock">锁定</button>
-
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>255555</td>
-                            <td>2566.22</td>
-                            <td>2533.22</td>
-                            <td>555</td>
-                            <td>1</td>
                             <td>
-                                <span class="user-status">启用</span>
-                            </td>
-                            <td class="handel">
-                                <div>会员详情</div>
-                                <button class="run displayed-hide">启用</button>
-                                <button class="lock">锁定</button>
+                                <button class="run btn btn-warning btn-xs">启用</button>
+                                <button class="lock btn btn-danger btn-xs displayed-hide">禁用</button>
 
                             </td>
                         </tr>
                         </tbody>
                     </table>
                 </div>
-                <!--5.-->
+                <!--5.层级列表-->
                 <div class="col-xs-12 displayed-hide" id="member-tier">
-                    <h5>层级列表</h5>
-                    <button class="button">新增</button>
-                    <div>
+                    <h5 class="h5">层级列表</h5>
+                    <div class="parent-input">
+                        <button class="button" data-toggle="modal" data-target="#member-tier-add-myModal">新增
+                        </button>
+                    </div>
+                    <div class="parent-input d-right">
                         <input type="text" placeholder="请输入层级名称">
                         <button class="button" id="member-tier-search">搜索</button>
-                        <table class="table table-striped">
-                            <thead>
-                            <tr>
-                                <th>名称</th>
-                                <th>描述</th>
-                                <th>存款次数</th>
-                                <th>存款总额</th>
-                                <th>提款次数</th>
-                                <th>提款总额</th>
-                                <th>会员人数</th>
-                                <th>操作</th>
-                                <th>功能设定</th>
-                            </tr>
-                            </thead>
+                    </div>
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th rowspan="2">名称</th>
+                            <th rowspan="2">描述</th>
+                            <th colspan="6">加入条件</th>
+                            <th rowspan="2">会员人数</th>
+                            <th rowspan="2">操作</th>
+                            <th rowspan="2">功能设定</th>
+                        </tr>
+                        <tr>
+                            <th>注册时间</th>
+                            <th>存款时间</th>
+                            <th>存款次数</th>
+                            <th>存款总额</th>
+                            <th>提款次数</th>
+                            <th>提款总额</th>
+                        </tr>
+                        </thead>
 
-                            <tbody>
-                            <tr>
-                                <td>255555</td>
-                                <td>2566.22</td>
-                                <td>2533.22</td>
-                                <td>555</td>
-                                <td>1</td>
-                                <td>
-                                    <span class="user-status">启用</span>
-                                </td>
-                                <td>
+                        <tbody>
+                        <tr>
+                            <td>255555</td>
+                            <td>2566.22</td>
+                            <td>2533.2</td>
+                            <td>555</td>
+                            <td>255555</td>
+                            <td>2566.22</td>
+                            <td>2533.2</td>
+                            <td>555</td>
+                            <td>1</td>
+                            <td>
+                                <span class="compile" data-toggle="modal"
+                                      data-target="#member-tier-amend-myModal">修改</span>
+                                <a href="#" data-toggle="modal" data-target="#member-tier-myModal"
+                                   class="compile">分层</a>
+                            </td>
+                            <td>
+                                <span class="compile" data-toggle="modal" data-target="#member-tier-setting-myModal">支付设定</span>
+                                <a href="payment.html#account" class="compile">入款账号</a>
+                                <a href="payment.html#management" class="compile">支付平台</a>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <!--新增模态框-->
+                    <div class="modal fade" id="member-tier-add-myModal" tabindex="-1" role="dialog"
+                         aria-labelledby="myModalLabel">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                            aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title" id="member-tier-add-myModal-myModalLabel">新增</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <h5 class="h5">新增层级</h5>
 
-                                    <div><a href="member.html">会员详情</a></div>
+                                    <div class="row">
+                                        <div class="form-horizontal col-sm-6">
+                                            <div class="form-group">
+                                                <label for="" class="col-sm-4 control-label">会员组名称：</label>
+                                                <div class="col-sm-8">
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-horizontal col-sm-6">
+                                            <div class="form-group">
+                                                <label for="" class="col-sm-4 control-label">会员组名称：</label>
+                                                <div class="col-sm-8">
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-horizontal col-sm-6">
+                                            <div class="form-group">
+                                                <label for="" class="col-sm-4 control-label">存款次数：</label>
+                                                <div class="col-sm-8">
+                                                    <input type="password" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-horizontal col-sm-6">
+                                            <div class="form-group">
+                                                <label for="" class="col-sm-4 control-label">存款总额：</label>
+                                                <div class="col-sm-8">
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-horizontal col-sm-6">
+                                            <div class="form-group">
+                                                <label for="newUser-userTel"
+                                                       class="col-sm-4 control-label">提款次数：</label>
+                                                <div class="col-sm-8">
+                                                    <input type="tel" class="form-control" id="newUser-userTel">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-horizontal col-sm-6">
+                                            <div class="form-group">
+                                                <label for="" class="col-sm-4 control-label">提款总额：</label>
 
-                                    <button class="run displayed-hide">启用</button>
-                                    <button class="lock">锁定</button>
+                                                <div class="col-sm-8">
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-offset-4 col-sm-1">
+                                                <button class="btn btn-danger btn-sm" type="button">确定</button>
+                                            </div>
+                                            <div class="col-sm-offset-1 col-sm-1">
+                                                <button class="btn btn-warning btn-sm" type="button">返回</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--修改模态框-->
+                    <div class="modal fade" id="member-tier-amend-myModal" tabindex="-1" role="dialog"
+                         aria-labelledby="myModalLabel">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                            aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title" id="member-tier-amend-myModal-myModalLabel">修改</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <h5 class="h5">编辑层级</h5>
+                                    <div class="row">
+                                        <div class="form-horizontal col-sm-6">
+                                            <div class="form-group">
+                                                <label class="col-sm-4 control-label">会员组名称</label>
+                                                <div class="col-sm-8">
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-horizontal col-sm-6">
+                                            <div class="form-group">
+                                                <label class="col-sm-4 control-label">描述</label>
+                                                <div class="col-sm-8">
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-horizontal col-sm-6">
+                                            <div class="form-group">
+                                                <label class="col-sm-4 control-label">存款次数</label>
+                                                <div class="col-sm-8">
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-horizontal col-sm-6">
+                                            <div class="form-group">
+                                                <label class="col-sm-4 control-label">存款总额</label>
+                                                <div class="col-sm-8">
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-horizontal col-sm-6">
+                                            <div class="form-group">
+                                                <label class="col-sm-4 control-label">提款次数</label>
+                                                <div class="col-sm-8">
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-horizontal col-sm-6">
+                                            <div class="form-group">
+                                                <label class="col-sm-4 control-label">提款总额</label>
+                                                <div class="col-sm-8">
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
 
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>255555</td>
-                                <td>2566.22</td>
-                                <td>2533.22</td>
-                                <td>555</td>
-                                <td>1</td>
-                                <td>
-                                    <span class="user-status">启用</span>
-                                </td>
-                                <td class="handel">
+                                    <div class="row">
+                                        <div class="col-sm-offset-4 col-sm-1">
+                                            <button id="member-tier-amend-confirm" class="btn btn-danger btn-sm"
+                                                    type="button">确定
+                                            </button>
+                                        </div>
+                                        <div class="col-sm-offset-1 col-sm-1">
+                                            <button id="member-tier-amend-cancel" class="btn btn-warning btn-sm"
+                                                    type="button">返回
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--支付设定模态框-->
+                    <div class="modal fade" id="member-tier-setting-myModal" tabindex="-1" role="dialog"
+                         aria-labelledby="myModalLabel">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                            aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title" id="member-tier-setting-myModalLabel">支付设定</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <div id="newUser">
+                                        <h5 class="h5">专用组</h5>
 
-                                    <div><a href="member.html">会员详情</a></div>
+                                        <h4>打码设定</h4>
+                                        <div class="row">
+                                            <div class="form-horizontal col-sm-4">
+                                                <div class="form-group">
+                                                    <label for="" class="col-sm-4 control-label">用户名：</label>
+                                                    <div class="col-sm-8">
+                                                        <input type="text" class="form-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-horizontal col-sm-4">
+                                                <div class="form-group">
+                                                    <label for="" class="col-sm-4 control-label">账户类型：</label>
+                                                    <div class="col-sm-8">
+                                                        <input type="text" class="form-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-horizontal col-sm-4">
+                                                <div class="form-group">
+                                                    <label class="col-sm-4 control-label">用户名：</label>
+                                                    <div class="col-sm-8">
+                                                        <input type="text" class="form-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <h4>出款设定</h4>
+                                        <div class="row">
+                                            <div class="form-horizontal col-sm-4">
+                                                <div class="form-group">
+                                                    <label for="" class="col-sm-4 control-label">每日提款次数：</label>
+                                                    <div class="col-sm-8">
+                                                        <input type="text" class="form-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-horizontal col-sm-4">
+                                                <div class="form-group">
+                                                    <label for="" class="col-sm-4 control-label">重复提款次数：</label>
+                                                    <div class="col-sm-8">
+                                                        <input type="text" class="form-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-horizontal col-sm-4">
+                                                <div class="form-group">
+                                                    <label class="col-sm-4 control-label">每日出款上线：</label>
+                                                    <div class="col-sm-8">
+                                                        <input type="text" class="form-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="form-horizontal col-sm-4">
+                                                <div class="form-group">
+                                                    <label for="" class="col-sm-4 control-label">每日出款上线：</label>
+                                                    <div class="col-sm-8">
+                                                        <input type="text" class="form-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-horizontal col-sm-4">
+                                                <div class="form-group">
+                                                    <label for="" class="col-sm-4 control-label">每次出款下线：</label>
+                                                    <div class="col-sm-8">
+                                                        <input type="text" class="form-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-horizontal col-sm-4">
+                                                <div class="form-group">
+                                                    <label class="col-sm-4 control-label">免收手续费次数：</label>
+                                                    <div class="col-sm-8">
+                                                        <input type="text" class="form-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="form-horizontal col-sm-4">
+                                                <div class="form-group">
+                                                    <label for="" class="col-sm-4 control-label">手续费扣点：</label>
+                                                    <div class="col-sm-8">
+                                                        <input type="text" class="form-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="form-horizontal col-sm-4">
+                                                <h4>线上入款设定</h4>
+                                            </div>
+                                            <div class="form-horizontal col-sm-4">
+                                                <h4>公司入款设定</h4>
+                                            </div>
+                                            <div class="form-horizontal col-sm-4">
+                                                <h4>人工入款设定</h4>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="form-horizontal col-sm-4">
+                                                <div class="form-group">
+                                                    <label for="" class="col-sm-4 control-label">优惠标准：</label>
+                                                    <div class="col-sm-8">
+                                                        <input type="text" class="form-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-horizontal col-sm-4">
+                                                <div class="form-group">
+                                                    <label for="" class="col-sm-4 control-label">优惠标准：</label>
+                                                    <div class="col-sm-8">
+                                                        <input type="text" class="form-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-horizontal col-sm-4">
+                                                <div class="form-group">
+                                                    <label class="col-sm-4 control-label">优惠标准：</label>
+                                                    <div class="col-sm-8">
+                                                        <input type="text" class="form-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="form-horizontal col-sm-4">
+                                                <div class="form-group">
+                                                    <label for="" class="col-sm-4 control-label">优惠百分比：</label>
+                                                    <div class="col-sm-8">
+                                                        <input type="text" class="form-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-horizontal col-sm-4">
+                                                <div class="form-group">
+                                                    <label for="" class="col-sm-4 control-label">优惠百分比：</label>
+                                                    <div class="col-sm-8">
+                                                        <input type="text" class="form-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-horizontal col-sm-4">
+                                                <div class="form-group">
+                                                    <label class="col-sm-4 control-label">优惠百分比：</label>
+                                                    <div class="col-sm-8">
+                                                        <input type="text" class="form-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="form-horizontal col-sm-4">
+                                                <div class="form-group">
+                                                    <label for="" class="col-sm-4 control-label">最高存款金额：</label>
+                                                    <div class="col-sm-8">
+                                                        <input type="text" class="form-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-horizontal col-sm-4">
+                                                <div class="form-group">
+                                                    <label for="" class="col-sm-4 control-label">最高存款金额：</label>
+                                                    <div class="col-sm-8">
+                                                        <input type="text" class="form-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-horizontal col-sm-4">
+                                                <div class="form-group">
+                                                    <label class="col-sm-4 control-label">最高存款金额：</label>
+                                                    <div class="col-sm-8">
+                                                        <input type="text" class="form-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="form-horizontal col-sm-4">
+                                                <div class="form-group">
+                                                    <label for="" class="col-sm-4 control-label">最低存款金额：</label>
+                                                    <div class="col-sm-8">
+                                                        <input type="text" class="form-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-horizontal col-sm-4">
+                                                <div class="form-group">
+                                                    <label for="" class="col-sm-4 control-label">最低存款金额：</label>
+                                                    <div class="col-sm-8">
+                                                        <input type="text" class="form-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-horizontal col-sm-4">
+                                                <div class="form-group">
+                                                    <label class="col-sm-4 control-label">最低存款金额：</label>
+                                                    <div class="col-sm-8">
+                                                        <input type="text" class="form-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="form-horizontal col-sm-4">
+                                                <div class="form-group">
+                                                    <label for="" class="col-sm-4 control-label">优惠上限金额：</label>
+                                                    <div class="col-sm-8">
+                                                        <input type="text" class="form-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-horizontal col-sm-4">
+                                                <div class="form-group">
+                                                    <label for="" class="col-sm-4 control-label">优惠上限金额：</label>
+                                                    <div class="col-sm-8">
+                                                        <input type="text" class="form-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-horizontal col-sm-4">
+                                                <div class="form-group">
+                                                    <label class="col-sm-4 control-label">优惠上限金额：</label>
+                                                    <div class="col-sm-8">
+                                                        <input type="text" class="form-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
 
-                                    <button class="run displayed-hide">启用</button>
-                                    <button class="lock">锁定</button>
+                                        <div class="row">
+                                            <div class="col-sm-offset-4 col-sm-1">
+                                                <button id="member-tier-setting-confirm" class="btn btn-danger btn-sm"
+                                                        type="button">确定
+                                                </button>
+                                            </div>
+                                            <div class="col-sm-offset-1 col-sm-1">
+                                                <button id="member-tier-setting-cancel" class="btn btn-warning btn-sm"
+                                                        type="button">返回
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--分层模态框-->
+                    <div class="modal fade" id="member-tier-myModal" tabindex="-1" role="dialog"
+                         aria-labelledby="myModalLabel">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                            aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title">Modal title</h4>
+                                </div>
+                                <div class="modal-body">
 
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>255555</td>
-                                <td>2566.22</td>
-                                <td>2533.22</td>
-                                <td>555</td>
-                                <td>1</td>
-                                <td>
-                                    <span class="user-status">启用</span>
-                                </td>
-                                <td class="handel">
+                                    <table class="table table-striped">
+                                        <thead>
+                                        <tr>
+                                            <th>选择层级</th>
+                                            <th>名称</th>
+                                            <th>描述</th>
+                                        </tr>
+                                        </thead>
 
-                                    <div><a href="member.html">会员详情</a></div>
-
-                                    <button class="run displayed-hide">启用</button>
-                                    <button class="lock">锁定</button>
-
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>255555</td>
-                                <td>2566.22</td>
-                                <td>2533.22</td>
-                                <td>555</td>
-                                <td>1</td>
-                                <td>
-                                    <span class="user-status">启用</span>
-                                </td>
-                                <td class="handel">
-
-                                    <div><a href="member.html">会员详情</a></div>
-
-                                    <button class="run displayed-hide">启用</button>
-                                    <button class="lock">锁定</button>
-
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>255555</td>
-                                <td>2566.22</td>
-                                <td>2533.22</td>
-                                <td>555</td>
-                                <td>1</td>
-                                <td>
-                                    <span class="user-status">启用</span>
-                                </td>
-                                <td class="handel">
-
-                                    <div><a href="member.html">会员详情</a></div>
-
-                                    <button class="run displayed-hide">启用</button>
-                                    <button class="lock">锁定</button>
-
-                                </td>
-                            </tr>
-                            </tbody>
-                        </table>
+                                        <tbody id="member-tier-tbody">
+                                        <tr>
+                                            <td><input type="checkbox" class="chooseOne"></td>
+                                            <td>默认层级</td>
+                                            <td>默认组</td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="checkbox" class="chooseOne"></td>
+                                            <td>真实会员</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="checkbox" class="chooseOne"></td>
+                                            <td>测试组</td>
+                                            <td>测试组</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <!--6.-->
+                <!--6.登录日志列表-->
                 <div class="col-xs-12 displayed-hide" id="login-Log">
-                    <h5>登录日志</h5>
+                    <h5 class="h5">登录日志列表</h5>
+                    <div class="parent-input d-right">
+                        登录日期：<input type="date">
+                        用户名称：<input type="text">
+                        IP<input type="text">
+                        <button class="button">搜索</button>
+
+                    </div>
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th>用户名称</th>
+                            <th>登录类型</th>
+                            <th>登录IP</th>
+                            <th>登录时间</th>
+                            <th>变更时间</th>
+                        </tr>
+                        </thead>
+
+                        <tbody id="login-Log-tbody">
+                        <tr>
+                            <td>11</td>
+                            <td>255555</td>
+                            <td>2566.22</td>
+                            <td>2533.22</td>
+                            <td class="color1">555</td>
+                        </tr>
+                        <tr>
+                            <td>11</td>
+                            <td>255555</td>
+                            <td>2566.22</td>
+                            <td>2533.22</td>
+                            <td class="color1">555</td>
+                        </tr>
+                        <tr>
+                            <td>11</td>
+                            <td>255555</td>
+                            <td>2566.22</td>
+                            <td>2533.22</td>
+                            <td class="color1">555</td>
+                        </tr>
+                        <tr>
+                            <td>11</td>
+                            <td>255555</td>
+                            <td>2566.22</td>
+                            <td>2533.22</td>
+                            <td>555</td>
+                        </tr>
+                        <tr>
+                            <td>11</td>
+                            <td>255555</td>
+                            <td>2566.22</td>
+                            <td>2533.22</td>
+                            <td>555</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <div aria-label="Page navigation">
+                        <ul class="pagination  pagination-sm">
+                            <li>
+                                <a href="#" aria-label="Previous">
+                                    <span aria-hidden="true">上一页</span>
+                                </a>
+                            </li>
+                            <li><a href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">4</a></li>
+                            <li><a href="#">5</a></li>
+                            <li>
+                                <a href="#" aria-label="Next">
+                                    <span aria-hidden="true">下一页</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
 
         </div>
+
     </div>
+</div>
 </div>
 
 

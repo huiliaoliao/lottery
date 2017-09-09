@@ -7,6 +7,7 @@
     <title></title>
     <link rel="stylesheet" href="css/bootstrap.css"/>
     <link rel="stylesheet" href="css/lottery.css">
+    <link rel="stylesheet" href="css/business.css">
     <!--[if lt IE 9]>
     <script src="js/html5shiv.min.js"></script>
     <script src="js/respond.min.js"></script>
@@ -32,19 +33,19 @@
                                 <ul>
                                     <li class="">
                                         <p class="fuMenu">彩票设置</p>
-                                        <img class="xiala" src="img/xiala.png" />
+                                        <img class="xiala" src="img/xiala.png"/>
                                         <div class="div1">
                                             <a href="#class-setting" class="zcd">分类设置</a>
                                             <a href="#show-class" class="zcd">展示分类</a>
                                             <a href="#color-setting" class="zcd">彩种设置</a>
-                                            <a href="#limit set" class="zcd">限额设置</a>
-                                            <a href="#color-list" class="zcd  removes">彩种列表</a>
+                                            <a href="#limit-set" class="zcd">限额设置</a>
+                                            <a href="#color-list" class="zcd">彩种列表</a>
                                             <a href="#play-list" class="zcd">玩法列表</a>
                                         </div>
                                     </li>
                                     <li class="">
                                         <p class="fuMenu">彩票管理</p>
-                                        <img class="xiala" src="img/xiala.png" />
+                                        <img class="xiala" src="img/xiala.png"/>
                                         <div class="div1">
                                             <a href="#single" class="zcd">注单管理</a>
                                             <a href="#run-lottery" class="zcd">开奖结果</a>
@@ -52,7 +53,7 @@
                                     </li>
                                     <li class="">
                                         <p class="fuMenu">六合彩管理</p>
-                                        <img class="xiala" src="img/xiala.png" />
+                                        <img class="xiala" src="img/xiala.png"/>
                                         <div class="div1">
                                             <a href="#result" class="zcd">开奖结果</a>
                                             <a href="#odds" class="zcd">赔率设置</a>
@@ -61,7 +62,7 @@
                                     </li>
                                     <li class="">
                                         <p class="fuMenu">私彩管理</p>
-                                        <img class="xiala" src="img/xiala.png" />
+                                        <img class="xiala" src="img/xiala.png"/>
                                         <div class="div1">
                                             <a href="#private" class="zcd">私彩管理</a>
                                         </div>
@@ -118,133 +119,1344 @@
                 <div class="clear"></div>
             </div>
             <!--主体内容-->
-            <div class="row">
+            <div class="row" id="main-content">
                 <!--彩票设置-->
                 <!--1.分类设置-->
                 <div class="col-xs-12 displayed-hide" id="class-setting">
-                    <h5>分类设置</h5>
+                    <h5>分类列表</h5>
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th>名称</th>
+                            <th>赔率模式</th>
+                            <th>最大返点</th>
+                            <th>会员注册默认任店</th>
+                            <th>排序</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <tbody id="class-setting-tbody">
+                        <tr>
+                            <td>PC</td>
+                            <td>0</td>
+                            <td>0.00</td>
+                            <td>0.00</td>
+                            <td>0</td>
+                            <td data-toggle="modal" data-target="#class-setting-list-myModal">
+                                <span class="compile">编辑</span>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <!--编辑模态框-->
+                    <div class="modal fade" id="class-setting-list-myModal" tabindex="-1" role="dialog"
+                         aria-labelledby="myModalLabel">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                            aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title" id="class-setting-list-myModalLabel">Modal title</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <h5>编辑分类</h5>
+                                    <div class="row">
+                                        <div class="form-horizontal col-sm-8">
+                                            <div class="form-group">
+                                                <label for="online-out-amoun-userName" class="col-sm-4 control-label">分类名称</label>
+                                                <div class="col-sm-8">
+                                                    <input type="text" class="form-control"
+                                                           id="online-out-amoun-userName" required>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-horizontal col-sm-8">
+                                            <div class="form-group">
+                                                <label for="" class="col-sm-4 control-label">赔率模式</label>
+                                                <div class="col-sm-8">
+                                                    <input type="text" class="form-control"
+                                                           id="" required>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-horizontal col-sm-8">
+                                            <div class="form-group">
+                                                <label for="online-out-amoun-userName" class="col-sm-4 control-label">注册默认返点</label>
+                                                <div class="col-sm-8">
+                                                    <input type="text" class="form-control"
+                                                           id="" required>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-horizontal col-sm-8">
+                                            <div class="form-group">
+                                                <label for="online-out-amoun-userName"
+                                                       class="col-sm-4 control-label">排序</label>
+                                                <div class="col-sm-8">
+                                                    <input type="text" class="form-control"
+                                                           id="" required>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-offset-4 col-sm-2">
+                                            <button id="newUser-confirm" class="btn btn-danger" type="button">确定
+                                            </button>
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <button id="class-setting-cancel" class="btn btn-warning" type="button">返回
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <!--2.展示分类-->
                 <div class="col-xs-12 displayed-hide" id="show-class">
                     <h5 class="h5">编辑展示分类</h5>
-                    <div class="parent-input">
-                        分类名称 &nbsp; <input type="text" value="三分彩">
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th>名称</th>
+                            <th>图片</th>
+                            <th>排序</th>
+                            <th>热门</th>
+                            <th>简介</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <tbody id="show-class-tbody">
+                        <tr>
+                            <td>三分彩</td>
+                            <td>0</td>
+                            <td>0.00</td>
+                            <td>0.00</td>
+                            <td>0</td>
+                            <td data-toggle="modal" data-target="#show-class-myModal">
+                                <span class="compile">编辑</span>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <!--编辑模态框-->
+                    <div class="modal fade" id="show-class-myModal" tabindex="-1" role="dialog"
+                         aria-labelledby="myModalLabel">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                            aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title" id="show-class-myModalLabel">Modal title</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <h5>编辑展示分类</h5>
+                                    <div class="row">
+                                        <div class="form-horizontal col-sm-8">
+                                            <div class="form-group">
+                                                <label for="online-out-amoun-userName" class="col-sm-4 control-label">分类名称</label>
+                                                <div class="col-sm-8">
+                                                    <input type="text" class="form-control" required>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-horizontal col-sm-8">
+                                            <div class="form-group">
+                                                <label for="" class="col-sm-4 control-label">分类图片</label>
+                                                <div class="col-sm-8">
+                                                    <input type="file" class="form-control"
+                                                           id="" required>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-horizontal col-sm-8">
+                                            <div class="form-group">
+                                                <label for="online-out-amoun-userName"
+                                                       class="col-sm-4 control-label">排序</label>
+                                                <div class="col-sm-8">
+                                                    <input type="text" class="form-control"
+                                                           id="" required>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-horizontal col-sm-8">
+                                            <div class="form-group">
+                                                <label for="online-out-amoun-userName"
+                                                       class="col-sm-4 control-label">热门</label>
+                                                <div class="col-sm-8">
+                                                    <select name="" required>
+                                                        <option value="">否</option>
+                                                        <option value="">是</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-horizontal col-sm-8">
+                                            <div class="form-group">
+                                                <label for="online-out-amoun-userName"
+                                                       class="col-sm-4 control-label">简介</label>
+                                                <div class="col-sm-8">
+                                                    <textarea name="" cols="20" rows="3"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-offset-4 col-sm-2">
+                                            <button id="show-class-confirm" class="btn btn-danger" type="button">确定
+                                            </button>
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <button id="show-class-cancel" class="btn btn-warning" type="button">返回
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="parent-input">
-                        分类图片 &nbsp; <input type="file">
-                    </div>
-                    <div class="parent-input">
-                        排序 &nbsp; <input type="text">
-                    </div>
-                    <div class="parent-input">
-                        热门 &nbsp;
-                        <select name="">
-                            <option value="">是</option>
-                            <option value="" slected>否</option>
-                        </select>
-                    </div>
-                    <div class="parent-input">
-                        简介 &nbsp; <textarea name="" cols="" rows=""></textarea>
-                    </div>
-                    <div class="parent-input">
-                        <button class="button">确定</button>
-                        <button class="button2">取消</button>
-                    </div>
+
 
                 </div>
                 <!--3.彩种设置-->
                 <div class="col-xs-12 displayed-hide" id="color-setting">
-                    <h5>彩种设置</h5>
+                    <h5>彩种玩法类别设置</h5>
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation" class="active"><a href="#color-setting-every"
+                                                                  aria-controls="profile" role="tab"
+                                                                  data-toggle="tab">时时彩</a></li>
+                        <li role="presentation"><a href="#color-setting-fast"
+                                                   aria-controls="messages" role="tab"
+                                                   data-toggle="tab">快3</a></li>
+                        <li role="presentation"><a href="#color-setting-eleven"
+                                                   aria-controls="settings"
+                                                   role="tab"
+                                                   data-toggle="tab">11选5</a></li>
+                        <li role="presentation"><a href="#color-setting-low"
+                                                   aria-controls="settings" role="tab"
+                                                   data-toggle="tab">低频彩</a></li>
+                        <li role="presentation"><a href="#color-setting-ten"
+                                                   aria-controls="settings" role="tab"
+                                                   data-toggle="tab">PK10</a></li>
+                        <li role="presentation"><a href="#color-setting-pc"
+                                                   aria-controls="settings" role="tab"
+                                                   data-toggle="tab">PC蛋蛋</a></li>
+                    </ul>
+
+
+                    <div class="tab-content">
+                        <!-- 时时彩 -->
+                        <div role="tabpanel" class="tab-pane active" id="color-setting-every">
+                            <table class="table table-striped">
+                                <thead id="color-setting-every-thead">
+                                <tr>
+                                    <th>玩法选单\彩种</th>
+                                    <th>重庆时时彩
+                                        <input type="checkbox" id="cqAll">
+                                    </th>
+                                    <th>新疆时时彩
+                                        <input type="checkbox" id="xjAll">
+                                    </th>
+                                    <th>北京时时彩
+                                        <input type="checkbox" id="bjAll">
+                                    </th>
+                                    <th>天津时时彩
+                                        <input type="checkbox" id="tjAll">
+                                    </th>
+                                    <th>排序</th>
+                                    <th>默认</th>
+                                </tr>
+                                </thead>
+                                <tbody id="color-setting-every-tbody">
+                                <tr>
+                                    <td>五星</td>
+                                    <td>
+                                        <input type="checkbox" class="cq">
+                                    </td>
+                                    <td>
+                                        <input type="checkbox" class="xj">
+                                    </td>
+                                    <td>
+                                        <input type="checkbox" class="bj">
+                                    </td>
+                                    <td>
+                                        <input type="checkbox" class="tj">
+                                    </td>
+                                    <td>
+                                        <input type="text">
+                                    </td>
+                                    <td>
+                                        <input type="radio">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>五星</td>
+                                    <td>
+                                        <input type="checkbox" class="cq">
+                                    </td>
+                                    <td>
+                                        <input type="checkbox" class="xj">
+                                    </td>
+                                    <td>
+                                        <input type="checkbox" class="bj">
+                                    </td>
+                                    <td>
+                                        <input type="checkbox" class="tj">
+                                    </td>
+                                    <td>
+                                        <input type="text">
+                                    </td>
+                                    <td>
+                                        <input type="radio">
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                            <button id="color-setting-save" class="btn btn-warning btn-sm">保存设置</button>
+                        </div>
+                        <!--快3-->
+                        <div role="tabpanel" class="tab-pane" id="color-setting-fast">
+                            <table class="table table-striped">
+                                <thead id="color-setting-fast-thead">
+                                <tr>
+                                    <th>玩法选单\彩种</th>
+                                    <th>安徽快3
+                                        <input type="checkbox">
+                                    </th>
+                                    <th>吉林快3
+                                        <input type="checkbox">
+                                    </th>
+                                    <th>广西快3
+                                        <input type="checkbox">
+                                    </th>
+                                    <th>江苏快3
+                                        <input type="checkbox">
+                                    </th>
+                                    <th>湖北快3
+                                        <input type="checkbox">
+                                    </th>
+                                    <th>排序</th>
+                                    <th>默认</th>
+                                </tr>
+                                </thead>
+                                <tbody id="color-setting-fast-tbody">
+                                <tr>
+                                    <td>五星</td>
+                                    <td>
+                                        <input type="checkbox">
+                                    </td>
+                                    <td>
+                                        <input type="checkbox">
+                                    </td>
+                                    <td>
+                                        <input type="checkbox">
+                                    </td>
+                                    <td>
+                                        <input type="checkbox">
+                                    </td>
+                                    <td>
+                                        <input type="checkbox">
+                                    </td>
+                                    <td>
+                                        <input type="text">
+                                    </td>
+                                    <td>
+                                        <input type="radio">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>五星</td>
+                                    <td>
+                                        <input type="checkbox">
+                                    </td>
+                                    <td>
+                                        <input type="checkbox">
+                                    </td>
+                                    <td>
+                                        <input type="checkbox">
+                                    </td>
+                                    <td>
+                                        <input type="checkbox">
+                                    </td>
+                                    <td>
+                                        <input type="checkbox">
+                                    </td>
+                                    <td>
+                                        <input type="text">
+                                    </td>
+                                    <td>
+                                        <input type="radio">
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!--11选5-->
+                        <div role="tabpanel" class="tab-pane" id="color-setting-eleven">
+                            <table class="table table-striped">
+                                <thead id="color-setting-eleven-thead">
+                                <tr>
+                                    <th>玩法选单\彩种</th>
+                                    <th>山东11选5
+                                        <input type="checkbox">
+                                    </th>
+                                    <th>上海11选5
+                                        <input type="checkbox">
+                                    </th>
+                                    <th>江西11选5
+                                        <input type="checkbox">
+                                    </th>
+                                    <th>广东11选5
+                                        <input type="checkbox">
+                                    </th>
+                                    <th>安徽11选5
+                                        <input type="checkbox">
+                                    </th>
+
+                                    <th>排序</th>
+                                    <th>默认</th>
+                                </tr>
+                                </thead>
+                                <tbody id="color-setting-eleven-tbody">
+                                <tr>
+                                    <td>五星</td>
+                                    <td>
+                                        <input type="checkbox">
+                                    </td>
+                                    <td>
+                                        <input type="checkbox">
+                                    </td>
+                                    <td>
+                                        <input type="checkbox">
+                                    </td>
+                                    <td>
+                                        <input type="checkbox">
+                                    </td>
+                                    <td>
+                                        <input type="checkbox">
+                                    </td>
+                                    <td>
+                                        <input type="text">
+                                    </td>
+                                    <td>
+                                        <input type="radio">
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!--低频彩-->
+                        <div role="tabpanel" class="tab-pane" id="color-setting-low">
+                            <table class="table table-striped">
+                                <thead id="color-setting-low-thead">
+                                <tr>
+                                    <th>玩法选单\彩种</th>
+                                    <th>排列三
+                                        <input type="checkbox">
+                                    </th>
+                                    <th>福彩3D
+                                        <input type="checkbox">
+                                    </th>
+                                    <th>排序</th>
+                                    <th>默认</th>
+                                </tr>
+                                </thead>
+                                <tbody id="color-setting-low-tbody">
+                                <tr>
+                                    <td>五星</td>
+                                    <td>
+                                        <input type="checkbox">
+                                    </td>
+                                    <td>
+                                        <input type="checkbox">
+                                    </td>
+                                    <td>
+                                        <input type="text">
+                                    </td>
+                                    <td>
+                                        <input type="radio">
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!--PK10-->
+                        <div role="tabpanel" class="tab-pane" id="color-setting-ten">
+                            <table class="table table-striped">
+                                <thead id="color-setting-ten-thead">
+                                <tr>
+                                    <th>玩法选单\彩种</th>
+                                    <th>北京PK拾
+                                        <input type="checkbox">
+                                    </th>
+                                    <th>急速PK拾
+                                        <input type="checkbox">
+                                    </th>
+                                    <th>排序</th>
+                                    <th>默认</th>
+                                </tr>
+                                </thead>
+                                <tbody id="color-setting-ten-tbody">
+                                <tr>
+                                    <td>五星</td>
+                                    <td>
+                                        <input type="checkbox">
+                                    </td>
+                                    <td>
+                                        <input type="checkbox">
+                                    </td>
+                                    <td>
+                                        <input type="text">
+                                    </td>
+                                    <td>
+                                        <input type="radio">
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!--PC蛋蛋-->
+                        <div role="tabpanel" class="tab-pane" id="color-setting-pc">
+                            <table class="table table-striped">
+                                <thead id="color-setting-pc-thead">
+                                <tr>
+                                    <th>玩法选单\彩种</th>
+                                    <th>北京28
+                                        <input type="checkbox">
+                                    </th>
+                                    <th>幸运28
+                                        <input type="checkbox">
+                                    </th>
+                                    <th>排序</th>
+                                    <th>默认</th>
+                                </tr>
+                                </thead>
+                                <tbody id="color-setting-pc-tbody">
+                                <tr>
+                                    <td>五星</td>
+                                    <td>
+                                        <input type="checkbox">
+                                    </td>
+                                    <td>
+                                        <input type="checkbox">
+                                    </td>
+                                    <td>
+                                        <input type="text">
+                                    </td>
+                                    <td>
+                                        <input type="radio">
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>
                 <!--4.限额设置-->
-                <div class="col-xs-12 displayed-hide" id="limit set">
+                <div class="col-xs-12 displayed-hide" id="limit-set">
                     <h5>限额设置</h5>
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation" class="active"><a href="#limit-set-every"
+                                                                  aria-controls="profile" role="tab"
+                                                                  data-toggle="tab">时时彩</a></li>
+                        <li role="presentation"><a href="#limit-set-fast"
+                                                   aria-controls="messages" role="tab"
+                                                   data-toggle="tab">快3</a></li>
+                        <li role="presentation"><a href="#limit-set-eleven"
+                                                   aria-controls="settings"
+                                                   role="tab"
+                                                   data-toggle="tab">11选5</a></li>
+                        <li role="presentation"><a href="#limit-set-low"
+                                                   aria-controls="settings" role="tab"
+                                                   data-toggle="tab">低频彩</a></li>
+                        <li role="presentation"><a href="#limit-set-ten"
+                                                   aria-controls="settings" role="tab"
+                                                   data-toggle="tab">PK10</a></li>
+                        <li role="presentation"><a href="#limit-set-pc"
+                                                   aria-controls="settings" role="tab"
+                                                   data-toggle="tab">PC蛋蛋</a></li>
+                    </ul>
+
+
+                    <div class="tab-content">
+                        <!-- 时时彩 -->
+                        <div role="tabpanel" class="tab-pane active" id="limit-set-every">
+                            <table class="table">
+                                <thead id="limit-set-every-thead">
+                                <tr>
+                                    <th rowspan="3" colspan="2">玩法</th>
+                                    <th colspan="2">赔率</th>
+                                    <th colspan="3">限额设置</th>
+                                </tr>
+                                <tr>
+                                    <th rowspan="2">最低</th>
+                                    <th rowspan="2">最高</th>
+                                    <th>单注最大押注</th>
+                                    <th>单注最小押注</th>
+                                    <th>单项最大金额</th>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control">
+                                            <div class="input-group-addon">快速变更</div>
+                                        </div>
+                                    </th>
+                                    <th>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control">
+                                            <div class="input-group-addon">快速变更</div>
+                                        </div>
+                                    </th>
+                                    <th>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control">
+                                            <div class="input-group-addon">快速变更</div>
+                                        </div>
+                                    </th>
+                                </tr>
+                                </thead>
+                                <tbody id="limit-set-every-tbody">
+                                <tr>
+                                    <td>五星</td>
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <td>0</td>
+                                    <td>
+
+
+                                    </td>
+                                    <td>
+                                        <input type="text">
+                                    </td>
+                                    <td>
+                                        <input type="text">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>五星</td>
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <td>0</td>
+                                    <td>
+                                        <input type="text">
+                                    </td>
+                                    <td>
+                                        <input type="text">
+                                    </td>
+                                    <td>
+                                        <input type="text">
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                            <button id="limit-set-every-save" class="btn btn-warning btn-sm">保存设置</button>
+                        </div>
+                        <!--快3-->
+                        <div role="tabpanel" class="tab-pane" id="limit-set-fast">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th rowspan="3" colspan="2">玩法</th>
+                                    <th colspan="2">赔率</th>
+                                    <th colspan="3">限额设置</th>
+                                </tr>
+                                <tr>
+                                    <th rowspan="2">最低</th>
+                                    <th rowspan="2">最高</th>
+                                    <th>单注最大押注</th>
+                                    <th>单注最小押注</th>
+                                    <th>单项最大金额</th>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        <input type="text">快速变更
+                                    </th>
+                                    <th>
+                                        <input type="text">快速变更
+                                    </th>
+                                    <th>
+                                        <input type="text">快速变更
+                                    </th>
+                                </tr>
+                                </thead>
+                                <tbody id="limit-set-fast-tbody">
+                                <tr>
+                                    <td>五星</td>
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <td>0</td>
+                                    <td>
+                                        <input type="text">
+                                    </td>
+                                    <td>
+                                        <input type="text">
+                                    </td>
+                                    <td>
+                                        <input type="text">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>五星</td>
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <td>0</td>
+                                    <td>
+                                        <input type="text">
+                                    </td>
+                                    <td>
+                                        <input type="text">
+                                    </td>
+                                    <td>
+                                        <input type="text">
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                            <button id="limit-set-fast-save" class="btn btn-warning btn-sm">保存设置</button>
+                        </div>
+                        <!--11选5-->
+                        <div role="tabpanel" class="tab-pane" id="limit-set-eleven">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th rowspan="3" colspan="2">玩法</th>
+                                    <th colspan="2">赔率</th>
+                                    <th colspan="3">限额设置</th>
+                                </tr>
+                                <tr>
+                                    <th rowspan="2">最低</th>
+                                    <th rowspan="2">最高</th>
+                                    <th>单注最大押注</th>
+                                    <th>单注最小押注</th>
+                                    <th>单项最大金额</th>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        <input type="text">快速变更
+                                    </th>
+                                    <th>
+                                        <input type="text">快速变更
+                                    </th>
+                                    <th>
+                                        <input type="text">快速变更
+                                    </th>
+                                </tr>
+                                </thead>
+                                <tbody id="limit-set-eleven-tbody">
+                                <tr>
+                                    <td>五星</td>
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <td>0</td>
+                                    <td>
+                                        <input type="text">
+                                    </td>
+                                    <td>
+                                        <input type="text">
+                                    </td>
+                                    <td>
+                                        <input type="text">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>五星</td>
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <td>0</td>
+                                    <td>
+                                        <input type="text">
+                                    </td>
+                                    <td>
+                                        <input type="text">
+                                    </td>
+                                    <td>
+                                        <input type="text">
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                            <button id="limit-set-eleven-save" class="btn btn-warning btn-sm">保存设置</button>
+                        </div>
+                        <!--低频彩-->
+                        <div role="tabpanel" class="tab-pane" id="limit-set-low">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th rowspan="3" colspan="2">玩法</th>
+                                    <th colspan="2">赔率</th>
+                                    <th colspan="3">限额设置</th>
+                                </tr>
+                                <tr>
+                                    <th rowspan="2">最低</th>
+                                    <th rowspan="2">最高</th>
+                                    <th>单注最大押注</th>
+                                    <th>单注最小押注</th>
+                                    <th>单项最大金额</th>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        <input type="text">快速变更
+                                    </th>
+                                    <th>
+                                        <input type="text">快速变更
+                                    </th>
+                                    <th>
+                                        <input type="text">快速变更
+                                    </th>
+                                </tr>
+                                </thead>
+                                <tbody id="limit-set-low-tbody">
+                                <tr>
+                                    <td>五星</td>
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <td>0</td>
+                                    <td>
+                                        <input type="text">
+                                    </td>
+                                    <td>
+                                        <input type="text">
+                                    </td>
+                                    <td>
+                                        <input type="text">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>五星</td>
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <td>0</td>
+                                    <td>
+                                        <input type="text">
+                                    </td>
+                                    <td>
+                                        <input type="text">
+                                    </td>
+                                    <td>
+                                        <input type="text">
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                            <button id="limit-set-low-save" class="btn btn-warning btn-sm">保存设置</button>
+                        </div>
+                        <!--PK10-->
+                        <div role="tabpanel" class="tab-pane" id="limit-set-ten">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th rowspan="3" colspan="2">玩法</th>
+                                    <th colspan="2">赔率</th>
+                                    <th colspan="3">限额设置</th>
+                                </tr>
+                                <tr>
+                                    <th rowspan="2">最低</th>
+                                    <th rowspan="2">最高</th>
+                                    <th>单注最大押注</th>
+                                    <th>单注最小押注</th>
+                                    <th>单项最大金额</th>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        <input type="text">快速变更
+                                    </th>
+                                    <th>
+                                        <input type="text">快速变更
+                                    </th>
+                                    <th>
+                                        <input type="text">快速变更
+                                    </th>
+                                </tr>
+                                </thead>
+                                <tbody id="limit-set-ten-tbody">
+                                <tr>
+                                    <td>五星</td>
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <td>0</td>
+                                    <td>
+                                        <input type="text">
+                                    </td>
+                                    <td>
+                                        <input type="text">
+                                    </td>
+                                    <td>
+                                        <input type="text">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>五星</td>
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <td>0</td>
+                                    <td>
+                                        <input type="text">
+                                    </td>
+                                    <td>
+                                        <input type="text">
+                                    </td>
+                                    <td>
+                                        <input type="text">
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                            <button id="limit-set-ten-save" class="btn btn-warning btn-sm">保存设置</button>
+                        </div>
+                        <!--PC蛋蛋-->
+                        <div role="tabpanel" class="tab-pane" id="limit-set-pc">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th rowspan="3" colspan="2">玩法</th>
+                                    <th colspan="2">赔率</th>
+                                    <th colspan="3">限额设置</th>
+                                </tr>
+                                <tr>
+                                    <th rowspan="2">最低</th>
+                                    <th rowspan="2">最高</th>
+                                    <th>单注最大押注</th>
+                                    <th>单注最小押注</th>
+                                    <th>单项最大金额</th>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        <input type="text">快速变更
+                                    </th>
+                                    <th>
+                                        <input type="text">快速变更
+                                    </th>
+                                    <th>
+                                        <input type="text">快速变更
+                                    </th>
+                                </tr>
+                                </thead>
+                                <tbody id="limit-set-pc-tbody">
+                                <tr>
+                                    <td>五星</td>
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <td>0</td>
+                                    <td>
+                                        <input type="text">
+                                    </td>
+                                    <td>
+                                        <input type="text">
+                                    </td>
+                                    <td>
+                                        <input type="text">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>五星</td>
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <td>0</td>
+                                    <td>
+                                        <input type="text">
+                                    </td>
+                                    <td>
+                                        <input type="text">
+                                    </td>
+                                    <td>
+                                        <input type="text">
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                            <button id="limit-set-pc-save" class="btn btn-warning btn-sm">保存设置</button>
+                        </div>
+                    </div>
                 </div>
                 <!--5.彩种列表-->
                 <div class="col-xs-12  displayed-hide" id="color-list">
-                    <h5>彩种列表</h5>
+                    <h5 class="h5">彩种列表</h5>
+                    <div class="parent-input">
+                        <button type="button" class="btn btn-warning btn-xs" data-toggle="modal"
+                                data-target="#color-list-add-myModal">新增
+                        </button>
+                    </div>
+                    <div class="parent-input d-right">
+                        彩种名称：<input type="text">
+                        <button type="button" class="btn btn-warning btn-xs">搜索</button>
+                    </div>
                     <table class="table table-striped">
                         <thead>
                         <tr>
-                            <th>层级</th>
-                            <th>订单号</th>
-                            <th>会员账户</th>
-                            <th>会员存款银行账户</th>
-                            <th>存入银行账号</th>
-                            <th>存入金额</th>
-                            <th>时间</th>
-                            <th>备注</th>
-                            <th>操作人</th>
+                            <th>名称</th>
+                            <th>分类</th>
+                            <th>展示分类</th>
+                            <th>简介</th>
+                            <th>图片</th>
+                            <th>是否热门</th>
+                            <th>状态</th>
+                            <th>排序</th>
+                            <th>操作</th>
                         </tr>
                         </thead>
 
-                        <tbody id="income-tbody">
+                        <tbody id="color-list-tbody">
                         <tr>
                             <td>公司入款</td>
                             <td>32145658.21（71人）
                             </td>
-                            <td  class="color1">会员出款</td>
-                            <td>收入金额</td>
                             <td>会员出款</td>
                             <td>收入金额</td>
                             <td>会员出款</td>
                             <td>收入金额</td>
                             <td>会员出款</td>
-                        </tr>
-                        <tr>
-                            <td>公司入款</td>
-                            <td>32145658.21（71人）</td>
-                            <td class="color1">会员出款</td>
                             <td>收入金额</td>
-                            <td>会员出款</td>
-                            <td>收入金额</td>
-                            <td>会员出款</td>
-                            <td>收入金额</td>
-                            <td>会员出款</td>
-                        </tr>
-                        <tr>
-                            <td>公司入款</td>
-                            <td>32145658.21（71人）
+                            <td>
+                                <span class="compile" data-toggle="modal" data-target="#color-list-myModal">编辑</span>
                             </td>
-                            <td class="color1">会员出款</td>
-                            <td>收入金额</td>
-                            <td>会员出款</td>
-                            <td>收入金额</td>
-                            <td>会员出款</td>
-                            <td>收入金额</td>
-                            <td>会员出款</td>
                         </tr>
                         <tr>
                             <td>公司入款</td>
-                            <td>32145658.21（71人）
+                            <td>1</td>
+                            <td>会员出款</td>
+                            <td>收入金额</td>
+                            <td>会员出款</td>
+                            <td>收入金额</td>
+                            <td>会员出款</td>
+                            <td>收入金额</td>
+                            <td>
+                                <span class="compile" data-toggle="modal" data-target="#color-list-myModal">编辑</span>
                             </td>
-                            <td class="color1">会员出款</td>
-                            <td>收入金额</td>
-                            <td>会员出款</td>
-                            <td>收入金额</td>
-                            <td>会员出款</td>
-                            <td>收入金额</td>
-                            <td>会员出款</td>
                         </tr>
                         </tbody>
 
                     </table>
-
+                    <!--新增模态框-->
+                    <div class="modal fade" id="color-list-add-myModal" tabindex="-1" role="dialog"
+                         aria-labelledby="myModalLabel">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                            aria-hidden="true">&times;</span></button>
+                                </div>
+                                <div class="modal-body">
+                                    <h5>新增彩种</h5>
+                                    <div class="row">
+                                        <div class="row">
+                                            <div class="form-horizontal col-sm-8">
+                                                <div class="form-group">
+                                                    <label for="online-out-amoun-userName"
+                                                           class="col-sm-4 control-label">彩种类型</label>
+                                                    <div class="col-sm-8">
+                                                        <select name="">
+                                                            <option value="shishi">时时彩</option>
+                                                            <option value="sanfen">三分彩</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="row">
+                                            <div class="form-horizontal col-sm-8">
+                                                <div class="form-group">
+                                                    <label for="online-out-amoun-userName"
+                                                           class="col-sm-4 control-label">展示类型</label>
+                                                    <div class="col-sm-8">
+                                                        <select name="">
+                                                            <option value="shishi">时时彩</option>
+                                                            <option value="sanfen">三分彩</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="row">
+                                            <div class="form-horizontal col-sm-8">
+                                                <div class="form-group">
+                                                    <label for="online-out-amoun-userName"
+                                                           class="col-sm-4 control-label">彩种名称</label>
+                                                    <div class="col-sm-8">
+                                                        <input type="text">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-horizontal col-sm-8">
+                                            <div class="form-group">
+                                                <label for="" class="col-sm-4 control-label">彩种简介</label>
+                                                <div class="col-sm-8">
+                                                    <textarea name="" cols="25" rows="3"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-horizontal col-sm-8">
+                                            <div class="form-group">
+                                                <label for="" class="col-sm-4 control-label">彩种图片</label>
+                                                <div class="col-sm-8">
+                                                    <input type="file">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-horizontal col-sm-8">
+                                            <div class="form-group">
+                                                <label for="online-out-amoun-userName" class="col-sm-4 control-label">彩种描述</label>
+                                                <div class="col-sm-8">
+                                                    <textarea name="" cols="25" rows="3"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-horizontal col-sm-8">
+                                            <div class="form-group">
+                                                <label for="online-out-amoun-userName" class="col-sm-4 control-label">热门描述</label>
+                                                <div class="col-sm-8">
+                                                    <textarea name="" cols="25" rows="3"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-horizontal col-sm-8">
+                                            <div class="form-group">
+                                                <label for="online-out-amoun-userName" class="col-sm-4 control-label">是否热门</label>
+                                                <div class="col-sm-8">
+                                                    <select name="">
+                                                        <option value="yes">是</option>
+                                                        <option value="no">否</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-horizontal col-sm-8">
+                                            <div class="form-group">
+                                                <label for="online-out-amoun-userName" class="col-sm-4 control-label">是否启用</label>
+                                                <div class="col-sm-8">
+                                                    <select name="">
+                                                        <option value="yes">启用</option>
+                                                        <option value="no">禁用</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-horizontal col-sm-8">
+                                            <div class="form-group">
+                                                <label for="online-out-amoun-userName"
+                                                       class="col-sm-4 control-label">排序</label>
+                                                <div class="col-sm-8">
+                                                    <input type="text">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-offset-4 col-sm-2">
+                                            <button id="color-list-add-confirm" class="btn btn-danger btn-sm"
+                                                    type="button">确定
+                                            </button>
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <button id="color-list-add-cancel" class="btn btn-warning btn-sm"
+                                                    type="button">返回
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--编辑模态框-->
+                    <div class="modal fade" id="color-list-myModal" tabindex="-1" role="dialog"
+                         aria-labelledby="myModalLabel">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                            aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title" id="color-list-myModalLabel">Modal title</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <h5>编辑彩种</h5>
+                                    <div class="row">
+                                        <div class="row">
+                                            <div class="form-horizontal col-sm-8">
+                                                <div class="form-group">
+                                                    <label for="online-out-amoun-userName"
+                                                           class="col-sm-4 control-label">彩种类型</label>
+                                                    <div class="col-sm-8">
+                                                        <select name="">
+                                                            <option value="shishi">时时彩</option>
+                                                            <option value="sanfen">三分彩</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="row">
+                                            <div class="form-horizontal col-sm-8">
+                                                <div class="form-group">
+                                                    <label for="online-out-amoun-userName"
+                                                           class="col-sm-4 control-label">展示类型</label>
+                                                    <div class="col-sm-8">
+                                                        <select name="">
+                                                            <option value="shishi">时时彩</option>
+                                                            <option value="sanfen">三分彩</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="row">
+                                            <div class="form-horizontal col-sm-8">
+                                                <div class="form-group">
+                                                    <label for="online-out-amoun-userName"
+                                                           class="col-sm-4 control-label">彩种名称</label>
+                                                    <div class="col-sm-8">
+                                                        <input type="text">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-horizontal col-sm-8">
+                                            <div class="form-group">
+                                                <label for="online-out-amoun-userName" class="col-sm-4 control-label">彩种图片</label>
+                                                <div class="col-sm-8">
+                                                    <input type="file" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-horizontal col-sm-8">
+                                            <div class="form-group">
+                                                <label for="" class="col-sm-4 control-label">彩种简介</label>
+                                                <div class="col-sm-8">
+                                                    <textarea name="" cols="25" rows="3"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-horizontal col-sm-8">
+                                            <div class="form-group">
+                                                <label for="online-out-amoun-userName" class="col-sm-4 control-label">彩种描述</label>
+                                                <div class="col-sm-8">
+                                                    <textarea name="" cols="25" rows="3"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-horizontal col-sm-8">
+                                            <div class="form-group">
+                                                <label for="online-out-amoun-userName" class="col-sm-4 control-label">热门描述</label>
+                                                <div class="col-sm-8">
+                                                    <textarea name="" cols="25" rows="3"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-horizontal col-sm-8">
+                                            <div class="form-group">
+                                                <label for="online-out-amoun-userName" class="col-sm-4 control-label">是否热门</label>
+                                                <div class="col-sm-8">
+                                                    <select name="">
+                                                        <option value="yes">是</option>
+                                                        <option value="no">否</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-horizontal col-sm-8">
+                                            <div class="form-group">
+                                                <label for="online-out-amoun-userName" class="col-sm-4 control-label">是否启用</label>
+                                                <div class="col-sm-8">
+                                                    <select name="">
+                                                        <option value="yes">启用</option>
+                                                        <option value="no">禁用</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-horizontal col-sm-8">
+                                            <div class="form-group">
+                                                <label for="online-out-amoun-userName"
+                                                       class="col-sm-4 control-label">排序</label>
+                                                <div class="col-sm-8">
+                                                    <input type="text">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-offset-4 col-sm-2">
+                                            <button id="color-list-confirm" class="btn btn-danger btn-sm"
+                                                    type="button">确定
+                                            </button>
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <button id="color-list-cancel" class="btn btn-warning btn-sm"
+                                                    type="button">返回
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <!--6.玩法列表-->
                 <div class="col-xs-12 displayed-hide" id="play-list">
                     <h5 class="h5">玩法列表</h5>
                     <div class="parent-input d-right">
                         彩种类别:&nbsp;<select name="">
-                            <option value="">全部</option>
-                            <option value="">不全部</option>
-                        </select>
+                        <option value="">全部</option>
+                        <option value="">不全部</option>
+                    </select>
                         <button class="button">搜索</button>
                     </div>
                     <table class="table table-striped">
                         <thead>
                         <tr>
-                            <th>广告标题</th>
+                            <th>彩种分类</th>
                             <th>类别</th>
                             <th>玩法名称</th>
                             <th>最小赔率</th>
@@ -255,7 +1467,7 @@
                             <th>操作</th>
                         </tr>
                         </thead>
-                        <tbody>
+                        <tbody id="play-list-tbody">
                         <tr>
                             <td>PC蛋蛋</td>
                             <td>特码包三</td>
@@ -266,7 +1478,7 @@
                             <td>10000.00</td>
                             <td>特码包三【特码包三】</td>
                             <td>
-                                <a href="" class="Ablue">编辑</a>
+                                <span class="compile" data-toggle="modal" data-target="#play-list-myModal">编辑</span>
                             </td>
                         </tr>
                         <tr>
@@ -279,115 +1491,75 @@
                             <td>10000.00</td>
                             <td>特码包三【特码包三】</td>
                             <td>
-                                <a href="" class="Ablue">编辑</a>
+                                <span class="compile" data-toggle="modal" data-target="#play-list-myModal">编辑</span>
                             </td>
                         </tr>
-                        <tr>
-                            <td>PC蛋蛋</td>
-                            <td>特码包三</td>
-                            <td>3.5</td>
-                            <td>3.5</td>
-                            <td>1.00</td>
-                            <td>10000.00</td>
-                            <td>10000.00</td>
-                            <td>特码包三【特码包三】</td>
-                            <td>
-                                <a href="" class="Ablue">编辑</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>PC蛋蛋</td>
-                            <td>特码包三</td>
-                            <td>3.5</td>
-                            <td>3.5</td>
-                            <td>1.00</td>
-                            <td>10000.00</td>
-                            <td>10000.00</td>
-                            <td>特码包三【特码包三】</td>
-                            <td>
-                                <a href="" class="Ablue">编辑</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>PC蛋蛋</td>
-                            <td>特码包三</td>
-                            <td>3.5</td>
-                            <td>3.5</td>
-                            <td>1.00</td>
-                            <td>10000.00</td>
-                            <td>10000.00</td>
-                            <td>特码包三【特码包三】</td>
-                            <td>
-                                <a href="" class="Ablue">编辑</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>PC蛋蛋</td>
-                            <td>特码包三</td>
-                            <td>3.5</td>
-                            <td>3.5</td>
-                            <td>1.00</td>
-                            <td>10000.00</td>
-                            <td>10000.00</td>
-                            <td>特码包三【特码包三】</td>
-                            <td>
-                                <a href="" class="Ablue">编辑</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>PC蛋蛋</td>
-                            <td>特码包三</td>
-                            <td>3.5</td>
-                            <td>3.5</td>
-                            <td>1.00</td>
-                            <td>10000.00</td>
-                            <td>10000.00</td>
-                            <td>特码包三【特码包三】</td>
-                            <td>
-                                <a href="" class="Ablue">编辑</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>PC蛋蛋</td>
-                            <td>特码包三</td>
-                            <td>3.5</td>
-                            <td>3.5</td>
-                            <td>1.00</td>
-                            <td>10000.00</td>
-                            <td>10000.00</td>
-                            <td>特码包三【特码包三】</td>
-                            <td>
-                                <a href="" class="Ablue">编辑</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>PC蛋蛋</td>
-                            <td>特码包三</td>
-                            <td>3.5</td>
-                            <td>3.5</td>
-                            <td>1.00</td>
-                            <td>10000.00</td>
-                            <td>10000.00</td>
-                            <td>特码包三【特码包三】</td>
-                            <td>
-                                <a href="" class="Ablue">编辑</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>PC蛋蛋</td>
-                            <td>特码包三</td>
-                            <td>3.5</td>
-                            <td>3.5</td>
-                            <td>1.00</td>
-                            <td>10000.00</td>
-                            <td>10000.00</td>
-                            <td>特码包三【特码包三】</td>
-                            <td>
-                                <a href="" class="Ablue">编辑</a>
-                            </td>
-                        </tr>
+
                         </tbody>
                     </table>
+                    <!--编辑模态框-->
+                    <div class="modal fade" id="play-list-myModal" tabindex="-1" role="dialog"
+                         aria-labelledby="myModalLabel">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                            aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title" id="play-list-myModalLabel">Modal title</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <h5>编辑玩法</h5>
+                                    <div class="row">
+                                        <div class="form-horizontal col-sm-8">
+                                            <div class="form-group">
+                                                <label for="online-out-amoun-userName" class="col-sm-4 control-label">玩法帮助</label>
+                                                <div class="col-sm-8">
+                                                    <textarea name="" cols="25" rows="3" maxlength="50"></textarea>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-horizontal col-sm-8">
+                                            <div class="form-group">
+                                                <label for="" class="col-sm-4 control-label">玩法示例</label>
+                                                <div class="col-sm-8">
+                                                    <!--<textarea name="" cols="25" rows="3" maxlength="50"-->
+                                                    <!--style="height: 48px; line-height: 16px;overflow: auto">-->
+                                                    <!--</textarea>-->
+                                                    <input type="text"
+                                                           style="height: 48px; line-height: 16px;overflow: auto">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-horizontal col-sm-8">
+                                            <div class="form-group">
+                                                <label for="online-out-amoun-userName" class="col-sm-4 control-label">玩法tips</label>
+                                                <div class="col-sm-8">
+                                                    <textarea name="" cols="25" rows="3" maxlength="50"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-offset-4 col-sm-2">
+                                            <button id="play-list-confirm" class="btn btn-danger btn-sm"
+                                                    type="button">确定
+                                            </button>
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <button id="play-list-cancel" class="btn btn-warning btn-sm"
+                                                    type="button">返回
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <!--彩票管理-->
@@ -397,8 +1569,8 @@
                     <div class="parent-input">
                         注单编号:&nbsp;<input type="number" placeholder="请输入注单编号">
                         会员账户:&nbsp;<input type="number" placeholder="请输入会员账户">
-                        日期范围:&nbsp;<input type="number" placeholder="最小金额">
-                        至&nbsp;<input type="number" placeholder="最大金额">
+                        日期范围:&nbsp;<input type="number">
+                        至&nbsp;<input type="number">
                     </div>
                     <div class="parent-input">
                         彩种:&nbsp;
@@ -407,27 +1579,397 @@
                             <option value="">不全部</option>
                         </select>
                         期号:&nbsp;<input type="text" placeholder="请输入彩期号">
-                        状态:&nbsp;<select name="" id="">
-                            <option value="">全部</option>
-                            <option value="">全部1</option>
-                            <option value="">全部2</option>
-                        </select>
+                        状态:&nbsp;<select name="">
+                        <option value="">全部</option>
+                        <option value="">全部1</option>
+                        <option value="">全部2</option>
+                    </select>
                         <select name="">
                             <option value="">默认分页</option>
                             <option value="">默认分页2</option>
                         </select>
-                        <button class="button">提交</button>
+                        <button class="button">搜索</button>
+                    </div>
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th>会员账号</th>
+                            <th>彩种</th>
+                            <th>期数</th>
+                            <th>玩法</th>
+                            <th>下注总额</th>
+                            <th>可返水金额</th>
+                            <th>返水比例</th>
+                            <th>中奖金额</th>
+                            <th>实际输赢</th>
+                            <th>投注内容</th>
+                            <th>投注时间</th>
+                            <th>追号</th>
+                            <th>状态</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <tbody id="single-tbody">
+                        <tr>
+                            <td>PC蛋蛋</td>
+                            <td>特码包三</td>
+                            <td>3.5</td>
+                            <td>3.5</td>
+                            <td>1.00</td>
+                            <td>10000.00</td>
+                            <td>10000.00</td>
+                            <td>特码包三【特码包三】</td>
+                            <td>1.00</td>
+                            <td>10000.00</td>
+                            <td>10000.00</td>
+                            <td>10000.00</td>
+                            <td>
+                                <span>未结算</span>
+                                <span class="displayed-hide">已中奖</span>
+                                <span class="displayed-hide">未中奖</span>
+                                <span class="displayed-hide">已取消</span>
+                            </td>
+                            <td>
+                                <span class="compile" data-toggle="modal"
+                                      data-target="#single-details-myModal">详情</span>
+                                <span class="compile revoke" data-toggle="modal" data-target="#single-revoke-myModal">撤单
+                                </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>PC蛋蛋</td>
+                            <td>特码包三</td>
+                            <td>3.5</td>
+                            <td>3.5</td>
+                            <td>1.00</td>
+                            <td>10000.00</td>
+                            <td>10000.00</td>
+                            <td>特码包三【特码包三】</td>
+                            <td>1.00</td>
+                            <td>10000.00</td>
+                            <td>10000.00</td>
+                            <td>10000.00</td>
+                            <td>特码包三【特码包三】</td>
+                            <td>
+                                <span class="compile" data-toggle="modal" data-target="#play-list-myModal">详情</span>
+                                <span class="compile revoke" data-toggle="modal"
+                                      data-target="#play-list-myModal">撤单</span>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <!--详情模态框-->
+                    <div class="modal fade" id="single-details-myModal" tabindex="-1" role="dialog"
+                         aria-labelledby="myModalLabel">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                            aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title" id="single-details-myModalLabel">Modal title</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="row">
+                                        <div class="form-horizontal col-sm-6">
+                                            <div class="form-group">
+                                                <label for="online-out-amoun-userName"
+                                                       class="col-sm-4 control-label">彩种</label>
+                                                <div class="col-sm-8">
+                                                    <input type="text" class="form-control" readonly>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-horizontal col-sm-6">
+                                            <div class="form-group">
+                                                <label for="online-out-amoun-userName"
+                                                       class="col-sm-4 control-label">玩法</label>
+                                                <div class="col-sm-8">
+                                                    <input type="text" class="form-control" readonly>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-horizontal col-sm-6">
+                                            <div class="form-group">
+                                                <label for="online-out-amoun-userName" class="col-sm-4 control-label">注单编号</label>
+                                                <div class="col-sm-8">
+                                                    <input type="text" class="form-control" readonly>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-horizontal col-sm-6">
+                                            <div class="form-group">
+                                                <label for="online-out-amoun-userName" class="col-sm-4 control-label">投注时间</label>
+                                                <div class="col-sm-8">
+                                                    <input type="text" class="form-control" readonly>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-horizontal col-sm-6">
+                                            <div class="form-group">
+                                                <label for="online-out-amoun-userName" class="col-sm-4 control-label">投注赔率</label>
+                                                <div class="col-sm-8">
+                                                    <input type="text" class="form-control" readonly>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-horizontal col-sm-6">
+                                            <div class="form-group">
+                                                <label for="online-out-amoun-userName" class="col-sm-4 control-label">投注数量</label>
+                                                <div class="col-sm-8">
+                                                    <input type="text" class="form-control" readonly>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-horizontal col-sm-6">
+                                            <div class="form-group">
+                                                <label for="online-out-amoun-userName" class="col-sm-4 control-label">单注金额</label>
+                                                <div class="col-sm-8">
+                                                    <input type="text" class="form-control" readonly>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-horizontal col-sm-6">
+                                            <div class="form-group">
+                                                <label for="online-out-amoun-userName" class="col-sm-4 control-label">投注总额</label>
+                                                <div class="col-sm-8">
+                                                    <input type="text" class="form-control" readonly>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-horizontal col-sm-6">
+                                            <div class="form-group">
+                                                <label for="online-out-amoun-userName" class="col-sm-4 control-label">返水比例</label>
+                                                <div class="col-sm-8">
+                                                    <input type="text" class="form-control" readonly>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-horizontal col-sm-6">
+                                            <div class="form-group">
+                                                <label for="online-out-amoun-userName" class="col-sm-4 control-label">反水金额</label>
+                                                <div class="col-sm-8">
+                                                    <input type="text" class="form-control" readonly>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-horizontal col-sm-6">
+                                            <div class="form-group">
+                                                <label for="online-out-amoun-userName" class="col-sm-4 control-label">开奖时间</label>
+                                                <div class="col-sm-8">
+                                                    <input type="text" class="form-control" readonly>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-horizontal col-sm-6">
+                                            <div class="form-group">
+                                                <label for="online-out-amoun-userName" class="col-sm-4 control-label">中奖金额</label>
+                                                <div class="col-sm-8">
+                                                    <input type="text" class="form-control" readonly>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-horizontal col-sm-12">
+                                            <div class="form-group">
+                                                <label for="online-out-amoun-userName" class="col-sm-2 control-label">投注号码</label>
+                                                <div class="col-sm-10">
+                                                    <input type="text" class="form-control" readonly>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-horizontal col-sm-12">
+                                            <div class="form-group">
+                                                <label for="online-out-amoun-userName" class="col-sm-2 control-label">开奖号码</label>
+                                                <div class="col-sm-10">
+                                                    <input type="text" class="form-control" readonly>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <!--2.开奖结果-->
                 <div class="col-xs-12 displayed-hide" id="run-lottery">
-                    <h5>开奖结果</h5>
-                </div>
+                    <h5 class="h5">彩期开奖列表</h5>
+                    <div class="parent-input d-right">
+                        期数：<input type="text">
+                        日期范围：<input type="date">
+                        <input type="date">
+                        状态：<select name="">
+                        <option value="all">全部</option>
+                        <option value="yikai">已开奖</option>
+                        <option value="weikai">未开奖</option>
+                    </select>
+                        彩种：<select name="">
+                        <option value="all">全部</option>
+                        <option value="yikai">时时彩</option>
+                        <option value="weikai">三分彩</option>
+                    </select>
+                        <button type="button" class="btn btn-warning btn-xs">搜索</button>
+                    </div>
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th>彩种</th>
+                            <th>期数</th>
+                            <th>投注截至日期</th>
+                            <th>开奖时间</th>
+                            <th>开奖号码</th>
+                            <th>下注金额</th>
+                            <th>中奖金额</th>
+                            <th>公司结果</th>
+                            <th>状态</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <tbody id="run-lottery-tbody">
+                        <tr>
+                            <td>PC蛋蛋</td>
+                            <td>特码包三</td>
+                            <td>3.5</td>
+                            <td>3.5</td>
+                            <td>1.00</td>
+                            <td>1.00</td>
+                            <td>10000.00</td>
+                            <td>10000.00</td>
+                            <td>特码包三【特码包三】</td>
+                            <td>
+                                <span class="color1" data-toggle="modal" data-target="#run-lottery-myModal">手动开奖</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>PC蛋蛋</td>
+                            <td>特码包三</td>
+                            <td>3.5</td>
+                            <td>3.5</td>
+                            <td>1.00</td>
+                            <td>1.00</td>
+                            <td>10000.00</td>
+                            <td>10000.00</td>
+                            <td>特码包三【特码包三】</td>
+                            <td>
+                                <span class="color1" data-toggle="modal" data-target="#run-lottery-myModal">手动开奖</span>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <!--手动开奖模态框-->
+                    <div class="modal fade" id="run-lottery-myModal" tabindex="-1" role="dialog"
+                         aria-labelledby="myModalLabel">
+                        <div class="modal-dialog modal-sm" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                            aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title" id="run-lottery-myModalLabel">Modal title</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="row" style="text-align: center">
+                                        <div class="form-horizontal col-sm-12">
+                                            <div class="form-group">
+                                                <div class="col-xs-12">
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row" style="text-align: center">
+                                        <div class="form-horizontal col-sm-12">
+                                            <div class="form-group">
+                                                <div class="col-xs-12">
+                                                    <button type="button" class="btn btn-warning btn-sm">手动开奖</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <!--六合彩管理-->
                 <!--1.开奖结果-->
                 <div class="col-xs-12 displayed-hide" id="result">
                     <h5>开奖结果</h5>
+                    <div class="parent-input">
+                        <button type="button" class="btn btn-warning btn-xs" data-toggle="modal"
+                                data-target="#color-list-add-myModal">新增
+                        </button>
+                    </div>
+                    <div class="parent-input d-right">
+                        日期范围：<input type="date">
+                        <input type="date">
+                        期数：<input type="text" placeholder="请输入彩票期数">
+                        <select name="">
+                            <option value="all">全部</option>
+                            <option value="all">未开奖</option>
+                            <option value="all">已开奖</option>
+                        </select>
+                        <button type="button" class="btn btn-warning btn-xs">搜索</button>
+                    </div>
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th>期数</th>
+                            <th>开盘时间</th>
+                            <th>封盘时间</th>
+                            <th>开奖号码</th>
+                            <th>下注金额</th>
+                            <th>中奖金额</th>
+                            <th>公司结果</th>
+                            <th>状态</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+
+                        <tbody id="result-tbody">
+                        <tr>
+                            <td>公司入款</td>
+                            <td>32145658.21（71人）
+                            </td>
+                            <td>会员出款</td>
+                            <td>收入金额</td>
+                            <td>会员出款</td>
+                            <td>收入金额</td>
+                            <td>会员出款</td>
+                            <td>收入金额</td>
+                            <td>
+                                <span class="compile" data-toggle="modal" data-target="#color-list-myModal">修改</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>公司入款</td>
+                            <td>1</td>
+                            <td>会员出款</td>
+                            <td>收入金额</td>
+                            <td>会员出款</td>
+                            <td>收入金额</td>
+                            <td>会员出款</td>
+                            <td>收入金额</td>
+                            <td>
+                                <span class="compile" data-toggle="modal" data-target="#color-list-myModal">编辑</span>
+                            </td>
+                        </tr>
+                        </tbody>
+
+                    </table>
                 </div>
                 <!--2.赔率管理-->
                 <div class="col-xs-12 displayed-hide" id="odds">
@@ -443,16 +1985,16 @@
                 <div class="col-xs-12 displayed-hide" id="private">
                     <h5>私彩管理</h5>
                 </div>
+
             </div>
         </div>
     </div>
-</div>
 
 
-<br/><br/><br/><br/><br/><br/>
-<script src="js/jquery-1.11.3.js"></script>
-<script src="js/bootstrap.js"></script>
-<script src="js/bootlint.js"></script>
-<script src="js/lottery.js"></script>
+    <br/><br/><br/><br/><br/><br/>
+    <script src="js/jquery-1.11.3.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/business.js"></script>
+    <script src="js/lottery.js"></script>
 </body>
 </html>

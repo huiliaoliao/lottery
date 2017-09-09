@@ -7,6 +7,7 @@
     <title></title>
     <link rel="stylesheet" href="css/bootstrap.css"/>
     <link rel="stylesheet" href="css/lottery.css">
+    <link rel="stylesheet" href="css/payment.css">
     <!--[if lt IE 9]>
     <script src="js/html5shiv.min.js"></script>
     <script src="js/respond.min.js"></script>
@@ -32,7 +33,7 @@
                                 <ul>
                                     <li class="">
                                         <p class="fuMenu">现金管理</p>
-                                        <img class="xiala" src="img/xiala.png" />
+                                        <img class="xiala" src="img/xiala.png"/>
                                         <div class="div1">
                                             <a href="#Artificial-info" class="zcd">人工入款</a>
                                             <a href="#Artificial-out" class="zcd">人工出款</a>
@@ -45,19 +46,27 @@
                                     </li>
                                     <li class="">
                                         <p class="fuMenu">入款管理</p>
-                                        <img class="xiala" src="img/xiala.png" />
+                                        <img class="xiala" src="img/xiala.png"/>
                                         <div class="div1">
                                             <a href="#account" class="zcd">公司入款账户</a>
                                             <a href="#payment-platform" class="zcd">支付平台设定</a>
+                                            <a href="#type-group" class="zcd">入款类型分组</a>
                                             <a href="#type-setting" class="zcd">入款类型设置</a>
                                             <a href="#management" class="zcd">支付平台管理</a>
                                         </div>
                                     </li>
                                     <li class="">
                                         <p class="fuMenu">优惠管理</p>
-                                        <img class="xiala" src="img/xiala.png" />
+                                        <img class="xiala" src="img/xiala.png"/>
                                         <div class="div1">
                                             <a href="#discounts" class="zcd">会员注册优惠设定</a>
+                                        </div>
+                                    </li>
+                                    <li class="">
+                                        <p class="fuMenu">银行管理</p>
+                                        <img class="xiala" src="img/xiala.png"/>
+                                        <div class="div1">
+                                            <a href="#bank-list" class="zcd">银行列表</a>
                                         </div>
                                     </li>
 
@@ -112,20 +121,17 @@
                 <div class="clear"></div>
             </div>
             <!--主体内容-->
-            <div class="row">
+            <div class="row" id="main-content">
                 <!--资金管理-->
                 <!--1.人工入款-->
                 <div class="col-xs-12 displayed-hide" id="Artificial-info">
                     <h5 class="h5">人工入款</h5>
                     <div class="parent-input">
-                    <button class="button  sel-width">添加入款</button>
-                    </div>
-                    <div class="parent-input">
-                       日期范围: <input type="date">
+                        日期范围: <input type="date">
                         <input type="date">
                         账号：<input type="text">
                         操作类型：
-                        <select name="" >
+                        <select name="">
                             <option value="">全部</option>
                             <option value="">全部1</option>
                         </select>
@@ -222,11 +228,256 @@
                 </div>
                 <!--2.人工出款-->
                 <div class="col-xs-12 displayed-hide" id="Artificial-out">
-                    <h5>人工出款</h5>
+                    <h5 class="h5">人工出款</h5>
+                    <div class="parent-input">
+                        <button class="button  sel-width" data-toggle="modal" data-target="#Artificial-out-add-myModal">
+                            新增
+                        </button>
+                    </div>
+                    <div class="parent-input">
+                        日期范围: <input type="date">
+                        <input type="date">
+                        账号：<input type="text">
+                        操作类型：
+                        <select name="">
+                            <option value="">全部</option>
+                            <option value="">全部1</option>
+                        </select>
+                        <select name="" class="button2 sel-width">
+                            <option value="">默认分页</option>
+                            <option value="">30条</option>
+                            <option value="">50条</option>
+                            <option value="">100条</option>
+                            <option value="">200条</option>
+                            <option value="">500条</option>
+                        </select>
+
+                        <button class="button search">搜索</button>
+                    </div>
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th>会员</th>
+                            <th>订单编号</th>
+                            <th>操作类型</th>
+                            <th>金额</th>
+                            <th>优惠</th>
+                            <th>影响投注量</th>
+                            <th>交易日期</th>
+                            <th>备注</th>
+                            <th>操作人</th>
+                            <th>是否首次</th>
+                        </tr>
+                        </thead>
+
+                        <tbody>
+                        <tr>
+                            <td>zongli</td>
+                            <td>255555</td>
+                            <td>2566.22</td>
+                            <td>2533.22</td>
+                            <td class="color1">555</td>
+                            <td>222</td>
+                            <td>255555</td>
+                            <td>2566.22</td>
+                            <td>2533.22</td>
+                            <td>555</td>
+                        </tr>
+                        <tr>
+                            <td>zongli</td>
+                            <td>255555</td>
+                            <td>2566.22</td>
+                            <td>2533.22</td>
+                            <td class="color1">555</td>
+                            <td>222</td>
+                            <td>255555</td>
+                            <td>2566.22</td>
+                            <td>2533.22</td>
+                            <td>555</td>
+                        </tr>
+                        <tr>
+                            <td>zongli</td>
+                            <td>255555</td>
+                            <td>2566.22</td>
+                            <td>2533.22</td>
+                            <td class="color1">555</td>
+                            <td>222</td>
+                            <td>255555</td>
+                            <td>2566.22</td>
+                            <td>2533.22</td>
+                            <td>555</td>
+                        </tr>
+                        <tr>
+                            <td>小计：</td>
+                            <td>255555</td>
+                            <td>2566.22</td>
+                            <td>2533.22</td>
+                            <td>555</td>
+                            <td>222</td>
+                            <td>255555</td>
+                            <td>2566.22</td>
+                            <td>2533.22</td>
+                            <td>555</td>
+                        </tr>
+                        <tr>
+                            <td>合计：</td>
+                            <td>255555</td>
+                            <td>2566.22</td>
+                            <td>2533.22</td>
+                            <td>555</td>
+                            <td>222</td>
+                            <td>255555</td>
+                            <td>2566.22</td>
+                            <td>2533.22</td>
+                            <td>555</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <!--新增模态框-->
+                    <div class="modal fade" id="Artificial-out-add-myModal" tabindex="-1" role="dialog"
+                         aria-labelledby="myModalLabel">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                            aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title" id="Artificial-out-add-myModalLabel">新增</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <h5 class="h5">添加出款</h5>
+                                    <div class="parent-input">
+                                        <input type="text" placeholder="请输入会员账号">
+                                        <button class="btn btn-warning btn-sm">查询账户</button>
+                                    </div>
+
+                                    <div class="table-responsive">
+                                        <table class="table">
+                                            <thead>
+                                            <tr>
+                                                <td rowspan="2">会员账号</td>
+                                                <td rowspan="2">真实姓名</td>
+                                                <td rowspan="2">账户余额</td>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                <td>ww888</td>
+                                                <td></td>
+                                                <td>8.220</td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-horizontal col-sm-6">
+                                            <div class="form-group">
+                                                <label for="" class="col-sm-4 control-label">提出金额：</label>
+                                                <div class="col-sm-8">
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-horizontal col-sm-6">
+                                            <div class="form-group">
+                                                <label for="" class="col-sm-4 control-label">投注量扣除额：</label>
+                                                <div class="col-sm-8">
+                                                    <input type="password" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-horizontal col-sm-6">
+                                            <div class="form-group">
+                                                <label for="" class="col-sm-4 control-label">提出项目：</label>
+                                                <div class="col-sm-8">
+                                                    <select name="">
+                                                        <option value="">冲账—扣除误存的[入款优惠]金额</option>
+                                                        <option value="">冲账—扣除[入款误存]金额</option>
+                                                        <option value="">冲账—扣除误存的[优惠活动赠送]金额</option>
+                                                        <option value="">冲账—扣除误存的[返回]金额</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-horizontal col-sm-6">
+                                            <div class="form-group">
+                                                <label for="" class="col-sm-4 control-label">备注：</label>
+                                                <div class="col-sm-8">
+                                                    <input type="password" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-offset-4 col-sm-1">
+                                            <button class="btn btn-danger btn-sm" type="button">确定</button>
+                                        </div>
+                                        <div class="col-sm-offset-1 col-sm-1">
+                                            <button class="btn btn-warning btn-sm" type="button">返回</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <!--3.公司入款-->
                 <div class="col-xs-12 displayed-hide" id="company-info">
-                    <h5>公司入款</h5>
+                    <h5 class="h5">公司入款列表</h5>
+                    <div class="parent-input">
+                        充值金额：<input type="text" placeholder="最小金额">
+                        -<input type="text" placeholder="最大金额">
+                        日期范围：<select name="">
+                        <option value="">提交</option>
+                        <option value="">异动</option>
+                        <option value="">去掉</option>
+                        <input type="date">
+                        <input type="date">
+                    </select>
+                    </div>
+                    <div class="parent-input">
+                        <select name="">
+                            <option value="">会员账号</option>
+                            <option value="">订单号</option>
+                            <option value="">操作者账号</option>
+                        </select>
+                        <input type="text" placeholder="输入查找内容">
+                        入款账户：<select name="">
+                        <option value="">全部</option>
+                        <option value="">用户账号</option>
+                    </select>
+                        <select name="">
+                            <option value="">待处理</option>
+                            <option value="">充值成功</option>
+                            <option value="">充值失败</option>
+                        </select>
+
+                    </div>
+                    <div class="parent-input">
+                        会员层级:&nbsp;<input type="checkbox">默认层级
+                        <input type="checkbox">真实会员
+                        <input type="checkbox">测试组
+                        <input type="checkbox">专用组
+                        <select name="">
+                            <option value="">默认分页</option>
+                            <option value="">默认分页2</option>
+                        </select>
+                        <select name="">
+                            <option value="auto">自动刷新</option>
+                            <option value="3">10秒刷新</option>
+                            <option value="20">20秒刷新</option>
+                            <option value="60">60秒刷新</option>
+                        </select>
+                        <button class="button">搜索</button>
+
+                    </div>
                     <table class="table table-striped">
                         <thead style="background-color: #3d3d3d;color:#fff;">
                         <tr>
@@ -248,22 +499,11 @@
                             <td class="color1">guo169841211</td>
                             <td>方式：微信</td>
                             <td>银行：中国银行
-                                卡主姓名：刘媛</td>
+                                卡主姓名：刘媛
+                            </td>
                             <td>存入金额：100.00（优惠：1.00）
-                                存入总额：101.00</td>
-                            <td>会员填写：2017/8/28 16:10</td>
-                            <td>js66666</td>
-                            <td>1516kj</td>
-                        </tr>
-                        <tr>
-                            <td>默认层级</td>
-                            <td>22002541256587744</td>
-                            <td  class="color1">guo169841211</td>
-                            <td>方式：微信</td>
-                            <td>银行：中国银行
-                                卡主姓名：刘媛</td>
-                            <td>存入金额：100.00（优惠：1.00）
-                                存入总额：101.00</td>
+                                存入总额：101.00
+                            </td>
                             <td>会员填写：2017/8/28 16:10</td>
                             <td>js66666</td>
                             <td>1516kj</td>
@@ -274,9 +514,11 @@
                             <td class="color1">guo169841211</td>
                             <td>方式：微信</td>
                             <td>银行：中国银行
-                                卡主姓名：刘媛</td>
+                                卡主姓名：刘媛
+                            </td>
                             <td>存入金额：100.00（优惠：1.00）
-                                存入总额：101.00</td>
+                                存入总额：101.00
+                            </td>
                             <td>会员填写：2017/8/28 16:10</td>
                             <td>js66666</td>
                             <td>1516kj</td>
@@ -287,22 +529,11 @@
                             <td class="color1">guo169841211</td>
                             <td>方式：微信</td>
                             <td>银行：中国银行
-                                卡主姓名：刘媛</td>
+                                卡主姓名：刘媛
+                            </td>
                             <td>存入金额：100.00（优惠：1.00）
-                                存入总额：101.00</td>
-                            <td>会员填写：2017/8/28 16:10</td>
-                            <td>js66666</td>
-                            <td>1516kj</td>
-                        </tr>
-                        <tr>
-                            <td>默认层级</td>
-                            <td>22002541256587744</td>
-                            <td  class="color1">guo169841211</td>
-                            <td>方式：微信</td>
-                            <td>银行：中国银行
-                                卡主姓名：刘媛</td>
-                            <td>存入金额：100.00（优惠：1.00）
-                                存入总额：101.00</td>
+                                存入总额：101.00
+                            </td>
                             <td>会员填写：2017/8/28 16:10</td>
                             <td>js66666</td>
                             <td>1516kj</td>
@@ -313,22 +544,11 @@
                             <td class="color1">guo169841211</td>
                             <td>方式：微信</td>
                             <td>银行：中国银行
-                                卡主姓名：刘媛</td>
+                                卡主姓名：刘媛
+                            </td>
                             <td>存入金额：100.00（优惠：1.00）
-                                存入总额：101.00</td>
-                            <td>会员填写：2017/8/28 16:10</td>
-                            <td>js66666</td>
-                            <td>1516kj</td>
-                        </tr>
-                        <tr>
-                            <td>默认层级</td>
-                            <td>22002541256587744</td>
-                            <td  class="color1">guo169841211</td>
-                            <td>方式：微信</td>
-                            <td>银行：中国银行
-                                卡主姓名：刘媛</td>
-                            <td>存入金额：100.00（优惠：1.00）
-                                存入总额：101.00</td>
+                                存入总额：101.00
+                            </td>
                             <td>会员填写：2017/8/28 16:10</td>
                             <td>js66666</td>
                             <td>1516kj</td>
@@ -339,9 +559,11 @@
                             <td class="color1">guo169841211</td>
                             <td>方式：微信</td>
                             <td>银行：中国银行
-                                卡主姓名：刘媛</td>
+                                卡主姓名：刘媛
+                            </td>
                             <td>存入金额：100.00（优惠：1.00）
-                                存入总额：101.00</td>
+                                存入总额：101.00
+                            </td>
                             <td>会员填写：2017/8/28 16:10</td>
                             <td>js66666</td>
                             <td>1516kj</td>
@@ -352,9 +574,11 @@
                             <td class="color1">guo169841211</td>
                             <td>方式：微信</td>
                             <td>银行：中国银行
-                                卡主姓名：刘媛</td>
+                                卡主姓名：刘媛
+                            </td>
                             <td>存入金额：100.00（优惠：1.00）
-                                存入总额：101.00</td>
+                                存入总额：101.00
+                            </td>
                             <td>会员填写：2017/8/28 16:10</td>
                             <td>js66666</td>
                             <td>1516kj</td>
@@ -365,9 +589,56 @@
                             <td class="color1">guo169841211</td>
                             <td>方式：微信</td>
                             <td>银行：中国银行
-                                卡主姓名：刘媛</td>
+                                卡主姓名：刘媛
+                            </td>
                             <td>存入金额：100.00（优惠：1.00）
-                                存入总额：101.00</td>
+                                存入总额：101.00
+                            </td>
+                            <td>会员填写：2017/8/28 16:10</td>
+                            <td>js66666</td>
+                            <td>1516kj</td>
+                        </tr>
+                        <tr>
+                            <td>默认层级</td>
+                            <td>22002541256587744</td>
+                            <td class="color1">guo169841211</td>
+                            <td>方式：微信</td>
+                            <td>银行：中国银行
+                                卡主姓名：刘媛
+                            </td>
+                            <td>存入金额：100.00（优惠：1.00）
+                                存入总额：101.00
+                            </td>
+                            <td>会员填写：2017/8/28 16:10</td>
+                            <td>js66666</td>
+                            <td>1516kj</td>
+                        </tr>
+                        <tr>
+                            <td>默认层级</td>
+                            <td>22002541256587744</td>
+                            <td class="color1">guo169841211</td>
+                            <td>方式：微信</td>
+                            <td>银行：中国银行
+                                卡主姓名：刘媛
+                            </td>
+                            <td>存入金额：100.00（优惠：1.00）
+                                存入总额：101.00
+                            </td>
+                            <td>会员填写：2017/8/28 16:10</td>
+                            <td>js66666</td>
+                            <td>1516kj</td>
+                        </tr>
+                        <tr>
+                            <td>默认层级</td>
+                            <td>22002541256587744</td>
+                            <td class="color1">guo169841211</td>
+                            <td>方式：微信</td>
+                            <td>银行：中国银行
+                                卡主姓名：刘媛
+                            </td>
+                            <td>存入金额：100.00（优惠：1.00）
+                                存入总额：101.00
+                            </td>
                             <td>会员填写：2017/8/28 16:10</td>
                             <td>js66666</td>
                             <td>1516kj</td>
@@ -378,34 +649,37 @@
                 </div>
                 <!--4.线上入款-->
                 <div class="col-xs-12 displayed-hide" id="online-info">
-                    <h5>线上入款</h5>
-                </div>
-                <!--5.线上出款-->
-                <div class="col-xs-12  displayed-hide" id="online-out">
-                    <h5 class="h5">线上出款列表</h5>
-                    <form action="">
+                    <h5>线上入款列表</h5>
                     <div class="parent-input">
-                        申请金额: <input type="number" placeholder="最小金额">
-                    至 <input type="number" placeholder="最大金额">
-                    出款金额: <input type="number" placeholder="最小金额">
-                    至&nbsp;<input type="number" placeholder="最大金额">
+                        充值金额：<input type="text" placeholder="最小金额">
+                        -<input type="text" placeholder="最大金额">
+                        日期范围：<select name="">
+                        <option value="">提交</option>
+                        <option value="">异动</option>
+                        <option value="">去掉</option>
+                        <input type="date">
+                        <input type="date">
+                    </select>
                     </div>
                     <div class="parent-input">
-                        日期范围:&nbsp;
-                        <select name="">
-                            <option value="">提交</option>
-                            <option value="">不提交</option>
-                        </select>
-                        <input type="date" id="online-out-start-time">
-                        至&nbsp;<input type="date" id="online-out-end-time">
-                        会员账户: &nbsp; <input type="text" placeholder="会员账户">
-                        <select name="" id="">
-                            <option value="">全部</option>
-                            <option value="">全部1</option>
-                            <option value="">全部2</option>
-                        </select>
-                    </div>
+                        类型：<select name="">
+                        <option value="">会员账号</option>
+                        <option value="">订单号</option>
+                        <option value="">操作者账号</option>
+                    </select>
+                        <input type="text" placeholder="输入查找内容">
+                        入款账户：<select name="">
+                        <option value="">全部</option>
+                        <option value="">用户账号</option>
+                    </select>
+                        处理状态：<select name="">
+                        <option value="">全部</option>
+                        <option value="">待处理</option>
+                        <option value="">充值成功</option>
+                        <option value="">充值失败</option>
+                    </select>
 
+                    </div>
                     <div class="parent-input">
                         会员层级:&nbsp;<input type="checkbox">默认层级
                         <input type="checkbox">真实会员
@@ -415,16 +689,272 @@
                             <option value="">默认分页</option>
                             <option value="">默认分页2</option>
                         </select>
-                        <select name="" id="online-out-refresh-type">
-                            <option value="auto">自动刷新</option>
-                            <option value="3">10秒刷新</option>
-                            <option value="20">20秒刷新</option>
-                            <option value="60">60秒刷新</option>
-                        </select>
-                        操作人:&nbsp;<input type="text">
-                        <button class="button">提交</button>
+                        <button class="button">搜索</button>
 
                     </div>
+                    <table class="table table-striped">
+                        <thead style="background-color: #3d3d3d;color:#fff;">
+                        <tr>
+                            <th>层级</th>
+                            <th>支付平台</th>
+                            <th>支付类别</th>
+                            <th>订单号</th>
+                            <th>存入金额</th>
+                            <th>存入优惠</th>
+                            <th>上级账号</th>
+                            <th>存款时间</th>
+                            <th>操作人</th>
+                            <th>到账时间</th>
+                            <th>状态</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <tbody id="online-info-tbody">
+                        <tr>
+                            <td>默认层级</td>
+                            <td>22002541256587744</td>
+                            <td class="color1">guo169841211</td>
+                            <td>方式：微信</td>
+                            <td>银行：中国银行
+                                卡主姓名：刘媛
+                            </td>
+                            <td>存入金额：100.00（优惠：1.00）
+                                存入总额：101.00
+                            </td>
+                            <td>会员填写：2017/8/28 16:10</td>
+                            <td>js66666</td>
+                            <td>1516kj</td>
+                            <td>会员填写：2017/8/28 16:10</td>
+                            <td>
+                                <button type="button" class="btn btn-danger btn-xs pending">待处理</button>
+                                <button type="button" class="btn btn-warning btn-xs displayed-hide success">充值成功
+                                </button>
+                            </td>
+                            <td>
+                                <a href="#">强制入款</a>
+                                <a href="#" class="replacement">补单</a>
+                            </td>
+                            <!--补单，警告框-->
+                            <!--<div id="myAlert" class="alert alert-success">-->
+                            <!--<a href="#" class="close" data-dismiss="alert">&times;</a>-->
+                            <!--<strong>成功！</strong>结果是成功的。-->
+                            <!--</div>-->
+                            <!--<div id="myAlert" class="alert alert-warning">-->
+                            <!--<a href="#" class="close" data-dismiss="alert">&times;</a>-->
+                            <!--<strong>警告！</strong>您的网络连接有问题。-->
+                            <!--</div>-->
+                        </tr>
+                        <tr>
+                            <td>默认层级</td>
+                            <td>22002541256587744</td>
+                            <td class="color1">guo169841211</td>
+                            <td>方式：微信</td>
+                            <td>银行：中国银行
+                                卡主姓名：刘媛
+                            </td>
+                            <td>存入金额：100.00（优惠：1.00）
+                                存入总额：101.00
+                            </td>
+                            <td>会员填写：2017/8/28 16:10</td>
+                            <td>js66666</td>
+                            <td>1516kj</td>
+                            <td>会员填写：2017/8/28 16:10</td>
+                            <td>js66666</td>
+                            <td><a href="#">强制入款/补单</a></td>
+                        </tr>
+                        <tr>
+                            <td>默认层级</td>
+                            <td>22002541256587744</td>
+                            <td class="color1">guo169841211</td>
+                            <td>方式：微信</td>
+                            <td>银行：中国银行
+                                卡主姓名：刘媛
+                            </td>
+                            <td>存入金额：100.00（优惠：1.00）
+                                存入总额：101.00
+                            </td>
+                            <td>会员填写：2017/8/28 16:10</td>
+                            <td>js66666</td>
+                            <td>1516kj</td>
+                            <td>会员填写：2017/8/28 16:10</td>
+                            <td>js66666</td>
+                            <td><a href="#">强制入款/补单</a></td>
+                        </tr>
+                        <tr>
+                            <td>默认层级</td>
+                            <td>22002541256587744</td>
+                            <td class="color1">guo169841211</td>
+                            <td>方式：微信</td>
+                            <td>银行：中国银行
+                                卡主姓名：刘媛
+                            </td>
+                            <td>存入金额：100.00（优惠：1.00）
+                                存入总额：101.00
+                            </td>
+                            <td>会员填写：2017/8/28 16:10</td>
+                            <td>js66666</td>
+                            <td>1516kj</td>
+                            <td>会员填写：2017/8/28 16:10</td>
+                            <td>js66666</td>
+                            <td><a href="#">强制入款/补单</a></td>
+                        </tr>
+                        <tr>
+                            <td>默认层级</td>
+                            <td>22002541256587744</td>
+                            <td class="color1">guo169841211</td>
+                            <td>方式：微信</td>
+                            <td>银行：中国银行
+                                卡主姓名：刘媛
+                            </td>
+                            <td>存入金额：100.00（优惠：1.00）
+                                存入总额：101.00
+                            </td>
+                            <td>会员填写：2017/8/28 16:10</td>
+                            <td>js66666</td>
+                            <td>1516kj</td>
+                            <td>会员填写：2017/8/28 16:10</td>
+                            <td>js66666</td>
+                            <td><a href="#">强制入款/补单</a></td>
+                        </tr>
+                        <tr>
+                            <td>默认层级</td>
+                            <td>22002541256587744</td>
+                            <td class="color1">guo169841211</td>
+                            <td>方式：微信</td>
+                            <td>银行：中国银行
+                                卡主姓名：刘媛
+                            </td>
+                            <td>存入金额：100.00（优惠：1.00）
+                                存入总额：101.00
+                            </td>
+                            <td>会员填写：2017/8/28 16:10</td>
+                            <td>js66666</td>
+                            <td>1516kj</td>
+                            <td>会员填写：2017/8/28 16:10</td>
+                            <td>js66666</td>
+                            <td><a href="#">强制入款/补单</a></td>
+                        </tr>
+                        <tr>
+                            <td>默认层级</td>
+                            <td>22002541256587744</td>
+                            <td class="color1">guo169841211</td>
+                            <td>方式：微信</td>
+                            <td>银行：中国银行
+                                卡主姓名：刘媛
+                            </td>
+                            <td>存入金额：100.00（优惠：1.00）
+                                存入总额：101.00
+                            </td>
+                            <td>会员填写：2017/8/28 16:10</td>
+                            <td>js66666</td>
+                            <td>1516kj</td>
+                            <td>会员填写：2017/8/28 16:10</td>
+                            <td>js66666</td>
+                            <td><a href="#">强制入款/补单</a></td>
+                        </tr>
+                        <tr>
+                            <td>默认层级</td>
+                            <td>22002541256587744</td>
+                            <td class="color1">guo169841211</td>
+                            <td>方式：微信</td>
+                            <td>银行：中国银行
+                                卡主姓名：刘媛
+                            </td>
+                            <td>存入金额：100.00（优惠：1.00）
+                                存入总额：101.00
+                            </td>
+                            <td>会员填写：2017/8/28 16:10</td>
+                            <td>js66666</td>
+                            <td>1516kj</td>
+                            <td>会员填写：2017/8/28 16:10</td>
+                            <td>js66666</td>
+                            <td><a href="#">强制入款/补单</a></td>
+                        </tr>
+                        <tr>
+                            <td>默认层级</td>
+                            <td>22002541256587744</td>
+                            <td class="color1">guo169841211</td>
+                            <td>方式：微信</td>
+                            <td>银行：中国银行
+                                卡主姓名：刘媛
+                            </td>
+                            <td>存入金额：100.00（优惠：1.00）
+                                存入总额：101.00
+                            </td>
+                            <td>会员填写：2017/8/28 16:10</td>
+                            <td>js66666</td>
+                            <td>1516kj</td>
+                            <td>会员填写：2017/8/28 16:10</td>
+                            <td>js66666</td>
+                            <td><a href="#">强制入款/补单</a></td>
+                        </tr>
+                        <tr>
+                            <td>默认层级</td>
+                            <td>22002541256587744</td>
+                            <td class="color1">guo169841211</td>
+                            <td>方式：微信</td>
+                            <td>银行：中国银行
+                                卡主姓名：刘媛
+                            </td>
+                            <td>存入金额：100.00（优惠：1.00）
+                                存入总额：101.00
+                            </td>
+                            <td>会员填写：2017/8/28 16:10</td>
+                            <td>js66666</td>
+                            <td>1516kj</td>
+                            <td>会员填写：2017/8/28 16:10</td>
+                            <td>js66666</td>
+                            <td><a href="#">强制入款/补单</a></td>
+                        </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+                <!--5.线上出款-->
+                <div class="col-xs-12  displayed-hide" id="online-out">
+                    <h5 class="h5">线上出款列表</h5>
+                    <form action="">
+                        <div class="parent-input">
+                            申请金额: <input type="number" placeholder="最小金额">
+                            至 <input type="number" placeholder="最大金额">
+                            出款金额: <input type="number" placeholder="最小金额">
+                            至&nbsp;<input type="number" placeholder="最大金额">
+                        </div>
+                        <div class="parent-input">
+                            日期范围:&nbsp;
+                            <select name="">
+                                <option value="">提交</option>
+                                <option value="">不提交</option>
+                            </select>
+                            <input type="date" id="online-out-start-time">
+                            至&nbsp;<input type="date" id="online-out-end-time">
+                            会员账户: &nbsp; <input type="text" placeholder="会员账户">
+                            <select name="" id="">
+                                <option value="">全部</option>
+                                <option value="">全部1</option>
+                                <option value="">全部2</option>
+                            </select>
+                        </div>
+
+                        <div class="parent-input">
+                            会员层级:&nbsp;<input type="checkbox">默认层级
+                            <input type="checkbox">真实会员
+                            <input type="checkbox">测试组
+                            <input type="checkbox">专用组
+                            <select name="">
+                                <option value="">默认分页</option>
+                                <option value="">默认分页2</option>
+                            </select>
+                            <select name="" id="online-out-refresh-type">
+                                <option value="auto">自动刷新</option>
+                                <option value="3">10秒刷新</option>
+                                <option value="20">20秒刷新</option>
+                                <option value="60">60秒刷新</option>
+                            </select>
+                            操作人:&nbsp;<input type="text">
+                            <button class="button">提交</button>
+
+                        </div>
                     </form>
 
                     <table class="table table-striped">
@@ -454,15 +984,15 @@
                             <td class="color1">p888888888
                             </td>
                             <td>dcp1010</td>
-                            <td class="color1">100.00</td>
+                            <td class="color1" data-toggle="modal" data-target="#online-out-applied-myModal">100.00</td>
                             <td>0.00</td>
                             <td>0.00</td>
-                            <td class="color2">100.00</td>
+                            <td class="color2" data-toggle="modal" data-target="#online-out-amoun-myModal">100.00</td>
                             <td>2017/07/16 15:16:18</td>
                             <td>确认</td>
                             <td></td>
                             <td>cpkf022</td>
-                            <td class="color1">添加</td>
+                            <td class="color1" data-toggle="modal" data-target="#online-out-remark-myModal">添加</td>
                             <td>未达到取款打码量</td>
                             <td>2017/08/28 16:37:37</td>
                             <td>2017/08/28 16:37:37</td>
@@ -472,15 +1002,15 @@
                             <td class="color1">p888888888
                             </td>
                             <td>dcp1010</td>
-                            <td class="color1">100.00</td>
+                            <td class="color1" data-toggle="modal" data-target="#online-out-applied-myModal">100.00</td>
                             <td>0.00</td>
                             <td>0.00</td>
-                            <td class="color2">100.00</td>
+                            <td class="color2" data-toggle="modal" data-target="#online-out-amoun-myModal">100.00</td>
                             <td>2017/07/16 15:16:18</td>
                             <td>确认</td>
                             <td></td>
                             <td>cpkf022</td>
-                            <td class="color1">添加</td>
+                            <td class="color1" data-toggle="modal" data-target="#online-out-remark-myModal">添加</td>
                             <td>未达到取款打码量</td>
                             <td>2017/08/28 16:37:37</td>
                             <td>2017/08/28 16:37:37</td>
@@ -490,15 +1020,15 @@
                             <td class="color1">p888888888
                             </td>
                             <td>dcp1010</td>
-                            <td class="color1">100.00</td>
+                            <td class="color1" data-toggle="modal" data-target="#online-out-applied-myModal">100.00</td>
                             <td>0.00</td>
                             <td>0.00</td>
-                            <td class="color2">100.00</td>
+                            <td class="color2" data-toggle="modal" data-target="#online-out-amoun-myModal">100.00</td>
                             <td>2017/07/16 15:16:18</td>
                             <td>确认</td>
                             <td></td>
                             <td>cpkf022</td>
-                            <td class="color1">添加</td>
+                            <td class="color1" data-toggle="modal" data-target="#online-out-remark-myModal">添加</td>
                             <td>未达到取款打码量</td>
                             <td>2017/08/28 16:37:37</td>
                             <td>2017/08/28 16:37:37</td>
@@ -508,15 +1038,15 @@
                             <td class="color1">p888888888
                             </td>
                             <td>dcp1010</td>
-                            <td class="color1">100.00</td>
+                            <td class="color1" data-toggle="modal" data-target="#online-out-applied-myModal">100.00</td>
                             <td>0.00</td>
                             <td>0.00</td>
-                            <td class="color2">100.00</td>
+                            <td class="color2" data-toggle="modal" data-target="#online-out-amoun-myModal">100.00</td>
                             <td>2017/07/16 15:16:18</td>
                             <td>确认</td>
                             <td></td>
                             <td>cpkf022</td>
-                            <td class="color1">添加</td>
+                            <td class="color1" data-toggle="modal" data-target="#online-out-remark-myModal">添加</td>
                             <td>未达到取款打码量</td>
                             <td>2017/08/28 16:37:37</td>
                             <td>2017/08/28 16:37:37</td>
@@ -525,39 +1055,1977 @@
 
                     </table>
 
+                    <!--出款金额详情模态框-->
+                    <div class="modal fade" id="online-out-amoun-myModal" tabindex="-1" role="dialog"
+                         aria-labelledby="myModalLabel">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                            aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title" id="online-out-amoun-myModalLabel">Modal title</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="row">
+                                        <div class="form-horizontal col-sm-8">
+                                            <div class="form-group">
+                                                <label for="online-out-amoun-userName" class="col-sm-4 control-label">申请金额：</label>
+                                                <div class="col-sm-8">
+                                                    <input type="text" class="form-control"
+                                                           id="online-out-amoun-userName">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-horizontal col-sm-4">
+                                            <button type="button" class="btn btn-warning btn-sm">复制</button>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-horizontal col-sm-8">
+                                            <div class="form-group">
+                                                <label for="online-out-amoun-bankUserName"
+                                                       class="col-sm-4 control-label">银行名称：</label>
+                                                <div class="col-sm-8">
+                                                    <input type="text" class="form-control"
+                                                           id="online-out-amoun-bankUserName">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-horizontal col-sm-4">
+                                            <button type="button" class="btn btn-warning btn-sm">复制</button>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-horizontal col-sm-8">
+                                            <div class="form-group">
+                                                <label for="online-out-amoun-bankNumber" class="col-sm-4 control-label">银行账号：</label>
+                                                <div class="col-sm-8">
+                                                    <input type="text" class="form-control"
+                                                           id="online-out-amoun-bankNumber">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-horizontal col-sm-4">
+                                            <button type="button" class="btn btn-warning btn-sm">复制</button>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-horizontal col-sm-8">
+                                            <div class="form-group">
+                                                <label for="online-out-amoun-bankAdd" class="col-sm-4 control-label">银行地址：</label>
+                                                <div class="col-sm-8">
+                                                    <input type="text" class="form-control"
+                                                           id="online-out-amoun-bankAdd">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-horizontal col-sm-4">
+                                            <button type="button" class="btn btn-warning btn-sm">复制</button>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-horizontal col-sm-8">
+                                            <div class="form-group">
+                                                <label for="online-out-amoun-accountName"
+                                                       class="col-sm-4 control-label">账户名称：</label>
+                                                <div class="col-sm-8">
+                                                    <input type="text" class="form-control"
+                                                           id="online-out-amoun-accountName">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-horizontal col-sm-4">
+                                            <button type="button" class="btn btn-warning btn-sm">复制</button>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-horizontal col-sm-8">
+                                            <div class="form-group">
+                                                <label for="online-out-amoun-remark" class="col-sm-4 control-label">用户备注：</label>
+                                                <div class="col-sm-8">
+                                                    <input type="text" class="form-control"
+                                                           id="online-out-amoun-remark">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-horizontal col-sm-4">
+                                            <button type="button" class="btn btn-warning btn-sm">复制</button>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--添加备注模态框-->
+                    <div class="modal fade" id="online-out-remark-myModal" tabindex="-1" role="dialog"
+                         aria-labelledby="myModalLabel">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                            aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title" id="online-out-remark-myModalLabel">Modal title</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="row">
+                                        <div class="form-horizontal col-sm-12">
+                                            <div class="form-group">
+                                                <label for="online-out-amoun-remark" class="col-sm-4 control-label">用户备注：</label>
+                                                <div class="col-sm-8">
+                                                    <input type="text" class="form-control" id="online-out-remark">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-horizontal col-sm-12">
+                                            <button type="button" class="btn btn-warning btn-sm">确定</button>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--申请金额模态框-->
+                    <div class="modal fade" id="online-out-applied-myModal" tabindex="-1" role="dialog"
+                         aria-labelledby="myModalLabel">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                            aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title" id="online-out-applied-myModalLabel">Modal title</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="parent-input">
+                                        账户总额：<input type="text">
+                                        可提现金额：<input type="text">
+                                        申请金额<input type="text">
+                                    </div>
+                                    <table class="table table-striped">
+                                        <thead>
+                                        <tr>
+                                            <th>No</th>
+                                            <th>开始日期</th>
+                                            <th>结束日期</th>
+                                            <th>存入金额</th>
+                                            <th>优惠</th>
+                                            <th>提现需达投注量</th>
+                                            <th>已达投注量</th>
+                                            <th>是否可提</th>
+                                        </tr>
+                                        </thead>
+
+                                    </table>
+
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <!--6.即使检查-->
                 <div class="col-xs-12 displayed-hide" id="check">
-                    <h5>即使检查</h5>
+                    <h5 class="h5">即使检查</h5>
+                    <div class="parent-input">
+                        检查账号：<input type="text">
+                        <button type="button" class="btn btn-warning btn-xs">搜索</button>
+                    </div>
+                    <table class="table table-striped">
+                        <thead>
+                        <tr style="background-color: #3d3d3d;color:#fff;">
+                            <th>No</th>
+                            <th>开始日期</th>
+                            <th>结束日期</th>
+                            <th>存入金额</th>
+                            <th>优惠</th>
+                            <th>提现需达投注量</th>
+                            <th>一投注量</th>
+                            <th>是否可提</th>
+                        </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
                 </div>
                 <!--7.金流管理-->
                 <div class="col-xs-12 displayed-hide" id="cash">
                     <h5>金流管理</h5>
+                    <div class="parent-input">
+                        日期范围：<input type="date">
+                        -<input type="text">
+                        <select name="">
+                            <option value="">会员账号</option>
+                            <option value="">订单号</option>
+                            <option value="">操作者账号</option>
+                        </select>
+                        状态：<select name="">
+                        <option value="">全部</option>
+                        <option value="">待处理</option>
+                        <option value="">充值成功</option>
+                        <option value="">充值失败</option>
+                    </select>
+                        <button type="button" class="btn btn-warning btn-xs">搜索</button>
+                    </div>
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th>层级</th>
+                            <th>时间</th>
+                            <th>会员账号</th>
+                            <th>订单号</th>
+                            <th>金流方向</th>
+                            <th>金流类型</th>
+                            <th>金额</th>
+                            <th>操作前金额</th>
+                            <th>操作后金额</th>
+                            <th>状态</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <tbody id="cash-tbody">
+                        </tbody>
+                    </table>
                 </div>
-
                 <!--入款管理-->
+
                 <!--1.公司入款账户-->
                 <div class="col-xs-12 displayed-hide" id="account">
-                    <h5>公司入款账户</h5>
+                    <h5 class="h5">公司入款账号列表</h5>
+                    <div class="parent-input">
+                        <button type="button" class="btn btn-warning btn-xs" data-toggle="modal"
+                                data-target="#account-add-myModal">
+                            新增
+                        </button>
+                    </div>
+                    <div class="parent-input d-right">
+                        状态：<select name="">
+                        <option value="">全部</option>
+                        <option value="">正常</option>
+                        <option value="">停用</option>
+                    </select>
+                        层级：<select name="">
+                        <option value="">全部</option>
+                        <option value="">默认层级</option>
+                        <option value="">真实会员</option>
+                        <option value="">测试组</option>
+                        <option value="">专用组</option>
+                    </select>
+                        <button type="button" class="btn btn-warning btn-xs">搜索</button>
+                    </div>
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th>银行类别</th>
+                            <th>开户网点</th>
+                            <th>收款人</th>
+                            <th>收款账号</th>
+                            <th>已存入金额/停用金额</th>
+                            <th>层级信息</th>
+                            <th>二维码</th>
+                            <th>状态</th>
+                            <th>备注</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+
+                        <tbody>
+                        <tr>
+                            <td>zongli</td>
+                            <td>255555</td>
+                            <td>2566.22</td>
+                            <td>2533.22</td>
+                            <td class="color1">555</td>
+                            <td>222</td>
+                            <td>255555</td>
+                            <td>2566.22</td>
+                            <td>2533.22</td>
+                            <td>
+                                <span class="compile" data-toggle="modal" data-target="#account-amend-myModal">修改</span>
+                                <a href="#">停用</a>
+                                <a href="#">删除</a>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <!--新增模态框-->
+                    <div class="modal fade" id="account-add-myModal" tabindex="-1" role="dialog"
+                         aria-labelledby="myModalLabel">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                            aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title" id="account-add-myModalLabel">新增</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <h5 class="h5">新增公司入款账号</h5>
+                                    <div class="row">
+                                        <div class="form-horizontal col-sm-6">
+                                            <div class="form-group">
+                                                <label class="col-sm-4 control-label">所属分组：</label>
+                                                <div class="col-sm-8">
+                                                    <select name="">
+                                                        <option value="">默认层级</option>
+                                                        <option value="">真实会员</option>
+                                                        <option value="">测试组</option>
+                                                        <option value="">专用组</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-horizontal col-sm-6">
+                                            <div class="form-group">
+                                                <label for="newuser-userType"
+                                                       class="col-sm-4 control-label">银行类别：</label>
+                                                <div class="col-sm-8">
+                                                    <select class="form-control" id="newuser-userType">
+                                                        <option value="nomalUser">中国工商</option>
+                                                        <option value="dailiUser">中国银行</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-horizontal col-sm-6">
+                                            <div class="form-group">
+                                                <label for="newUser-upwd" class="col-sm-4 control-label">开户网点：</label>
+                                                <div class="col-sm-8">
+                                                    <input type="password" class="form-control" id="newUser-upwd">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-horizontal col-sm-6">
+                                            <div class="form-group">
+                                                <label class="col-sm-4 control-label">收款人：</label>
+                                                <div class="col-sm-8">
+                                                    <input type="password" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-horizontal col-sm-6">
+                                            <div class="form-group">
+                                                <label class="col-sm-4 control-label">使用金额：</label>
+                                                <div class="col-sm-8">
+                                                    <input type="password" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-horizontal col-sm-6">
+                                            <div class="form-group">
+                                                <label class="col-sm-4 control-label">二维码：</label>
+                                                <div class="col-sm-8">
+                                                    <input type="file" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-horizontal col-sm-6">
+                                            <div class="form-group">
+                                                <label class="col-sm-4 control-label">状态：</label>
+                                                <div class="col-sm-8">
+                                                    <select class="form-control">
+                                                        <option value="nomalUser">正常</option>
+                                                        <option value="dailiUser">停用</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h4 class="h4">会员端提示</h4>
+                                    <div class="row">
+                                        <div class="form-horizontal col-sm-6">
+                                            <div class="form-group">
+                                                <label class="col-sm-4 control-label">受款账号：</label>
+                                                <div class="col-sm-8">
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-horizontal col-sm-6">
+                                            <div class="form-group">
+                                                <label class="col-sm-4 control-label">汇款资讯：</label>
+                                                <div class="col-sm-8">
+                                                    <textarea name="" cols="52" rows="3"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-offset-4 col-sm-1">
+                                            <button id="account-add-confirm" class="btn btn-danger btn-sm"
+                                                    type="button">确定
+                                            </button>
+                                        </div>
+                                        <div class="col-sm-offset-1 col-sm-1">
+                                            <button id="account-addcancel" class="btn btn-warning btn-sm" type="button">
+                                                返回
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!--修改模态框-->
+                    <div class="modal fade" id="account-amend-myModal" tabindex="-1" role="dialog"
+                         aria-labelledby="myModalLabel">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                            aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title" id="account-amend-myModalLabel">修改</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <h5 class="h5">新增公司入款账号</h5>
+                                    <div class="row">
+                                        <div class="form-horizontal col-sm-6">
+                                            <div class="form-group">
+                                                <label class="col-sm-4 control-label">所属分组：</label>
+                                                <div class="col-sm-8">
+                                                    <select name="">
+                                                        <option value="">默认层级</option>
+                                                        <option value="">真实会员</option>
+                                                        <option value="">测试组</option>
+                                                        <option value="">专用组</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-horizontal col-sm-6">
+                                            <div class="form-group">
+                                                <label for="newuser-userType"
+                                                       class="col-sm-4 control-label">银行类别：</label>
+                                                <div class="col-sm-8">
+                                                    <select class="form-control" id="newuser-userType">
+                                                        <option value="nomalUser">中国工商</option>
+                                                        <option value="dailiUser">中国银行</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-horizontal col-sm-6">
+                                            <div class="form-group">
+                                                <label for="newUser-upwd" class="col-sm-4 control-label">开户网点：</label>
+                                                <div class="col-sm-8">
+                                                    <input type="password" class="form-control" id="newUser-upwd">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-horizontal col-sm-6">
+                                            <div class="form-group">
+                                                <label class="col-sm-4 control-label">收款人：</label>
+                                                <div class="col-sm-8">
+                                                    <input type="password" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-horizontal col-sm-6">
+                                            <div class="form-group">
+                                                <label class="col-sm-4 control-label">使用金额：</label>
+                                                <div class="col-sm-8">
+                                                    <input type="password" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-horizontal col-sm-6">
+                                            <div class="form-group">
+                                                <label class="col-sm-4 control-label">二维码：</label>
+                                                <div class="col-sm-8">
+                                                    <input type="file" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-horizontal col-sm-6">
+                                            <div class="form-group">
+                                                <label class="col-sm-4 control-label">状态：</label>
+                                                <div class="col-sm-8">
+                                                    <select class="form-control">
+                                                        <option value="nomalUser">正常</option>
+                                                        <option value="dailiUser">停用</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h4 class="h4">会员端提示</h4>
+                                    <div class="row">
+                                        <div class="form-horizontal col-sm-6">
+                                            <div class="form-group">
+                                                <label class="col-sm-4 control-label">受款账号：</label>
+                                                <div class="col-sm-8">
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-horizontal col-sm-6">
+                                            <div class="form-group">
+                                                <label class="col-sm-4 control-label">汇款资讯：</label>
+                                                <div class="col-sm-8">
+                                                    <textarea name="" cols="52" rows="3"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-offset-4 col-sm-1">
+                                            <button id="account-add-confirm" class="btn btn-danger btn-sm"
+                                                    type="button">确定
+                                            </button>
+                                        </div>
+                                        <div class="col-sm-offset-1 col-sm-1">
+                                            <button id="account-addcancel" class="btn btn-warning btn-sm" type="button">
+                                                返回
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <!--2.支付平台设定-->
                 <div class="col-xs-12 displayed-hide" id="payment-platform">
-                    <h5>支付平台设定</h5>
-                </div>
-                <!--3.入款类型设置-->
-                <div class="col-xs-12 displayed-hide" id="type-setting">
-                    <h5>入款类型设置</h5>
-                </div>
-                <!--4.支付平台管理-->
-                <div class="col-xs-12 displayed-hide" id="management">
-                    <h5>支付平台管理</h5>
-                </div>
+                    <h5 class="h5">支付平台设定</h5>
+                    <div class="parent-input">
+                        <button type="button" class="btn btn-warning btn-xs" data-toggle="modal"
+                                href="#payment-platform-add-myModal">
+                            新增
+                        </button>
+                    </div>
+                    <div class="parent-input d-right">
+                        状态：<select name="">
+                        <option value="">全部</option>
+                        <option value="">正常</option>
+                        <option value="">停用</option>
+                    </select>
+                        层级：<select name="">
+                        <option value="">全部</option>
+                        <option value="">默认层级</option>
+                        <option value="">真实会员</option>
+                        <option value="">测试组</option>
+                        <option value="">专用组</option>
+                    </select>
+                        <button type="button" class="btn btn-warning btn-xs">搜索</button>
+                    </div>
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th>商家编号</th>
+                            <th>支付平台</th>
+                            <th>支付类别</th>
+                            <th>状态</th>
+                            <th>入款次数/已存金额/停用金额</th>
+                            <th>最低充值金额</th>
+                            <th>层级名称</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
 
+                        <tbody>
+                        <tr>
+                            <td>zongli</td>
+                            <td>255555</td>
+                            <td>2566.22</td>
+                            <td>
+                                <button class="btn btn-warning btn-xs">正常</button>
+                                <button class="btn btn-danger btn-xs displayed-hide">停用</button>
+                            </td>
+                            <td class="color1">555</td>
+                            <td>222</td>
+                            <td>255555</td>
+                            <td>
+                                <span class="compile" data-toggle="modal" data-target="#payment-platform-amend-myModal">修改</span>
+                                <a href="#">停用</a>
+                                <a href="#">删除</a>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <!--新增模态框-->
+                    <div class="modal fade" id="payment-platform-add-myModal" tabindex="-1" role="dialog"
+                         aria-labelledby="myModalLabel">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                            aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title" id="payment-platform-add-myModalLabel">新增</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <h5 class="h5">新增支付平台</h5>
+                                    <div class="row">
+                                        <div class="form-horizontal col-sm-6">
+                                            <div class="form-group">
+                                                <label class="col-sm-4 control-label">所属分组</label>
+                                                <div class="col-sm-8">
+                                                    <select name="">
+                                                        <option value="">默认层级</option>
+                                                        <option value="">真实会员</option>
+                                                        <option value="">测试组</option>
+                                                        <option value="">专用组</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-horizontal col-sm-6">
+                                            <div class="form-group">
+                                                <label class="col-sm-4 control-label">支付平台</label>
+                                                <div class="col-sm-8">
+                                                    <select class="form-control">
+                                                        <option value="nomalUser">中国工商</option>
+                                                        <option value="dailiUser">中国银行</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-horizontal col-sm-6">
+                                            <div class="form-group">
+                                                <label class="col-sm-4 control-label">支付类别</label>
+                                                <div class="col-sm-8">
+                                                    <select class="form-control">
+                                                        <option value="nomalUser">微信扫码</option>
+                                                        <option value="dailiUser">支付宝wap</option>
+                                                        <option value="dailiUser">支付宝扫码</option>
+                                                        <option value="dailiUser">QQ钱包</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-horizontal col-sm-6">
+                                            <div class="form-group">
+                                                <label class="col-sm-4 control-label">商城网址</label>
+                                                <div class="col-sm-8">
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-horizontal col-sm-6">
+                                            <div class="form-group">
+                                                <label class="col-sm-4 control-label">商家编号</label>
+                                                <div class="col-sm-8">
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-horizontal col-sm-6">
+                                            <div class="form-group">
+                                                <label class="col-sm-4 control-label">终端号</label>
+                                                <div class="col-sm-8">
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-horizontal col-sm-6">
+                                            <div class="form-group">
+                                                <label class="col-sm-4 control-label">MD5密钥</label>
+                                                <div class="col-sm-8">
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-horizontal col-sm-6">
+                                            <div class="form-group">
+                                                <label class="col-sm-4 control-label">使用金额</label>
+                                                <div class="col-sm-8">
+                                                    <input type="text" class="form-control" placeholder="0为不限制">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-horizontal col-sm-6">
+                                            <div class="form-group">
+                                                <label class="col-sm-4 control-label">状态</label>
+                                                <div class="col-sm-8">
+                                                    <select class="form-control">
+                                                        <option value="nomalUser">正常</option>
+                                                        <option value="dailiUser">停用</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-horizontal col-sm-6">
+                                            <div class="form-group">
+                                                <label class="col-sm-4 control-label">上传私钥证书</label>
+                                                <div class="col-sm-8">
+                                                    <input type="file" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-horizontal col-sm-6">
+                                            <div class="form-group">
+                                                <label class="col-sm-4 control-label">证书密钥</label>
+                                                <div class="col-sm-8">
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-horizontal col-sm-6">
+                                            <div class="form-group">
+                                                <label class="col-sm-4 control-label">最低限额</label>
+                                                <div class="col-sm-8">
+                                                    <input type="text" class="form-control" placeholder="默认为0不限制">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-horizontal col-sm-6">
+                                            <div class="form-group">
+                                                <label class="col-sm-4 control-label">PSA商户私钥</label>
+                                                <div class="col-sm-8">
+                                                    <textarea name="" id="" cols="52" rows="3"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-horizontal col-sm-6">
+                                            <div class="form-group">
+                                                <label class="col-sm-4 control-label">PSA服务的公钥</label>
+                                                <div class="col-sm-8">
+                                                    <textarea name="" cols="52" rows="3"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-horizontal col-sm-6">
+                                            <div class="form-group">
+                                                <label class="col-sm-4 control-label">备注</label>
+                                                <div class="col-sm-8">
+                                                    <textarea name="" cols="52" rows="3"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-offset-4 col-sm-1">
+                                            <button id="newUser-confirm" class="btn btn-danger" type="button">确定
+                                            </button>
+                                        </div>
+                                        <div class="col-sm-offset-1 col-sm-1">
+                                            <button id="newuser-cancel" class="btn btn-warning" type="button">返回
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!--修改模态框-->
+                    <div class="modal fade" id="payment-platform-amend-myModal" tabindex="-1" role="dialog"
+                         aria-labelledby="myModalLabel">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                            aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title" id="payment-platform-amend-myModalLabel">修改</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="row">
+                                        <div class="form-horizontal col-sm-6">
+                                            <div class="form-group">
+                                                <label class="col-sm-4 control-label">所属分组</label>
+                                                <div class="col-sm-8">
+                                                    <select name="">
+                                                        <option value="">默认层级</option>
+                                                        <option value="">真实会员</option>
+                                                        <option value="">测试组</option>
+                                                        <option value="">专用组</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-horizontal col-sm-6">
+                                            <div class="form-group">
+                                                <label class="col-sm-4 control-label">支付平台</label>
+                                                <div class="col-sm-8">
+                                                    <select class="form-control">
+                                                        <option value="nomalUser">中国工商</option>
+                                                        <option value="dailiUser">中国银行</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-horizontal col-sm-6">
+                                            <div class="form-group">
+                                                <label class="col-sm-4 control-label">支付类别</label>
+                                                <div class="col-sm-8">
+                                                    <select class="form-control">
+                                                        <option value="nomalUser">微信扫码</option>
+                                                        <option value="dailiUser">支付宝wap</option>
+                                                        <option value="dailiUser">支付宝扫码</option>
+                                                        <option value="dailiUser">QQ钱包</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-horizontal col-sm-6">
+                                            <div class="form-group">
+                                                <label class="col-sm-4 control-label">商城网址</label>
+                                                <div class="col-sm-8">
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-horizontal col-sm-6">
+                                            <div class="form-group">
+                                                <label class="col-sm-4 control-label">商家编号</label>
+                                                <div class="col-sm-8">
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-horizontal col-sm-6">
+                                            <div class="form-group">
+                                                <label class="col-sm-4 control-label">终端号</label>
+                                                <div class="col-sm-8">
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-horizontal col-sm-6">
+                                            <div class="form-group">
+                                                <label class="col-sm-4 control-label">MD5密钥</label>
+                                                <div class="col-sm-8">
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-horizontal col-sm-6">
+                                            <div class="form-group">
+                                                <label class="col-sm-4 control-label">使用金额</label>
+                                                <div class="col-sm-8">
+                                                    <input type="text" class="form-control" placeholder="0为不限制">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-horizontal col-sm-6">
+                                            <div class="form-group">
+                                                <label class="col-sm-4 control-label">状态</label>
+                                                <div class="col-sm-8">
+                                                    <select class="form-control">
+                                                        <option value="nomalUser">正常</option>
+                                                        <option value="dailiUser">停用</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-horizontal col-sm-6">
+                                            <div class="form-group">
+                                                <label class="col-sm-4 control-label">上传私钥证书</label>
+                                                <div class="col-sm-8">
+                                                    <input type="file" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-horizontal col-sm-6">
+                                            <div class="form-group">
+                                                <label class="col-sm-4 control-label">证书密钥</label>
+                                                <div class="col-sm-8">
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-horizontal col-sm-6">
+                                            <div class="form-group">
+                                                <label class="col-sm-4 control-label">最低限额</label>
+                                                <div class="col-sm-8">
+                                                    <input type="text" class="form-control" placeholder="默认为0不限制">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-horizontal col-sm-6">
+                                            <div class="form-group">
+                                                <label class="col-sm-4 control-label">PSA商户私钥</label>
+                                                <div class="col-sm-8">
+                                                    <textarea name="" id="" cols="52" rows="3"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-horizontal col-sm-6">
+                                            <div class="form-group">
+                                                <label class="col-sm-4 control-label">PSA服务的公钥</label>
+                                                <div class="col-sm-8">
+                                                    <textarea name="" cols="52" rows="3"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-horizontal col-sm-6">
+                                            <div class="form-group">
+                                                <label class="col-sm-4 control-label">备注</label>
+                                                <div class="col-sm-8">
+                                                    <textarea name="" cols="52" rows="3"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-offset-4 col-sm-1">
+                                            <button id="payment-platform-amend-confirm" class="btn btn-danger"
+                                                    type="button">确定
+                                            </button>
+                                        </div>
+                                        <div class="col-sm-offset-1 col-sm-1">
+                                            <button id="payment-platform-amend-cancel" class="btn btn-warning"
+                                                    type="button">返回
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--3.入款类型分组-->
+                <div class="col-xs-12 displayed-hide" id="type-group">
+                    <h5>类型分组列表</h5>
+                    <div class="parent-input">
+                        <button type="button" class="btn btn-warning btn-xs" data-toggle="modal"
+                                data-target="#type-group-add-myModal">
+                            新增
+                        </button>
+                    </div>
+                    <div class="parent-input d-right">
+                        <input type="text">
+                        <button class="btn btn-warning btn-xs">搜索</button>
+                    </div>
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th>名称</th>
+                            <th>排序</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+
+                        <tbody>
+                        <tr>
+                            <td>zongli</td>
+                            <td>255555</td>
+                            <td>
+                                <span class="compile" data-toggle="modal" data-target="#type-group-amend-myModal">编辑</span>
+                                <a href="#">删除</a>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <!--新增模态框-->
+                    <div class="modal fade" id="type-group-add-myModal" tabindex="-1" role="dialog"
+                         aria-labelledby="myModalLabel">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                            aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title" id="type-group-add-myModalLabel">新增</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <h5>新增入款类型分组</h5>
+
+                                    <div class="row">
+                                        <div class="form-horizontal col-sm-12">
+                                            <div class="form-group">
+                                                <label class="col-sm-2 control-label">名称</label>
+                                                <div class="col-sm-9">
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-horizontal col-sm-12">
+                                            <div class="form-group">
+                                                <label class="col-sm-2 control-label">排序</label>
+                                                <div class="col-sm-9">
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-offset-4 col-sm-1">
+                                            <button id="type-group-add-confirm" class="btn btn-danger btn-sm"
+                                                    type="button">确定
+                                            </button>
+                                        </div>
+                                        <div class="col-sm-offset-1 col-sm-1">
+                                            <button id="type-group-add-cancel" class="btn btn-warning btn-sm"
+                                                    type="button">返回
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!--编辑模态框-->
+                    <div class="modal fade" id="type-group-amend-myModal" tabindex="-1" role="dialog"
+                         aria-labelledby="myModalLabel">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                            aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title" id="type-group-amend-myModalLabel">编辑</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="row">
+                                        <div class="form-horizontal col-sm-12">
+                                            <div class="form-group">
+                                                <label class="col-sm-2 control-label">名称</label>
+                                                <div class="col-sm-9">
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-horizontal col-sm-12">
+                                            <div class="form-group">
+                                                <label class="col-sm-2 control-label">排序</label>
+                                                <div class="col-sm-9">
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-offset-4 col-sm-1">
+                                            <button id="type-group-amend-confirm" class="btn btn-danger btn-sm"
+                                                    type="button">确定
+                                            </button>
+                                        </div>
+                                        <div class="col-sm-offset-1 col-sm-1">
+                                            <button id="type-group-amend-cancel" class="btn btn-warning btn-sm"
+                                                    type="button">返回
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--4.入款类型设置-->
+                <div class="col-xs-12 displayed-hide" id="type-setting">
+                    <h5>类型分组设置</h5>
+                    <div class="parent-input d-right">
+                        <input type="text">
+                        <button class="btn btn-warning btn-xs">搜索</button>
+                    </div>
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th>名称</th>
+                            <th>简介</th>
+                            <th>ICON图片</th>
+                            <th>分组</th>
+                            <th>状态</th>
+                            <th>排序</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+
+                        <tbody id="type-setting-tbody">
+                        <tr>
+                            <td>zongli</td>
+                            <td>255555</td>
+                            <td>zongli</td>
+                            <td class="state">
+                                <button class="run btn btn-warning btn-xs">启用</button>
+                                <button class="lock btn btn-danger btn-xs displayed-hide">禁用</button>
+                            </td>
+                            <td>zongli</td>
+                            <td>255555</td>
+                            <td class="handle">
+                                <span class="compile" data-toggle="modal" data-target="#type-setting-myModal">编辑</span>
+                                <span class="stop">停用</span>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <!--编辑模态框-->
+                    <div class="modal fade" id="type-setting-myModal" tabindex="-1" role="dialog"
+                         aria-labelledby="myModalLabel">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                            aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title" id="type-setting-myModalLabel">编辑</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <h5 class="h5">编辑入款类型</h5>
+                                    <div class="row">
+                                        <div class="form-horizontal col-sm-12">
+                                            <div class="form-group">
+                                                <label class="col-sm-2 control-label">名称</label>
+                                                <div class="col-sm-9">
+                                                    <input type="text" class="form-control" placeholder="网银-在线支付">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-horizontal col-sm-12">
+                                            <div class="form-group">
+                                                <label class="col-sm-2 control-label">分组</label>
+                                                <div class="col-sm-9">
+                                                    <select class="form-control">
+                                                        <option value="nomalUser">银行转账/在线支付</option>
+                                                        <option value="dailiUser">银行转账/在线支付</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-horizontal col-sm-12">
+                                            <div class="form-group">
+                                                <label class="col-sm-2 control-label">简介</label>
+                                                <div class="col-sm-9">
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-horizontal col-sm-12">
+                                            <div class="form-group">
+                                                <label class="col-sm-2 control-label">排序</label>
+                                                <div class="col-sm-9">
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-horizontal col-sm-12">
+                                            <div class="form-group">
+                                                <label class="col-sm-2 control-label">选择文件</label>
+                                                <div class="col-sm-9">
+                                                    <input type="file" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-horizontal col-sm-12">
+                                            <div class="form-group">
+                                                <label class="col-sm-2 control-label">是否启用</label>
+                                                <div class="col-sm-9">
+                                                    <select class="form-control">
+                                                        <option value="nomalUser">正常</option>
+                                                        <option value="dailiUser">启用</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-offset-4 col-sm-1">
+                                            <button id="type-setting-confirm" class="btn btn-danger btn-sm" type="button">确定</button>
+                                        </div>
+                                        <div class="col-sm-offset-1 col-sm-3">
+                                            <button id="type-setting-cancel" class="btn btn-warning btn-sm" type="button">返回</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--5.支付平台管理-->
+                <div class="col-xs-12 displayed-hide" id="management">
+                    <h5>支付平台列表</h5>
+                    <div class="parent-input">
+                        <button type="button" class="btn btn-warning btn-xs" data-toggle="modal" data-target="#management-add-myModal">
+                            新增
+                        </button>
+                    </div>
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th>平台ID</th>
+                            <th>平台名称</th>
+                            <th>操作类名</th>
+                            <th>状态</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+
+                        <tbody>
+                        <tr>
+                            <td>89</td>
+                            <td>多半支付</td>
+                            <td>DuoDuo</td>
+                            <td>正常</td>
+                            <td>
+                                <span class="compile" data-toggle="modal" data-target="#management-amend-myModal">修改</span>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <!--新增模态框-->
+                    <div class="modal fade" id="management-add-myModal" tabindex="-1" role="dialog"
+                         aria-labelledby="myModalLabel">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                            aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title" id="management-add-myModalLabel">新增</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <h5 class="h5">新增支付平台</h5>
+                                    <div class="row">
+                                        <div class="form-horizontal col-sm-12">
+                                            <div class="form-group">
+                                                <label for="" class="col-sm-2 control-label">平台名称</label>
+                                                <div class="col-sm-9">
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-horizontal col-sm-12">
+                                            <div class="form-group">
+                                                <label for="" class="col-sm-2 control-label">操作类型</label>
+                                                <div class="col-sm-9">
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-horizontal col-sm-12">
+                                            <div class="form-group">
+                                                <label for="newuser-userType" class="col-sm-2 control-label">状态</label>
+                                                <div class="col-sm-9">
+                                                    <select class="form-control" id="management-userType">
+                                                        <option value="nomalUser">全部</option>
+                                                        <option value="dailiUser">正常</option>
+                                                        <option value="nomalUser">停用</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h4>支付类别对应接口地址：</h4>
+                                    <div class="row">
+                                        <div class="form-horizontal col-sm-12">
+                                            <div class="form-group">
+                                                <label for="" class="col-sm-2 control-label">网银支付</label>
+                                                <div class="col-sm-9">
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-horizontal col-sm-12">
+                                            <div class="form-group">
+                                                <label for="" class="col-sm-2 control-label">微信wap</label>
+                                                <div class="col-sm-9">
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-horizontal col-sm-12">
+                                            <div class="form-group">
+                                                <label for="" class="col-sm-2 control-label">微信扫码</label>
+                                                <div class="col-sm-9">
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-horizontal col-sm-12">
+                                            <div class="form-group">
+                                                <label for="" class="col-sm-2 control-label">支付宝wap</label>
+                                                <div class="col-sm-9">
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-horizontal col-sm-12">
+                                            <div class="form-group">
+                                                <label for="" class="col-sm-2 control-label">支付宝扫码</label>
+                                                <div class="col-sm-9">
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-horizontal col-sm-12">
+                                            <div class="form-group">
+                                                <label for="" class="col-sm-2 control-label">QQ钱包</label>
+                                                <div class="col-sm-9">
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-horizontal col-sm-12">
+                                            <div class="form-group">
+                                                <label for="" class="col-sm-2 control-label">QQ钱包wap</label>
+                                                <div class="col-sm-9">
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-horizontal col-sm-12">
+                                            <div class="form-group">
+                                                <label for="" class="col-sm-2 control-label">京东钱</label>
+                                                <div class="col-sm-9">
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-horizontal col-sm-12">
+                                            <div class="form-group">
+                                                <label for="" class="col-sm-2 control-label">京东钱包wap</label>
+                                                <div class="col-sm-9">
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-horizontal col-sm-12">
+                                            <div class="form-group">
+                                                <label for="" class="col-sm-2 control-label">百度钱包</label>
+                                                <div class="col-sm-9">
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-horizontal col-sm-12">
+                                            <div class="form-group">
+                                                <label for="" class="col-sm-2 control-label">百度钱包wap</label>
+                                                <div class="col-sm-9">
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-sm-offset-4 col-sm-1">
+                                            <button id="management-add-confirm" class="btn btn-danger btn-sm" type="button">确定</button>
+                                        </div>
+                                        <div class="col-sm-offset-1 col-sm-1">
+                                            <button id="management-add-cancel" class="btn btn-warning btn-sm" type="button">返回</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!--修改模态框-->
+                    <div class="modal fade" id="management-amend-myModal" tabindex="-1" role="dialog"
+                         aria-labelledby="myModalLabel">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                            aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title" id="management-amend-myModalLabel">编辑</h4>
+                                </div>
+                                <div class="modal-body">
+                                        <h5 class="h5">修改支付平台</h5>
+                                        <div class="row">
+                                            <div class="form-horizontal col-sm-12">
+                                                <div class="form-group">
+                                                    <label for="" class="col-sm-2 control-label">平台名称</label>
+                                                    <div class="col-sm-9">
+                                                        <input type="text" class="form-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="form-horizontal col-sm-12">
+                                                <div class="form-group">
+                                                    <label for="" class="col-sm-2 control-label">操作类型</label>
+                                                    <div class="col-sm-9">
+                                                        <input type="text" class="form-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="form-horizontal col-sm-12">
+                                                <div class="form-group">
+                                                    <label for="newuser-userType" class="col-sm-2 control-label">状态
+                                                    </label>
+                                                    <div class="col-sm-9">
+                                                        <select class="form-control">
+                                                            <option value="nomalUser">全部</option>
+                                                            <option value="dailiUser">正常</option>
+                                                            <option value="nomalUser">停用</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <h4>支付类别对应接口地址：</h4>
+                                        <div class="row">
+                                            <div class="form-horizontal col-sm-12">
+                                                <div class="form-group">
+                                                    <label for="" class="col-sm-2 control-label">网银支付</label>
+                                                    <div class="col-sm-9">
+                                                        <input type="text" class="form-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="form-horizontal col-sm-12">
+                                                <div class="form-group">
+                                                    <label for="" class="col-sm-2 control-label">微信wap</label>
+                                                    <div class="col-sm-9">
+                                                        <input type="text" class="form-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="form-horizontal col-sm-12">
+                                                <div class="form-group">
+                                                    <label for="" class="col-sm-2 control-label">微信扫码</label>
+                                                    <div class="col-sm-9">
+                                                        <input type="text" class="form-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="form-horizontal col-sm-12">
+                                                <div class="form-group">
+                                                    <label for="" class="col-sm-2 control-label">支付宝wap</label>
+                                                    <div class="col-sm-9">
+                                                        <input type="text" class="form-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="form-horizontal col-sm-12">
+                                                <div class="form-group">
+                                                    <label for="" class="col-sm-2 control-label">支付宝扫码</label>
+                                                    <div class="col-sm-9">
+                                                        <input type="text" class="form-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="form-horizontal col-sm-12">
+                                                <div class="form-group">
+                                                    <label for="" class="col-sm-2 control-label">QQ钱包</label>
+                                                    <div class="col-sm-9">
+                                                        <input type="text" class="form-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="form-horizontal col-sm-12">
+                                                <div class="form-group">
+                                                    <label for="" class="col-sm-2 control-label">QQ钱包wap</label>
+                                                    <div class="col-sm-9">
+                                                        <input type="text" class="form-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="form-horizontal col-sm-12">
+                                                <div class="form-group">
+                                                    <label for="" class="col-sm-2 control-label">京东钱</label>
+                                                    <div class="col-sm-9">
+                                                        <input type="text" class="form-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="form-horizontal col-sm-12">
+                                                <div class="form-group">
+                                                    <label for="" class="col-sm-2 control-label">京东钱包wap</label>
+                                                    <div class="col-sm-9">
+                                                        <input type="text" class="form-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="form-horizontal col-sm-12">
+                                                <div class="form-group">
+                                                    <label for="" class="col-sm-2 control-label">百度钱包</label>
+                                                    <div class="col-sm-9">
+                                                        <input type="text" class="form-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="form-horizontal col-sm-12">
+                                                <div class="form-group">
+                                                    <label for="" class="col-sm-2 control-label">百度钱包wap</label>
+                                                    <div class="col-sm-9">
+                                                        <input type="text" class="form-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-sm-offset-4 col-sm-1">
+                                                <button id="management-amend-confirm" class="btn btn-danger btn-sm" type="button">确定</button>
+                                            </div>
+                                            <div class="col-sm-offset-1 col-sm-1">
+                                                <button id="management-amend-cancel" class="btn btn-warning btn-sm" type="button">返回</button>
+                                            </div>
+                                        </div>
+
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <!--优惠管理-->
                 <!--1.会员注册优惠设定-->
                 <div class="col-xs-12 displayed-hide" id="discounts">
                     <h5>会员注册优惠设定</h5>
+                    <div class="parent-input">
+                        <button type="button" class="btn btn-warning btn-xs" data-toggle="modal" data-target="#discounts-add-myModal">
+                            新增
+                        </button>
+                    </div>
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th>赠送优惠</th>
+                            <th>优惠方式</th>
+                            <th>添加投注量</th>
+                            <th>每日IP限制优惠次数</th>
+                            <th>备注</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
 
+                        <tbody>
+                        <tr>
+                            <td>89</td>
+                            <td>多半支付</td>
+                            <td>DuoDuo</td>
+                            <td>正常</td>
+                            <td>正常</td>
+                            <td>是</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <!--新增模态框-->
+                    <div class="modal fade" id="discounts-add-myModal" tabindex="-1" role="dialog"
+                         aria-labelledby="myModalLabel">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                            aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title" id="discounts-add-myModalLabel">新增</h4>
+                                </div>
+                                <div class="modal-body">
+                                        <h5 class="h5">新增会员优惠设定</h5>
+                                        <div class="row">
+                                            <div class="form-horizontal col-sm-12">
+                                                <div class="form-group">
+                                                    <label class="col-sm-2 control-label">注册送彩金：</label>
+                                                    <div class="col-sm-9">
+                                                        <select class="form-control" required>
+                                                            <option value="">是</option>
+                                                            <option value="">否</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="form-horizontal col-sm-12">
+                                                <div class="form-group">
+                                                    <label class="col-sm-2 control-label">赠送优惠：</label>
+                                                    <div class="col-sm-9">
+                                                        <input type="text" class="form-control" required>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="form-horizontal col-sm-12">
+                                                <div class="form-group">
+                                                    <label class="col-sm-2 control-label">优惠方式：</label>
+                                                    <div class="col-sm-9">
+                                                        <select class="form-control" required>
+                                                            <option value="all">
+                                                                <input type="checkbox">全部
+                                                            </option>
+                                                            <option value="computer">
+                                                                <input type="checkbox">电脑
+                                                            </option>
+                                                            <option value="iphone">
+                                                                <input type="checkbox">IOS手机
+                                                            </option>
+                                                            <option value="phone">
+                                                                <input type="checkbox">android手机
+                                                            </option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="form-horizontal col-sm-12">
+                                                <div class="form-group">
+                                                    <label class="col-sm-2 control-label">添加投注量：</label>
+                                                    <div class="col-sm-9">
+                                                        <input type="text" class="form-control" required>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="form-horizontal col-sm-12">
+                                                <div class="form-group">
+                                                    <label class="col-sm-2 control-label">每日同ip限制优惠次数：</label>
+                                                    <div class="col-sm-9">
+                                                        <input type="text" class="form-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="form-horizontal col-sm-12">
+                                                <div class="form-group">
+                                                    <label class="col-sm-2 control-label">备注：</label>
+                                                    <div class="col-sm-9">
+                                                        <input type="text" class="form-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-offset-4 col-sm-1">
+                                                <button id="discounts-add-confirm" class="btn btn-danger btn-sm" type="button">确定</button>
+                                            </div>
+                                            <div class="col-sm-offset-1 col-sm-1">
+                                                <button id="discounts-add-cancel" class="btn btn-warning btn-sm" type="button">返回</button>
+                                            </div>
+                                        </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!---->
+                <!--银行列表-->
+                <div class="col-xs-12 displayed-hide" id="bank-list">
+                    <h5 class="h5">银行列表</h5>
+                    <div class="parent-input">
+                        <button type="button" class="btn btn-warning btn-xs" data-toggle="modal" data-target="#bank-list-add-myModal">新增
+                        </button>
+                    </div>
+                    <div class="parent-input">
+                        <input type="text">
+                        <button type="button" class="btn btn-warning btn-xs" data-toggle="modal" data-target="#bank-list-add-myModal">
+                            搜索
+                        </button>
+                    </div>
+
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th>银行名称</th>
+                            <th>银行代码</th>
+                            <th>银行PC图片</th>
+                            <th>银行手机端图片</th>
+                            <th>状态</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+
+                        <tbody>
+                        <tr>
+                            <td>89</td>
+                            <td>多半支付</td>
+                            <td>DuoDuo</td>
+                            <td>正常</td>
+                            <td>正常</td>
+                            <td class="compile" data-toggle="modal" data-target="#bank-list-amend-myModal">编辑</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <!--新增模态框-->
+                    <div class="modal fade" id="bank-list-add-myModal" tabindex="-1" role="dialog"
+                         aria-labelledby="myModalLabel">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                            aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title" id="bank-list-add-myModalLabel">新增</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <h5 class="h5">新增银行</h5>
+                                    <div class="row">
+                                        <div class="form-horizontal col-sm-12">
+                                            <div class="form-group">
+                                                <label class="col-sm-2 control-label">银行名称：</label>
+                                                <div class="col-sm-9">
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-horizontal col-sm-12">
+                                            <div class="form-group">
+                                                <label class="col-sm-2 control-label">银行代码：</label>
+                                                <div class="col-sm-9">
+                                                    <input type="text" class="form-control" placeholder="例如:icbc,abc">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-horizontal col-sm-12">
+                                            <div class="form-group">
+                                                <label class="col-sm-2 control-label">手机图片：</label>
+                                                <div class="col-sm-9">
+                                                    <input type="file">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-horizontal col-sm-12">
+                                            <div class="form-group">
+                                                <label class="col-sm-2 control-label">PC图片：</label>
+                                                <div class="col-sm-9">
+                                                    <input type="file">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-horizontal col-sm-12">
+                                            <div class="form-group">
+                                                <label class="col-sm-2 control-label">是否启用：</label>
+                                                <div class="col-sm-9">
+                                                    <select name="" class="form-control">
+                                                        <option value="">正常</option>
+                                                        <option value="">停用</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-offset-4 col-sm-1">
+                                            <button id="bank-list-add-confirm" class="btn btn-danger btn-sm" type="button">确定</button>
+                                        </div>
+                                        <div class="col-sm-offset-1 col-sm-1">
+                                            <button id="bank-list-add-cancel" class="btn btn-warning btn-sm" type="button">返回</button>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--编辑模态框-->
+                    <div class="modal fade" id="bank-list-amend-myModal" tabindex="-1" role="dialog"
+                         aria-labelledby="myModalLabel">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                            aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title" id="bank-list-amend-myModalLabel">编辑</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <h5 class="h5">编辑银行</h5>
+                                    <div class="row">
+                                        <div class="form-horizontal col-sm-12">
+                                            <div class="form-group">
+                                                <label class="col-sm-2 control-label">银行名称：</label>
+                                                <div class="col-sm-9">
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-horizontal col-sm-12">
+                                            <div class="form-group">
+                                                <label class="col-sm-2 control-label">银行代码：</label>
+                                                <div class="col-sm-9">
+                                                    <input type="text" class="form-control" placeholder="例如:icbc,abc">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-horizontal col-sm-12">
+                                            <div class="form-group">
+                                                <label class="col-sm-2 control-label">手机图片：</label>
+                                                <div class="col-sm-9">
+                                                    <input type="file">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-horizontal col-sm-12">
+                                            <div class="form-group">
+                                                <label class="col-sm-2 control-label">PC图片：</label>
+                                                <div class="col-sm-9">
+                                                    <input type="file">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-horizontal col-sm-12">
+                                            <div class="form-group">
+                                                <label class="col-sm-2 control-label">是否启用：</label>
+                                                <div class="col-sm-9">
+                                                    <select name="" class="form-control">
+                                                        <option value="">正常</option>
+                                                        <option value="">停用</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-offset-4 col-sm-1">
+                                            <button id="bank-list-amend-confirm" class="btn btn-danger btn-sm" type="button">确定</button>
+                                        </div>
+                                        <div class="col-sm-offset-1 col-sm-1">
+                                            <button id="bank-list-amend-cancel" class="btn btn-warning btn-sm" type="button">返回</button>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

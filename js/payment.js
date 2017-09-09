@@ -50,9 +50,45 @@ $(function () {
 
 
 
+    //线上出款列表
+    $("#online-info-tbody").on("click","td:last-child>a:first-child",function () {
+        var con;
+        con= confirm("确认要执行该操作么?");
+        if(con==true){
+            $(this).parent().prev().children('.success').css("display","block").prev().css("display","none");
+        }
+        else{
+            $(this).parent().prev().children('.success').css("display","none").prev().css("display","block");
+        }
+    });
 
 
-})
+    //入款类型设置
+    $("#type-setting-tbody").on("click",".state button",function () {
+        if (this.className.indexOf('run') >= 0) {
+            $(this).css("display", "none").next().css("display", "block");
+        } else {
+            $(this).css("display", "none").prev().css("display", "block");
+        }
+    });
+    //操作，停用启用
+    $("#type-setting-tbody").on("click",".handle .stop",function () {
+        if (this.className.indexOf('stop') >= 0) {
+            $(this).text("启用");
+        } else {
+            $(this).text("停用").css("color","#f4841e");
+        }//只是一次性点击，
+    })
+
+
+
+
+
+
+
+
+
+});
 
 
 

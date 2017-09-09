@@ -343,6 +343,7 @@ body {
     font-family: "\5FAE\8F6F\96C5\9ED1","Microsoft Yahei","Hiragino Sans GB",tahoma,arial,"\5B8B\4F53";
     line-height: 1;
     min-width: 1300px;
+    background-color: #f6f6f6;
 }
 
 ul,
@@ -425,9 +426,17 @@ div.row .displayed-show{
 #collect-myModal .modal-dialog{
     width: 880px;
 }
-
-
-
+.compile{
+    cursor: pointer;
+    text-decoration: underline;
+    color:#4888c8;
+}
+#main-content label{
+    font-weight: normal;
+}
+.modal-title {
+    border:0;
+}
 
 
 

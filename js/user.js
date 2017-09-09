@@ -134,9 +134,10 @@ $(document).ready(function () {
             daili: "255555",
             total: 2566,
             shengyu: 2533,
-            state: 555,
+            state: `<button class="run btn-warning btn-xs displayed-hide">启用</button>
+                                    <button class="lock btn-danger btn-xs">禁用</button>`,
             createTime: 2000,
-            handle: "click"
+            handle: ` <span class="compile" data-toggle="modal" data-target="#agency-name-amend-myModal">编辑</span><a href="#">启用</a><a href="#">删除</a>`
         },
         {
             userId: 'zhangsan',
@@ -144,9 +145,10 @@ $(document).ready(function () {
             daili: "255555",
             total: 2566,
             shengyu: 2533,
-            state: 555,
+            state: `<button class="run btn-warning btn-xs displayed-hide">启用</button>
+                                    <button class="lock btn-danger btn-xs">禁用</button>`,
             createTime: 2000,
-            handle: "click"
+            handle: ` <span class="compile" data-toggle="modal" data-target="#agency-name-amend-myModal">编辑</span><a href="#">启用</a><a href="#">删除</a>`
         },
         {
             userId: 'zhangsan',
@@ -154,9 +156,10 @@ $(document).ready(function () {
             daili: "255555",
             total: 2566,
             shengyu: 2533,
-            state: 555,
+            state: `<button class="run btn-warning btn-xs displayed-hide">启用</button>
+                                    <button class="lock btn-danger btn-xs">禁用</button>`,
             createTime: 2000,
-            handle: "click"
+            handle: ` <span class="compile" data-toggle="modal" data-target="#agency-name-amend-myModal">编辑</span><a href="#">启用</a><a href="#">删除</a>`
         },
         {
             userId: 'james',
@@ -164,9 +167,10 @@ $(document).ready(function () {
             daili: "255555",
             total: 2566,
             shengyu: 2533,
-            state: 555,
+            state: `<button class="run btn-warning btn-xs displayed-hide">启用</button>
+                                    <button class="lock btn-danger btn-xs">禁用</button>`,
             createTime: 2000,
-            handle: "click"
+            handle: ` <span class="compile" data-toggle="modal" data-target="#agency-name-amend-myModal">编辑</span><a href="#">启用</a><a href="#">删除</a>`
         },
         {
             userId: 'carry',
@@ -174,9 +178,10 @@ $(document).ready(function () {
             daili: "255555",
             total: 2566,
             shengyu: 2533,
-            state: 555,
+            state: `<button class="run btn-warning btn-xs displayed-hide">启用</button>
+                                    <button class="lock btn-danger btn-xs">禁用</button>`,
             createTime: 2000,
-            handle: "click"
+            handle: ` <span class="compile" data-toggle="modal" data-target="#agency-name-amend-myModal">编辑</span><a href="#">启用</a><a href="#">删除</a>`
         },
         {
             userId: 'melo',
@@ -184,9 +189,10 @@ $(document).ready(function () {
             daili: "255555",
             total: 2566,
             shengyu: 2533,
-            state: 555,
+            state: `<button class="run btn-warning btn-xs displayed-hide">启用</button>
+                                    <button class="lock btn-danger btn-xs">禁用</button>`,
             createTime: 2000,
-            handle: "click"
+            handle: ` <span class="compile" data-toggle="modal" data-target="#agency-name-amend-myModal">编辑</span><a href="#">启用</a><a href="#">删除</a>`
         },
         {
             userId: 'userId',
@@ -194,9 +200,10 @@ $(document).ready(function () {
             daili: "255555",
             total: 2566,
             shengyu: 2533,
-            state: 555,
+            state: `<button class="run btn-warning btn-xs displayed-hide">启用</button>
+                                    <button class="lock btn-danger btn-xs">禁用</button>`,
             createTime: 2000,
-            handle: "click"
+            handle: ` <span class="compile" data-toggle="modal" data-target="#agency-name-amend-myModal">编辑</span><a href="#">启用</a><a href="#">删除</a>`
         },
         {
             userId: 'kobe',
@@ -204,9 +211,10 @@ $(document).ready(function () {
             daili: "255555",
             total: 2566,
             shengyu: 2533,
-            state: 555,
+            state: `<button class="run btn-warning btn-xs displayed-hide">启用</button>
+                                    <button class="lock btn-danger btn-xs">禁用</button>`,
             createTime: 2000,
-            handle: "click"
+            handle: ` <span class="compile" data-toggle="modal" data-target="#agency-name-amend-myModal">编辑</span><a href="#">启用</a><a href="#">删除</a>`
         },
         {
             userId: 'tom',
@@ -214,9 +222,10 @@ $(document).ready(function () {
             daili: "255555",
             total: 2566,
             shengyu: 2533,
-            state: 555,
+            state: `<button class="run btn-warning btn-xs displayed-hide">启用</button>
+                                    <button class="lock btn-danger btn-xs">禁用</button>`,
             createTime: 2000,
-            handle: "click"
+            handle: ` <span class="compile" data-toggle="modal" data-target="#agency-name-amend-myModal">编辑</span><a href="#">启用</a><a href="#">删除</a>`
         },
         {
             userId: 'jarry',
@@ -224,9 +233,10 @@ $(document).ready(function () {
             daili: "255555",
             total: 2566,
             shengyu: 2533,
-            state: 555,
+            state: `<button class="run btn-warning btn-xs displayed-hide">启用</button>
+                                    <button class="lock btn-danger btn-xs">禁用</button>`,
             createTime: 2000,
-            handle: "click"
+            handle: ` <span class="compile" data-toggle="modal" data-target="#agency-name-amend-myModal">编辑</span><a href="#">启用</a><a href="#">删除</a>`
         },
         {
             userId: 'yyy',
@@ -234,9 +244,9 @@ $(document).ready(function () {
             daili: "255555",
             total: 2566,
             shengyu: 2533,
-            state: 555,
+            state: '',
             createTime: 2000,
-            handle: "click"
+            handle: ''
         }
     ];
     //计算页码数量并动态生成
@@ -300,7 +310,10 @@ $(document).ready(function () {
                     <td>${currentPageDate[i].daili}<input type="hidden" value='${currentPageDate[i].userId}'></td>
                     <td>${currentPageDate[i].total}</td>
                     <td>${currentPageDate[i].shengyu}</td>
-                    <td class="color1">${currentPageDate[i].state}</td>
+                    <td class="state">
+                    <button class="run btn-warning btn-xs displayed-hide">启用</button>
+                                    <button class="lock btn-danger btn-xs">禁用</button>
+                                    </td>
                     <td>${currentPageDate[i].createTime}</td>
                     <td>${currentPageDate[i].handle}</td>
                 </tr>
@@ -423,20 +436,44 @@ $(document).ready(function () {
     });
 
 
-    //代理审核
+    //二、代理审核
     $("#membership-details-search").click(function () {
         var user = $("#membership-details-user").val;
         var al = $("#membership-details-all").val;
     });
-    //表格里面启用锁定按钮
-    // $("#summary>tbody tr td:eq(10)").click(function () {
-    //     if ($(this).text("启用")) {
-    //         $(this).html("<button class='btn btn-danger btn-xs'>锁定</button>");
-    //     } else {
-    //         $(this).html("<button class='btn btn-danger btn-xs'>启用</button>");
-    //     }
-    // });
+    // 启用锁定按钮
+    $("#summary  .detail button").click(function () {
+        if (this.className.indexOf('run') >= 0) {
+            $(this).parent().prev().children(".user-status").text("启用");
+            $(this).css("display", "none").next().css("display", "block");
+        } else {
+            $(this).parent().prev().children(".user-status").text("锁定");
+            $(this).css("display", "none").prev().css("display", "block");
+        }
 
+    });
+        // 三、代理域名下，禁用启用按钮
+    $("#agency-name-tbody").on('click','.state button',function () {
+        if (this.className.indexOf('run') >= 0) {
+            $(this).parent().prev().children(".user-status").text("启用");
+            $(this).css("display", "none").next().css("display", "block");
+        } else {
+            $(this).parent().prev().children(".user-status").text("锁定");
+            $(this).css("display", "none").prev().css("display", "block");
+        }
+
+    });
+
+    //四、代理码管理
+    $("#agency-tbody").on('click','td:last-child>button',function () {
+        if (this.className.indexOf('run') >= 0) {
+            $(this).parent().prev().children(".user-status").text("启用");
+            $(this).css("display", "none").next().css("display", "block");
+        } else {
+            $(this).parent().prev().children(".user-status").text("锁定");
+            $(this).css("display", "none").prev().css("display", "block");
+        }
+    })
 
 });
 

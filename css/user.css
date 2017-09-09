@@ -1,4 +1,4 @@
-.user-parent-input{
+.user-pareuser-listnt-input{
     margin-bottom: 20px;
     font-size: 14px;
 }
@@ -103,13 +103,45 @@ h4{
 #bank-table{
     margin-bottom: 120px;
 }
-
-
-
-
-
-
-
+#add a{
+    text-decoration: none;
+    color:#fff;
+}
+#summary .detail{
+    position: relative;
+}
+#summary .detail button{
+    position: absolute;
+    top:10px;
+    left:67px;
+}
+#membership-details-myModal .modal-dialog{
+    width:880px;
+}
+button>a,
+button>a:hover {
+    text-decoration: none;
+    color:#fff;
+}
+#agency-name-table .state{
+    position: relative;
+}
+#agency-name-table .state button{
+    position: absolute;
+    top:5px;
+    left:36px;
+}
+#agency-table td:last-child{
+    position: relative;
+}
+#agency-table td:last-child>button{
+    position: absolute;
+    top:5px;
+    left: 38px;
+}
+#member-tier-setting-myModal .modal-content{
+    width:780px;
+}
 
 
 

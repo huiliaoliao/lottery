@@ -1,0 +1,23 @@
+input{
+    border:1px solid #ddd;
+}
+#color-setting-save{
+    text-align: center;
+}
+#limit-set .table{
+    border-collapse: separate;
+    border-spacing: 1px;
+}
+#limit-set .table > thead > tr > th{
+    border-bottom: 0;
+    border-top:0;
+}
+#limit-set .table tbody td{
+    border-right: 1px solid #e3e3e3;
+}
+#play-help{
+    width: 300px;
+    height:70px;
+    border: 1px solid #ddd;
+    overflow: auto;
+}

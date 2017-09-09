@@ -1,0 +1,15 @@
+#type-setting-tbody .state{
+    position: relative;
+}
+#type-setting-tbody .state button{
+    position: absolute;
+    top:5px;
+    left:50px;
+}
+.stop{
+    color:red;
+    cursor: pointer;
+}
+#type-group .modal-content{
+    width:400px;
+}
